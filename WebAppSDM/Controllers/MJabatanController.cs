@@ -13,7 +13,7 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<MJabatan> objCatlist = _context.MJabatan;
+            IEnumerable<MJabatan> objCatlist = _context.MJabatan.Where(x=> x.isdelete == 0);
             return View(objCatlist);
         }
         public IActionResult Create()

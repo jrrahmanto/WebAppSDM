@@ -1,32 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Dynamic;
 using WebAppSDM.Data;
 using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
-    public class MGradeController : Controller
+    public class MTunjanganController : Controller
     {
         private readonly ApplicationDBContext _context;
-        public MGradeController(ApplicationDBContext context)
+        public MTunjanganController(ApplicationDBContext context)
         {
             _context = context;
         }
         public IActionResult Index()
         {
-            IEnumerable<MGrade> objCatlist = _context.MGrade.Where(x => x.isdelete == 0); ;
+            IEnumerable<ViewTunjangan> objCatlist = _context.ViewTunjangan;
             return View(objCatlist);
         }
         public IActionResult Create()
         {
+            List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
+            List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            ViewData["GradeList"] = gradelist;
+            ViewData["JabatanList"] = jabatanlist;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(MGrade empobj)
+        public IActionResult Create(MTunjangan empobj)
         {
             if (ModelState.IsValid)
             {
-                _context.MGrade.Add(empobj);
+                empobj.create_date = DateTime.Now;
+                _context.MTunjangan.Add(empobj);
                 _context.SaveChanges();
                 TempData["ResultOk"] = "Record Added Successfully !";
                 return RedirectToAction("Index");
@@ -34,14 +41,18 @@ namespace WebAppSDM.Controllers
 
             return View(empobj);
         }
-
         public IActionResult Edit(int? id)
         {
+            List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
+            List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            ViewData["GradeList"] = gradelist;
+            ViewData["JabatanList"] = jabatanlist;
+
             if (id == null || id == 0)
             {
                 return NotFound();
             }
-            var empfromdb = _context.MGrade.Find(id);
+            var empfromdb = _context.MTunjangan.Find(id);
 
             if (empfromdb == null)
             {
@@ -52,11 +63,11 @@ namespace WebAppSDM.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(MGrade empobj)
+        public IActionResult Edit(MTunjangan empobj)
         {
             if (ModelState.IsValid)
             {
-                _context.MGrade.Update(empobj);
+                _context.MTunjangan.Update(empobj);
                 _context.SaveChanges();
                 TempData["ResultOk"] = "Data Updated Successfully !";
                 return RedirectToAction("Index");
@@ -64,14 +75,18 @@ namespace WebAppSDM.Controllers
 
             return View(empobj);
         }
-
         public IActionResult Delete(int? id)
         {
+            List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
+            List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            ViewData["GradeList"] = gradelist;
+            ViewData["JabatanList"] = jabatanlist;
+
             if (id == null || id == 0)
             {
                 return NotFound();
             }
-            var empfromdb = _context.MGrade.Find(id);
+            var empfromdb = _context.MTunjangan.Find(id);
 
             if (empfromdb == null)
             {
@@ -79,15 +94,14 @@ namespace WebAppSDM.Controllers
             }
             return View(empfromdb);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteGrade(MGrade empobj)
+        public IActionResult DeleteTunjangan(MTunjangan empobj)
         {
             if (ModelState.IsValid)
             {
                 empobj.isdelete = 1;
-                _context.MGrade.Update(empobj);
+                _context.MTunjangan.Update(empobj);
                 _context.SaveChanges();
                 TempData["ResultOk"] = "Data Deleted Successfully !";
                 return RedirectToAction("Index");

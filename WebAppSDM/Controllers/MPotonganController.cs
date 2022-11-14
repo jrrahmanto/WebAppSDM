@@ -4,16 +4,16 @@ using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
-    public class MGradeController : Controller
+    public class MPotonganController : Controller
     {
         private readonly ApplicationDBContext _context;
-        public MGradeController(ApplicationDBContext context)
+        public MPotonganController(ApplicationDBContext context)
         {
             _context = context;
         }
         public IActionResult Index()
         {
-            IEnumerable<MGrade> objCatlist = _context.MGrade.Where(x => x.isdelete == 0); ;
+            IEnumerable<MPotongan> objCatlist = _context.MPotongan.Where(x=>x.isdelete == 0);
             return View(objCatlist);
         }
         public IActionResult Create()
@@ -22,11 +22,12 @@ namespace WebAppSDM.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(MGrade empobj)
+        public IActionResult Create(MPotongan empobj)
         {
             if (ModelState.IsValid)
             {
-                _context.MGrade.Add(empobj);
+                empobj.create_date = DateTime.Now;
+                _context.MPotongan.Add(empobj);
                 _context.SaveChanges();
                 TempData["ResultOk"] = "Record Added Successfully !";
                 return RedirectToAction("Index");
@@ -41,7 +42,7 @@ namespace WebAppSDM.Controllers
             {
                 return NotFound();
             }
-            var empfromdb = _context.MGrade.Find(id);
+            var empfromdb = _context.MPotongan.Find(id);
 
             if (empfromdb == null)
             {
@@ -52,11 +53,11 @@ namespace WebAppSDM.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(MGrade empobj)
+        public IActionResult Edit(MPotongan empobj)
         {
             if (ModelState.IsValid)
             {
-                _context.MGrade.Update(empobj);
+                _context.MPotongan.Update(empobj);
                 _context.SaveChanges();
                 TempData["ResultOk"] = "Data Updated Successfully !";
                 return RedirectToAction("Index");
@@ -71,7 +72,7 @@ namespace WebAppSDM.Controllers
             {
                 return NotFound();
             }
-            var empfromdb = _context.MGrade.Find(id);
+            var empfromdb = _context.MPotongan.Find(id);
 
             if (empfromdb == null)
             {
@@ -82,12 +83,12 @@ namespace WebAppSDM.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteGrade(MGrade empobj)
+        public IActionResult DeletePotongan(MPotongan empobj)
         {
             if (ModelState.IsValid)
             {
                 empobj.isdelete = 1;
-                _context.MGrade.Update(empobj);
+                _context.MPotongan.Update(empobj);
                 _context.SaveChanges();
                 TempData["ResultOk"] = "Data Deleted Successfully !";
                 return RedirectToAction("Index");

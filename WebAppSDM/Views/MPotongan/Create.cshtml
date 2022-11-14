@@ -1,0 +1,58 @@
+﻿@model MPotongan
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Create Master Potongan</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form method="post">
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-name">Kode Potongan</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" asp-for="kode_potongan" required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Nama Potongan</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" asp-for="nama_potongan" required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Nominal (Rp)</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" asp-for="nominal" required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Rate Percent (%)</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" asp-for="rate_percent" pattern="^\d+(?:\.\d{1,2})?$" min="0" value="0.00" step="0.01" required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Komponen</label>
+                            <div class="col-sm-10">
+                                <select asp-for="komponen" class="form-control" required>
+                                    <option value="1">Gapok</option>
+                                    <option value="2">THP 1</option>
+                                    <option value="3">THP 2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <a asp-controller="MPotongan" asp-action="Index" class="btn btn-lg btn-danger p-2">Back</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

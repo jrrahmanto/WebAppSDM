@@ -1,0 +1,140 @@
+﻿@model MKaryawan
+@{
+    var GradeList = (List<DropdownList.GradeList>)ViewData["GradeList"];
+    var JabatanList = (List<DropdownList.JabatanList>)ViewData["JabatanList"];
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger;
+        if ($('#Tgl_Permanen').val() == "2000-01-01") {
+            document.getElementById('Tgl_Permanen').readOnly = true;
+            $("#defaultCheck1").attr('checked', true);
+        } 
+    });
+</script>
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Edit Master Karyawan</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form method="post" asp-action="Edit">
+                        <input type="text" class="form-control" asp-for="id" hidden="hidden" />
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-name">NIP</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" asp-for="NIP" required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Nama Lengkap</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" asp-for="Nama" required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Tanggal Masuk</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" asp-for="Tgl_Masuk" required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company"></label>
+                            <div class="col-sm-10">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" onclick="validateCb()" />
+                                <label class="form-check-label" for="defaultCheck1"> Karyawan Kontrak </label>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Tanggal Permanen</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" asp-for="Tgl_Permanen" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">NIK</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" asp-for="NIK" required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">NPWP</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" asp-for="NPWP" required />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Alamat</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" asp-for="Alamat" rows="3" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Nominal (Rp)</label>
+                            <div class="col-sm-10">
+                                <select asp-for="Status_Pajak" class="form-select">
+                                    <option value="1">TK</option>
+                                    <option value="2">K</option>
+                                    <option value="3">K1</option>
+                                    <option value="4">K2</option>
+                                    <option value="5">K3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Grade</label>
+                            <div class="col-sm-10">
+                                <select asp-for="Grade_id" class="form-control" required>
+                                    @foreach (var item in GradeList)
+                                    {
+                                            <option value="@item.id">@item.nama</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Jabatan</label>
+                            <div class="col-sm-10">
+                                <select asp-for="Jabatan_id" class="form-control" required>
+                                    @foreach (var item in JabatanList)
+                                    {
+                                            <option value="@item.id">@item.nama</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Gaji Pokok</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" asp-for="Gapok" required />
+                            </div>
+                        </div>
+                        <div class="row justify-content-end">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <a asp-controller="MKaryawan" asp-action="Index" class="btn btn-lg btn-danger p-2">Back</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function validateCb() {
+  
+        if (document.getElementById("defaultCheck1").checked) {
+            $("#Tgl_Permanen").val("2000-01-01")
+            document.getElementById('Tgl_Permanen').readOnly = true;
+        } else {
+            $("#Tgl_Permanen").val("");
+            document.getElementById("Tgl_Permanen").readOnly = false;
+        }
+    }
+</script>
