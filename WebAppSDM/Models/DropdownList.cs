@@ -12,5 +12,11 @@
             public int id { get; set; }
             public string nama { get; set; }
         }
+        public class KaryawanList
+        {
+            public int id { get; set; }
+            public string nama { get; set; }
+            public string NIP { get; set; }
+        }
     }
 }

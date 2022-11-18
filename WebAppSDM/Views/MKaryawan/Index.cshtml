@@ -22,8 +22,8 @@
             <table class="table" id="myDataTable">
                 <thead>
                     <tr>
-                        <th>NIP</th>
                         <th>Nama</th>
+                        <th>NIP</th>
                         <th>Tgl Masuk</th>
                         <th>Tgl Permanen</th>
                         <th>Alamat</th>
@@ -35,8 +35,8 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.NIP</strong></td>
-                            <td>@item.Nama</td>
+                            <td><strong>@item.Nama</strong></td>
+                            <td>@item.NIP</td>
                             <td>@item.Tgl_Masuk.ToString("dd/MM/yyyy")</td>
                             @if (item.Tgl_Permanen.ToString("dd/MM/yyyy") == "01/01/2000")
                             {
