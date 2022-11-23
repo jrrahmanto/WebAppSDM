@@ -59,9 +59,9 @@
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
                     <center>
-                    <a asp-controller ="Home" asp-action="Index">
-                        <img src="https://i.ibb.co/K5NzTqj/Logo-KBI-1.png" style=" width: 50%;height: auto;" />
-                    </a>
+                        <a asp-controller="Home" asp-action="Index">
+                            <img src="https://i.ibb.co/K5NzTqj/Logo-KBI-1.png" style=" width: 50%;height: auto;" />
+                        </a>
                     </center>
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
                         <i class="bx bx-chevron-left bx-sm align-middle"></i>
@@ -113,6 +113,16 @@
                                     <div data-i18n="Master Karyawan">Master Karyawan</div>
                                 </a>
                             </li>
+                            <li class="menu-item">
+                                <a asp-controller="MMesinAbsen" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Master Mesin Absen">Master Mesin Absen</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a asp-controller="MParameters" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Master Parameter">Master Parameter</div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -154,211 +164,19 @@
                                     <div data-i18n="Koperasi">Koperasi</div>
                                 </a>
                             </li>
-                        </ul>
-                    </li>
-                    <!-- Components -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-                    <!-- Cards -->
-                    <li class="menu-item">
-                        <a href="cards-basic.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-collection"></i>
-                            <div data-i18n="Basic">Cards</div>
-                        </a>
-                    </li>
-                    <!-- User interface -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-box"></i>
-                            <div data-i18n="User interface">User interface</div>
-                        </a>
-                        <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="ui-accordion.html" class="menu-link">
-                                    <div data-i18n="Accordion">Accordion</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-alerts.html" class="menu-link">
-                                    <div data-i18n="Alerts">Alerts</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-badges.html" class="menu-link">
-                                    <div data-i18n="Badges">Badges</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-buttons.html" class="menu-link">
-                                    <div data-i18n="Buttons">Buttons</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-carousel.html" class="menu-link">
-                                    <div data-i18n="Carousel">Carousel</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-collapse.html" class="menu-link">
-                                    <div data-i18n="Collapse">Collapse</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-dropdowns.html" class="menu-link">
-                                    <div data-i18n="Dropdowns">Dropdowns</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-footer.html" class="menu-link">
-                                    <div data-i18n="Footer">Footer</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-list-groups.html" class="menu-link">
-                                    <div data-i18n="List Groups">List groups</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-modals.html" class="menu-link">
-                                    <div data-i18n="Modals">Modals</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-navbar.html" class="menu-link">
-                                    <div data-i18n="Navbar">Navbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-offcanvas.html" class="menu-link">
-                                    <div data-i18n="Offcanvas">Offcanvas</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-pagination-breadcrumbs.html" class="menu-link">
-                                    <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-progress.html" class="menu-link">
-                                    <div data-i18n="Progress">Progress</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-spinners.html" class="menu-link">
-                                    <div data-i18n="Spinners">Spinners</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-tabs-pills.html" class="menu-link">
-                                    <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-toasts.html" class="menu-link">
-                                    <div data-i18n="Toasts">Toasts</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-tooltips-popovers.html" class="menu-link">
-                                    <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="ui-typography.html" class="menu-link">
-                                    <div data-i18n="Typography">Typography</div>
+                                <a asp-controller="TGajis" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Gaji">Gaji</div>
                                 </a>
                             </li>
                         </ul>
-                    </li>
-
-                    <!-- Extended components -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-copy"></i>
-                            <div data-i18n="Extended UI">Extended UI</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                                    <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="extended-ui-text-divider.html" class="menu-link">
-                                    <div data-i18n="Text Divider">Text Divider</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="icons-boxicons.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-crown"></i>
-                            <div data-i18n="Boxicons">Boxicons</div>
-                        </a>
-                    </li>
-
-                    <!-- Forms & Tables -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
-                    <!-- Forms -->
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div data-i18n="Form Elements">Form Elements</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="forms-basic-inputs.html" class="menu-link">
-                                    <div data-i18n="Basic Inputs">Basic Inputs</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="forms-input-groups.html" class="menu-link">
-                                    <div data-i18n="Input groups">Input groups</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div data-i18n="Form Layouts">Form Layouts</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="form-layouts-vertical.html" class="menu-link">
-                                    <div data-i18n="Vertical Form">Vertical Form</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="form-layouts-horizontal.html" class="menu-link">
-                                    <div data-i18n="Horizontal Form">Horizontal Form</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Tables -->
-                    <li class="menu-item">
-                        <a href="tables-basic.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-table"></i>
-                            <div data-i18n="Tables">Tables</div>
-                        </a>
                     </li>
                     <!-- Misc -->
                     <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
                     <li class="menu-item">
-                        <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                           target="_blank"
-                           class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-support"></i>
-                            <div data-i18n="Support">Support</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                           target="_blank"
-                           class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-file"></i>
-                            <div data-i18n="Documentation">Documentation</div>
+                        <a asp-controller="Logout" asp-action="Index" class="menu-link">
+                            <i class="bx bx-power-off me-2"></i>
+                            <div data-i18n="Log Out">Log Out</div>
                         </a>
                     </li>
                 </ul>
@@ -378,12 +196,11 @@
 
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                         <!-- Search -->
-                               <marquee direction="LEFT">Hallo, Selamat datang kembali</marquee>
+                        <marquee direction="LEFT">Hallo, Selamat datang kembali</marquee>
                         <!-- /Search -->
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
-
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
@@ -411,7 +228,7 @@
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                        <a asp-controller="Logout" asp-action="Index" class="menu-link dropdown-item">
                                             <i class="bx bx-power-off me-2"></i>
                                             <span class="align-middle">Log Out</span>
                                         </a>

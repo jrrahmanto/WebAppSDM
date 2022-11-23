@@ -1,0 +1,41 @@
+﻿@model WebAppSDM.Models.MParameter
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Delete Parameter</h4>
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.value)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.value)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.keterangan)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.keterangan)
+                        </dd>
+                    </dl>
+
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="id" />
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                        <a asp-controller="MParameters" asp-action="Index" class="btn btn-lg btn-danger p-2">Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

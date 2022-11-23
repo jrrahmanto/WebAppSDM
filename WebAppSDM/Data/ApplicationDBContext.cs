@@ -18,9 +18,13 @@ namespace WebAppSDM.Data
         public DbSet<MKaryawan> MKaryawan { get; set; }
         public DbSet<TAbsensi> TAbsensi { get; set; }
         public DbSet<TKoperasi> TKoperasi { get; set; }
+        public DbSet<MMesinAbsen> MMesinAbsen { get; set; }
+        public DbSet<MParameter> MParameter { get; set; }
+        public DbSet<TGaji> TGaji { get; set; }
         public DbSet<ViewKaryawan> ViewKaryawan { get; set; }
         public DbSet<ViewTunjangan> ViewTunjangan { get; set; }
         public DbSet<ViewTAbsensi> ViewTAbsensi { get; set; }
+        public DbSet<ViewGaji> ViewGaji { get; set; }
         public DbSet<DropdownList.GradeList> GradeList { get; set; }
         public DbSet<DropdownList.JabatanList> JabatanList { get; set; }
         public DbSet<DropdownList.KaryawanList> KaryawanLists { get; set; }
@@ -56,6 +60,11 @@ namespace WebAppSDM.Data
                 entity.HasKey(e => e.id);
                 entity.ToTable("KaryawanList");
                 entity.Property(e => e.nama).HasMaxLength(50);
+            });
+            modelBuilder.Entity<ViewGaji>(entity => {
+                entity.HasKey(e => e.id);
+                entity.ToTable("ViewGaji");
+                entity.Property(e => e.Nama).HasMaxLength(100);
             });
         }
     }

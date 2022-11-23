@@ -1,0 +1,157 @@
+﻿@model IEnumerable<WebAppSDM.Models.ViewGaji>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.noConflict();
+        $('#myDataTable').DataTable({
+            order: [[1, 'desc']],
+        });
+    });
+</script>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Transaksi/</span>Gaji</h4>
+    <!-- Basic Bootstrap Table -->
+    <div class="card">
+        <h5 class="card-header"> <a href="TGajis/Create" class="btn btn-sm btn-outline-primary">Generate</a></h5>
+        <div class="card-header">
+        </div>
+    </div>
+    <br />
+    <!-- Basic Bootstrap Table -->
+    <div class="card">
+        <div class="card-header">
+            <table class="table" id="myDataTable">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NIP)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.periode_year)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.periode_month)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.gapok)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.tunjangan_tetap)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.tunjangan_harian)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Gapok)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.tunjangan_lain)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.bpjs_ks)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.bpjs_tk)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.dplk)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.pph21)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.potongan_koperasi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.potongan_lain)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.thp1)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.thp2)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.nominal_upah)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.update_date)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NIP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.periode_year)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.periode_month)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.gapok)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tunjangan_tetap)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tunjangan_harian)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Gapok)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tunjangan_lain)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.bpjs_ks)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.bpjs_tk)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.dplk)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.pph21)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.potongan_koperasi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.potongan_lain)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.thp1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.thp2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nominal_upah)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.update_date)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

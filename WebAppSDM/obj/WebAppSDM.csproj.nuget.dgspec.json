@@ -54,6 +54,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "System.Linq.Dynamic.Core": {
+              "target": "Package",
+              "version": "[1.2.23, )"
             }
           },
           "imports": [

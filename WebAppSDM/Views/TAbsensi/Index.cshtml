@@ -6,14 +6,40 @@
 }
 
 <script type="text/javascript">
+    //    $(document).ready(function () {
+    //    $.noConflict();
+    //    $('#myDataTable').DataTable({
+    //        "processing": true,
+    //        "serverSide": true,
+    //        "filter": true,
+    //        "order": [[1, 'desc']],
+    //        "ajax": {
+    //            "url": "/TAbsensi/getList",
+    //            "type": "POST",
+    //            "datatype": "json"
+    //        },
+    //        "columns": [
+    //            { "data": "nama", "name": "nama", "autoWidth": true },
+    //            { "data": "Jam_Masuk", "name": "Jam_Masuk", "autoWidth": true },
+    //            { "data": "Jam_Keluar", "name": "Jam_Keluar", "autoWidth": true },
+    //            { "data": "Status", "name": "Status", "autoWidth": true },
+    //            { "data": "Lembur", "name": "Lembur", "autoWidth": true },
+    //            { "data": "keterangan", "name": "Nominal_Lembur", "autoWidth": true },
+    //            { "data": "Hitung_Lembur", "name": "Hitung_Lembur", "autoWidth": true },
+    //            { "data": "Nominal_Lembur", "name": "keterangan", "autoWidth": true, "render": $.fn.dataTable.render.number(',', '.', 2, '') },
+    //        ]
+    //    });
+    //});
     $(document).ready(function () {
         $.noConflict();
-        $('#myDataTable').DataTable({});
+        $('#myDataTable').DataTable({
+         order: [[1, 'desc']],
+        });
     });
 </script>
 
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Transaksi/</span>Absensi</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Transaksi/</span>Absensi Tgl @TempData["date"]</h4>
     <!-- Basic Bootstrap Table -->
     <div class="card">
 
@@ -23,11 +49,11 @@
                 <thead>
                     <tr>
                         <th>Nama</th>
-                        <th>Periode</th>
                         <th>Jam Masuk</th>
                         <th>Jam Pulang</th>
                         <th>Lembur</th>
                         <th>Keterangan</th>
+                        <th>Status</th>
                         <th>Hitung Lembur</th>
                         <th>Nominal Lembur</th>
                         <th>Action</th>
@@ -38,11 +64,20 @@
                     {
                         <tr>
                             <td>@item.nama</td>
-                            <td>@item.update_date.ToString("dd/MM/yyyy")</td>
-                            <td>@item.Jam_Masuk.ToString("HH:mm:ss")</td>
-                            <td>@item.Jam_Keluar.ToString("HH:mm:ss")</td>
+                            <td>@item.Jam_Masuk</td>
+                            <td>@item.Jam_Keluar</td>
                             <td>@item.Lembur</td>
-                            <td>@item.Status</td>
+                            <td>@item.keterangan</td>
+                            <td>
+                                @if (item.Status == "masuk")
+                                {
+                                    <span class="badge bg-label-primary me-1">Masuk</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-label-danger me-1">Tdk Masuk</span>
+                                }
+                            </td>
                             <td>
                                 @if (item.Hitung_Lembur == true)
                                 {
