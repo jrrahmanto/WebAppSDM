@@ -80,14 +80,18 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(TAbsensi empobj)
         {
-            DateTime enddate = Convert.ToDateTime(empobj.Jam_Keluar);
-            TimeSpan lembur = (empobj.Jam_Keluar - Convert.ToDateTime(enddate.ToString("yyyy-MM-dd 17:00:00"))).Value;
-            if (lembur.TotalHours < 1)
+            if (empobj.Jam_Keluar != null )
             {
-                lembur = TimeSpan.Parse("00:00:00");
+                DateTime enddate = Convert.ToDateTime(empobj.Jam_Keluar);
+                TimeSpan lembur = (empobj.Jam_Keluar - Convert.ToDateTime(enddate.ToString("yyyy-MM-dd 17:00:00"))).Value;
+                if (lembur.TotalHours < 1)
+                {
+                    lembur = TimeSpan.Parse("00:00:00");
+                }
+
+                empobj.Lembur = lembur;
             }
 
-            empobj.Lembur = lembur;
             if (ModelState.IsValid)
             {
                 _context.TAbsensi.Update(empobj);

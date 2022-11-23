@@ -15,6 +15,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Source Code Service\WebAppSDM\WebAppSDM
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -153,14 +173,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TAbsensi/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFic2Vuc2lcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TGajis/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEdhamlzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TGajis/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEdhamlzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TGajis/Details.cshtml]

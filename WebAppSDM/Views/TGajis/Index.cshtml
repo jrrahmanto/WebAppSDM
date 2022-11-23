@@ -4,154 +4,181 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@if (TempData["ResultOk"] != null)
+{
+    <h1 class="card-header">@TempData["ResultOk"]</h1>
+}
 
 <script type="text/javascript">
     $(document).ready(function () {
         $.noConflict();
         $('#myDataTable').DataTable({
-            order: [[1, 'desc']],
+            "order": []
         });
     });
 </script>
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Transaksi/</span>Gaji</h4>
-    <!-- Basic Bootstrap Table -->
-    <div class="card">
-        <h5 class="card-header"> <a href="TGajis/Create" class="btn btn-sm btn-outline-primary">Generate</a></h5>
-        <div class="card-header">
+
+    <!-- Basic Layout -->
+    <div class="col-xxl">
+        <div class="card mb-4">
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div class="row mb-3">
+                        <div class="col-sm-2">
+                            Periode Start
+                            <input type="date" class="form-control" id="periodestart" name="periodestart" />
+                        </div>
+                        <div class="col-sm-2">
+                            Periode End
+                            <input type="date" class="form-control" id="periodeend" name="periodeend" />
+                        </div>
+                        <div class="col-sm-2">
+                            <br />
+                            <button type="submit" class="btn btn-primary">Generate</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    <br />
-    <!-- Basic Bootstrap Table -->
-    <div class="card">
-        <div class="card-header">
-            <table class="table" id="myDataTable">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.NIP)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.periode_year)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.periode_month)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.gapok)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.tunjangan_tetap)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.tunjangan_harian)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Gapok)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.tunjangan_lain)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.bpjs_ks)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.bpjs_tk)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.dplk)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.pph21)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.potongan_koperasi)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.potongan_lain)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.thp1)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.thp2)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.nominal_upah)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.update_date)
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
+
+    <hr />
+
+
+    <div class="col-12">
+        <div class="card overflow-hidden" style="height: 500px">
+            <div class="card-body" id="both-scrollbars-example">
+                <table class="display compact" style="width:100%" id="myDataTable">
+                    <thead>
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NIP)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.periode_year)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.periode_month)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.gapok)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.tunjangan_tetap)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.tunjangan_harian)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Gapok)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.tunjangan_lain)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.bpjs_ks)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.bpjs_tk)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.dplk)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.pph21)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.potongan_koperasi)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.potongan_lain)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.thp1)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.thp2)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.nominal_upah)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.update_date)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-                            </td>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nama)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NIP)
+                            </th>
+                            <th>
+                                Year
+                            </th>
+                            <th>
+                               Month
+                            </th>
+                            <th>
+                                Tunj Tetap
+                            </th>
+                            <th>
+                                Tunj Harian
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Gapok)
+                            </th>
+                            <th>
+                                Tunj Lainnya
+                            </th>
+                            <th>
+                              BPJS KS
+                            </th>
+                            <th>
+                                BPJS TK
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.dplk)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.pph21)
+                            </th>
+                            <th>
+                                POTONGAN KOPERASI
+                            </th>
+                            <th>
+                                POTONGAN LAINNYA
+                            </th>
+                            <th>
+                                THP 1
+                            </th>
+                            <th>
+                               THP 2
+                            </th>
+                            <th>
+                                TOTAL UPAH
+                            </th>
+                            <th>ACT</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nama)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NIP)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.periode_year)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.periode_month)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.tunjangan_tetap)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.tunjangan_harian)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.Gapok)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.tunjangan_lain)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.bpjs_ks)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.bpjs_tk)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.dplk)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.pph21)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.potongan_koperasi)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.potongan_lain)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.thp1)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.thp2)
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.nominal_upah)
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" asp-controller="TGajis" asp-action="Edit" asp-route-id="@item.id"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                            <a class="dropdown-item" asp-action="Details" asp-route-id="@item.id"><i class="bx bx-detail"></i> Detail</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+    <!--/ Vertical & Horizontal Scrollbars -->
 </div>

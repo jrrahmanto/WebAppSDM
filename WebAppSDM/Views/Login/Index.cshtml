@@ -1,4 +1,13 @@
-﻿@{
+﻿@model Login
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    string notificationlogin = HttpContextAccessor.HttpContext.Session.GetString("NotificationLogin");
+
+    <center><h1 class="card-header" style="color:red">@notificationlogin</h1></center>
+}
+
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -72,12 +81,12 @@
 
                         <form method="POST" asp-action="Auth">
                             <div class="mb-3">
+                                <label class="form-label"></label>
                                 <label for="email" class="form-label">Username</label>
-                                <input type="text"
+                                <input asp-for="username" type="text"
                                        class="form-control"
-                                       id="email"
-                                       name="email-username"
                                        placeholder="Enter your username"
+                                       required
                                        autofocus />
                             </div>
                             <div class="mb-3 form-password-toggle">
@@ -88,19 +97,12 @@
                                     </a>
                                 </div>
                                 <div class="input-group input-group-merge">
-                                    <input type="password"
-                                           id="password"
+                                    <input  asp-for="password" type="password"
                                            class="form-control"
-                                           name="password"
                                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                                           aria-describedby="password" />
+                                           aria-describedby="password"
+                                           required/>
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="remember-me" />
-                                    <label class="form-check-label" for="remember-me"> Remember Me </label>
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -121,22 +123,6 @@
         </div>
     </div>
 
-    <!-- / Content -->
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-
-    <script src="../assets/vendor/js/menu.js"></script>
-    <!-- endbuild -->
-    <!-- Vendors JS -->
-    <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
-
-    <!-- Page JS -->
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    
 </body>
 </html>

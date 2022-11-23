@@ -21,6 +21,7 @@ namespace WebAppSDM.Data
         public DbSet<MMesinAbsen> MMesinAbsen { get; set; }
         public DbSet<MParameter> MParameter { get; set; }
         public DbSet<TGaji> TGaji { get; set; }
+        public DbSet<AUser> AUser { get; set; }
         public DbSet<ViewKaryawan> ViewKaryawan { get; set; }
         public DbSet<ViewTunjangan> ViewTunjangan { get; set; }
         public DbSet<ViewTAbsensi> ViewTAbsensi { get; set; }

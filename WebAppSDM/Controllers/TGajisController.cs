@@ -23,18 +23,18 @@ namespace WebAppSDM.Controllers
         // GET: TGajis
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ViewGaji.ToListAsync());
+            return View(await _context.ViewGaji.OrderByDescending(x=>x.periode_year).OrderByDescending(y=>y.periode_month).OrderBy(a=>a.Nama).ToListAsync());
         }
 
         // GET: TGajis/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.TGaji == null)
+            if (id == null || _context.ViewGaji == null)
             {
                 return NotFound();
             }
 
-            var tGaji = await _context.TGaji
+            var tGaji = await _context.ViewGaji
                 .FirstOrDefaultAsync(m => m.id == id);
             if (tGaji == null)
             {
@@ -44,8 +44,9 @@ namespace WebAppSDM.Controllers
             return View(tGaji);
         }
 
-        // GET: TGajis/Create
-        public IActionResult Create()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("periodestart,periodeend")] SPGenerateGaji tGaji)
         {
             try
             {
@@ -56,38 +57,19 @@ namespace WebAppSDM.Controllers
                     { 
                         // Create parameters    
                         new SqlParameter { ParameterName = "@nip", Value = item.NIP },
-                        new SqlParameter { ParameterName = "@year", Value = "2022" },
-                        new SqlParameter { ParameterName = "@month", Value = "11" },
-                        new SqlParameter { ParameterName = "@periodestart", Value = "2022-10-15" },
-                        new SqlParameter { ParameterName = "@periodeend", Value = "2022-11-16" },
+                        new SqlParameter { ParameterName = "@year", Value = tGaji.periodeend.Year },
+                        new SqlParameter { ParameterName = "@month", Value = tGaji.periodeend.ToString("MM") },
+                        new SqlParameter { ParameterName = "@periodestart", Value = tGaji.periodestart },
+                        new SqlParameter { ParameterName = "@periodeend", Value = tGaji.periodeend },
                     };
                     _context.Database.ExecuteSqlRaw("EXEC GenerateGaji @nip,@year,@month,@periodestart,@periodeend", parms.ToArray());
-
-
                 }
             }
-            catch (Exception x)
+            catch (Exception)
             {
-
                 throw;
             }
             return RedirectToAction("Index", "TGajis");
-        }
-
-        // POST: TGajis/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,NIP,periode_year,periode_month,gapok,tunjangan_tetap,tunjangan_harian,Gapok,tunjangan_lain,bpjs_ks,bpjs_tk,dplk,pph21,potongan_koperasi,potongan_lain,thp1,thp2,nominal_upah,update_date")] TGaji tGaji)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(tGaji);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(tGaji);
         }
 
         // GET: TGajis/Edit/5
@@ -111,7 +93,7 @@ namespace WebAppSDM.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,NIP,periode_year,periode_month,gapok,tunjangan_tetap,tunjangan_harian,Gapok,tunjangan_lain,bpjs_ks,bpjs_tk,dplk,pph21,potongan_koperasi,potongan_lain,thp1,thp2,nominal_upah,update_date")] TGaji tGaji)
+        public async Task<IActionResult> Edit(int id, [Bind("id,NIP,periode_year,periode_month,gapok,tunjangan_tetap,tunjangan_harian,tunjangan_lain,bpjs_ks,bpjs_tk,dplk,pph21,potongan_koperasi,potongan_lain,thp1,thp2,nominal_upah,update_date,potongan")] TGaji tGaji)
         {
             if (id != tGaji.id)
             {
@@ -122,11 +104,15 @@ namespace WebAppSDM.Controllers
             {
                 try
                 {
+                    tGaji.update_date = DateTime.Now;
+                    tGaji.nominal_upah = tGaji.thp2 - (tGaji.potongan + tGaji.potongan_koperasi + tGaji.potongan_lain);
                     _context.Update(tGaji);
                     await _context.SaveChangesAsync();
+                    TempData["ResultOk"] = "Data Updated Successfully !";
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception x)
                 {
+                    TempData["ResultOk"] = "Data Updated Error !"+x.Message;
                     if (!TGajiExists(tGaji.id))
                     {
                         return NotFound();

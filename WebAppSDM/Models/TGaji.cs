@@ -13,7 +13,6 @@ namespace WebAppSDM.Models
         public Decimal gapok { get; set; }
         public Decimal tunjangan_tetap { get; set; }
         public Decimal tunjangan_harian { get; set; }
-        public Decimal Gapok { get; set; }
         public Decimal tunjangan_lain { get; set; }
         public Decimal bpjs_ks { get; set; }
         public Decimal bpjs_tk { get; set; }
@@ -25,6 +24,7 @@ namespace WebAppSDM.Models
         public Decimal thp2 { get; set; }
         public Decimal nominal_upah { get; set; }
         public DateTime update_date { get; set; }
+        public Decimal potongan { get; set; }
     }
 
     [Table("dbo.ViewGaji")]

@@ -2,6 +2,7 @@
 {
     public class SPGenerateGaji
     {
-        public string nip { get; set; }
+        public DateTime periodestart { get; set; }
+        public DateTime periodeend { get; set; }
     }
 }
