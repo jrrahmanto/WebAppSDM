@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using System.Diagnostics;
 using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

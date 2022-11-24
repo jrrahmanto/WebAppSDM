@@ -8,7 +8,7 @@ namespace WebAppSDM.Controllers
     {
         public IActionResult Index()
         {
-            var login = HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.Clear();
             return RedirectToAction("Index", "Login");
         }
     }

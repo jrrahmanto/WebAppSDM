@@ -4,6 +4,7 @@ using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class MPotonganController : Controller
     {
         private readonly ApplicationDBContext _context;

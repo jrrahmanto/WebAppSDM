@@ -11,6 +11,7 @@ using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class TGajisController : Controller
     {
         private readonly ApplicationDBContext _context;

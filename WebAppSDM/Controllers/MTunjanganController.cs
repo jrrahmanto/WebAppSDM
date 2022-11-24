@@ -6,6 +6,7 @@ using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class MTunjanganController : Controller
     {
         private readonly ApplicationDBContext _context;

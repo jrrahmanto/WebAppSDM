@@ -4,6 +4,7 @@ using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class MJabatanController : Controller
     {
         private readonly ApplicationDBContext _context;

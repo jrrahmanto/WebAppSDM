@@ -9,6 +9,7 @@ using System.Drawing.Printing;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class TAbsensiController : Controller
     {
         private readonly ApplicationDBContext _context;
