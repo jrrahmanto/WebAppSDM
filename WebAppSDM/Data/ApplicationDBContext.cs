@@ -20,6 +20,7 @@ namespace WebAppSDM.Data
         public DbSet<TKoperasi> TKoperasi { get; set; }
         public DbSet<MMesinAbsen> MMesinAbsen { get; set; }
         public DbSet<MParameter> MParameter { get; set; }
+        public DbSet<ARole> ARole { get; set; }
         public DbSet<TGaji> TGaji { get; set; }
         public DbSet<AUser> AUser { get; set; }
         public DbSet<ViewKaryawan> ViewKaryawan { get; set; }

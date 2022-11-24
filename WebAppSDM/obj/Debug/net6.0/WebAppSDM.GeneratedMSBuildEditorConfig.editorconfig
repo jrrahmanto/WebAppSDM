@@ -19,14 +19,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -209,6 +201,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/wwwroot/html/TemplateEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = d3d3cm9vdFxodG1sXFRlbXBsYXRlRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/Shared/_Layout.cshtml]

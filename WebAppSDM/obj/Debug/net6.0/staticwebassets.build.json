@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vrB7ys3CyLxau2jZUC5WxEtpVksDIHyx4MprP58vh5M=",
+  "Hash": "NXSVnEDToSk5Ow/oMPt+Ze7QrDcI2gYyiD9+Y22vgwc=",
   "Source": "WebAppSDM",
   "BasePath": "_content/WebAppSDM",
   "Mode": "Default",
@@ -2242,6 +2242,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\html\\TemplateEmail.cshtml",
+      "SourceId": "WebAppSDM",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\",
+      "BasePath": "_content/WebAppSDM",
+      "RelativePath": "html/TemplateEmail.cshtml",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "wwwroot\\html\\TemplateEmail.cshtml"
     },
     {
       "Identity": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\js\\site.js",

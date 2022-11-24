@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
+using System.Net;
+using System.Reflection;
 using System.Security.Claims;
 using WebAppSDM.Data;
 using WebAppSDM.Models;
@@ -10,22 +14,25 @@ namespace WebAppSDM.Controllers
     public class LoginController : Controller
     {
         private readonly ApplicationDBContext _context;
+
         public LoginController(ApplicationDBContext context)
         {
             _context = context;
         }
         public IActionResult Index()
         {
+
             HttpContext.Session.SetString("NotificationLogin", "");
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Auth(Login dt)
+        public IActionResult Auth(Login.loginparam dt)
         {
             try
             {
-                var db = _context.AUser.Where(x => x.isactive == 1 && x.username == dt.username && x.password == dt.password).FirstOrDefault();
+                var pwd = Login.Encrypt(dt.password);
+                var db = _context.AUser.Where(x => x.isactive == 1 && x.username == dt.username && x.password == pwd).FirstOrDefault();
                 if (db == null)
                 {
                     HttpContext.Session.SetString("NotificationLogin", "Incorrect password or username !");
