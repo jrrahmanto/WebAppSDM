@@ -56,7 +56,6 @@ namespace WebAppSDM.Data
             });
             modelBuilder.Entity<ViewTAbsensi>(entity => {
                 entity.ToTable("ViewTAbsensi");
-                entity.Property(e => e.Status).IsRequired(false);
             });
             modelBuilder.Entity<DropdownList.KaryawanList>(entity => {
                 entity.HasKey(e => e.id);

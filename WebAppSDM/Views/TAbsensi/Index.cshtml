@@ -4,6 +4,9 @@
 {
     <h1 class="card-header">@TempData["ResultOk"]</h1>
 }
+@{
+    var KaryawanList = (List<DropdownList.KaryawanList>)ViewData["KaryawanList"];
+}
 
 <script type="text/javascript">
     //    $(document).ready(function () {
@@ -12,14 +15,14 @@
     //        "processing": true,
     //        "serverSide": true,
     //        "filter": true,
-    //        "order": [[1, 'desc']],
+    //        "order": [],
     //        "ajax": {
     //            "url": "/TAbsensi/getList",
     //            "type": "POST",
     //            "datatype": "json"
     //        },
     //        "columns": [
-    //            { "data": "nama", "name": "nama", "autoWidth": true },
+    //            { "data": "NIP", "name": "NIP", "autoWidth": true },
     //            { "data": "Jam_Masuk", "name": "Jam_Masuk", "autoWidth": true },
     //            { "data": "Jam_Keluar", "name": "Jam_Keluar", "autoWidth": true },
     //            { "data": "Status", "name": "Status", "autoWidth": true },
@@ -33,77 +36,115 @@
     $(document).ready(function () {
         $.noConflict();
         $('#myDataTable').DataTable({
-         order: [[1, 'desc']],
+            order: [],
         });
     });
 </script>
 
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Transaksi/</span>Absensi Tgl @TempData["date"]</h4>
-    <!-- Basic Bootstrap Table -->
-    <div class="card">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Transaksi/</span>Absensi</h4>
 
-        <div class="card-header">
+    <!-- Basic Layout -->
+    <div class="col-xxl">
+        <div class="card mb-4">
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div class="row mb-3">
+                        <div class="col-sm-2">
+                            Nama
+                            <select name="nip" id="nip" class="form-control" required>
+                                @foreach (var item in KaryawanList)
+                                {
+                                    <option value="@item.NIP">@item.nama</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            Periode Start
+                            <input type="date" class="form-control" id="periodestart" name="periodestart" />
+                        </div>
+                        <div class="col-sm-2">
+                            Periode End
+                            <input type="date" class="form-control" id="periodeend" name="periodeend" />
+                        </div>
+                        <div class="col-sm-3">
+                            <br />
+                            <button type="submit" class="btn btn-primary">Search</button>    <a asp-controller="TAbsensi" asp-action="Index" class="btn btn-danger">Clear</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-            <table class="table" id="myDataTable">
-                <thead>
-                    <tr>
-                        <th>Nama</th>
-                        <th>Jam Masuk</th>
-                        <th>Jam Pulang</th>
-                        <th>Lembur</th>
-                        <th>Keterangan</th>
-                        <th>Status</th>
-                        <th>Hitung Lembur</th>
-                        <th>Nominal Lembur</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody class="table-border-bottom-0">
-                    @foreach (var item in Model)
-                    {
+    <hr />
+
+    <div class="col-12">
+        <div class="card overflow-hidden" style="height: 500px">
+            <div class="card-body" id="both-scrollbars-example">
+
+                <table class="table" id="myDataTable">
+                    <thead>
                         <tr>
-                            <td>@item.nama</td>
-                            <td>@item.Jam_Masuk</td>
-                            <td>@item.Jam_Keluar</td>
-                            <td>@item.Lembur</td>
-                            <td>@item.keterangan</td>
-                            <td>
-                                @if (item.Status == "masuk")
-                                {
-                                    <span class="badge bg-label-primary me-1">Masuk</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-label-danger me-1">Tdk Masuk</span>
-                                }
-                            </td>
-                            <td>
-                                @if (item.Hitung_Lembur == true)
-                                {
-                                    <span class="badge bg-label-primary me-1">Yes</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-label-danger me-1">No</span>
-                                }
-                            </td>
-                            <td>@String.Format("{0:n}", item.Nominal_Lembur)</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" asp-controller="TAbsensi" asp-action="Edit" asp-route-id="@item.id"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                    </div>
-                                </div>
-                            </td>
+                            <th>Nama</th>
+                            <th>Periode</th>
+                            <th>Jam Masuk</th>
+                            <th>Jam Pulang</th>
+                            <th>Lembur</th>
+                            <th>Keterangan</th>
+                            <th>Status</th>
+                            <th>Hitung Lembur</th>
+                            <th>Nominal Lembur</th>
+                            <th>Action</th>
                         </tr>
-                    }
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.nama</td>
+                                <td>@item.update_date.ToString("dd/MM/yy")</td>
+                                <td>@item.Jam_Masuk</td>
+                                <td>@item.Jam_Keluar</td>
+                                <td>@item.Lembur</td>
+                                <td>@item.keterangan</td>
+                                <td>
+                                    @if (item.Status == "masuk")
+                                    {
+                                        <span class="badge bg-label-primary me-1">Masuk</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-label-danger me-1">Tdk Masuk</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.Hitung_Lembur == true)
+                                    {
+                                        <span class="badge bg-label-primary me-1">Yes</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-label-danger me-1">No</span>
+                                    }
+                                </td>
+                                <td>@String.Format("{0:n}", item.Nominal_Lembur)</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" asp-controller="TAbsensi" asp-action="Edit" asp-route-id="@item.id"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

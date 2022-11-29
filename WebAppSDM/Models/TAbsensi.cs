@@ -20,7 +20,6 @@ namespace WebAppSDM.Models
     [Table("dbo.ViewTAbsensi")]
     public class ViewTAbsensi
     {
-        [Key]
         public int id { get; set; }
         public string NIP { get; set; }
         public string Jam_Masuk { get; set; }
@@ -32,5 +31,11 @@ namespace WebAppSDM.Models
         public DateTime update_date { get; set; }
         public string nama { get; set; }
         public string keterangan { get; set; }
+    }
+    public class filterAbsensi
+    {
+        public string nip { get; set; }
+        public DateTime periodestart { get; set; }
+        public DateTime periodeend { get; set; }
     }
 }
