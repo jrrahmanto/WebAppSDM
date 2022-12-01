@@ -19,26 +19,27 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Kode Tunjangan</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" asp-for="kode_tunjangan" required />
+                                <input type="text" class="form-control" asp-for="kode_tunjangan" readonly="readonly"/>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-company">Nama Tunjangan</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" asp-for="nama_tunjangan" required />
+                                <input type="text" class="form-control" asp-for="nama_tunjangan" readonly="readonly" />
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-company">Nominal</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" asp-for="nominal" required />
+                                <input type="number" class="form-control" asp-for="nominal" readonly="readonly" />
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-company">Grade</label>
                             <div class="col-sm-10">
-                                <select asp-for="grade" class="form-control" required>
+                                <select asp-for="grade" class="form-control" readonly="readonly">
+                                    <option value="99999">-</option>
                                     @foreach (var item in GradeList)
                                     {
                                         <option value="@item.id">@item.nama</option>
@@ -50,7 +51,8 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-company">Jabatan</label>
                             <div class="col-sm-10">
-                                <select asp-for="jabatan" class="form-control" required>
+                                <select asp-for="jabatan" class="form-control" readonly="readonly">
+                                    <option value="99999">-</option>
                                     @foreach (var item in JabatanList)
                                     {
                                         <option value="@item.id">@item.nama</option>
@@ -64,7 +66,7 @@
                             <label class="col-sm-2 col-form-label" for="basic-default-company">Daily (Yes/No)</label>
                             <div class="col-sm-10">
                                 <div class="form-check d-flex">
-                                    <input class="form-check-input" type="checkbox" asp-for="daily" />
+                                    <input class="form-check-input" type="checkbox" asp-for="daily" readonly="readonly" />
                                     <span class="text-muted fw-light">&nbsp;Apakah di hitung harian</span>
                                 </div>
                             </div>

@@ -14,11 +14,13 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Index()
         {
+            TempData["activelink"] = "active";
             IEnumerable<TKoperasi> objCatlist = _context.TKoperasi.Where(x => x.isdelete == 0); ;
             return View(objCatlist);
         }
         public IActionResult Create()
         {
+            TempData["activelink"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
             return View();
@@ -27,6 +29,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(TKoperasi empobj)
         {
+            TempData["activelink"] = "active";
             if (ModelState.IsValid)
             {
                 empobj.update_date = DateTime.Now;
@@ -41,6 +44,7 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Edit(int? id)
         {
+            TempData["activelink"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
 
@@ -61,6 +65,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(TKoperasi empobj)
         {
+            TempData["activelink"] = "active";
             if (ModelState.IsValid)
             {
                 _context.TKoperasi.Update(empobj);
@@ -74,6 +79,7 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Delete(int? id)
         {
+            TempData["activelink"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
 
@@ -93,6 +99,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteKoperasi(TKoperasi empobj)
         {
+            TempData["activelink"] = "active";
             if (ModelState.IsValid)
             {
                 empobj.isdelete = 1;

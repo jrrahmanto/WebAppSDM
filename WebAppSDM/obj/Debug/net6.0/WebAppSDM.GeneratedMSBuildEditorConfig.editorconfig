@@ -39,6 +39,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MGrade/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUdyYWRlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -193,6 +213,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TKoperasi/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEtvcGVyYXNpXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/_ViewImports.cshtml]

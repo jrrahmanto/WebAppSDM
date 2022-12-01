@@ -1,0 +1,79 @@
+﻿@model WebAppSDM.Models.TMutasi
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TMutasi</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NIP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NIP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.grade_old)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.grade_old)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.grade_new)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.grade_new)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.jabatan_old)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.jabatan_old)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.jabatan_new)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.jabatan_new)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.date_mutasi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date_mutasi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.no_sk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.no_sk)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.keterangan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.keterangan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isdelete)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isdelete)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.createdate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.createdate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,6 +1,8 @@
 ﻿@model WebAppSDM.Models.TGaji
 
 @{
+    var GradeList = (List<DropdownList.GradeList>)ViewData["GradeList"];
+    var JabatanList = (List<DropdownList.JabatanList>)ViewData["JabatanList"];
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }

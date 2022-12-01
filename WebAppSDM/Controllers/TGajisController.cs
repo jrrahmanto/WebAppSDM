@@ -24,12 +24,14 @@ namespace WebAppSDM.Controllers
         // GET: TGajis
         public async Task<IActionResult> Index()
         {
+            TempData["activelink"] = "active";
             return View(await _context.ViewGaji.OrderByDescending(x=>x.periode_year).OrderByDescending(y=>y.periode_month).OrderBy(a=>a.Nama).ToListAsync());
         }
 
         // GET: TGajis/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            TempData["activelink"] = "active";
             if (id == null || _context.ViewGaji == null)
             {
                 return NotFound();
@@ -49,6 +51,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("periodestart,periodeend")] SPGenerateGaji tGaji)
         {
+            TempData["activelink"] = "active";
             try
             {
                 IEnumerable<MKaryawan> objCatlist = _context.MKaryawan.Where(x => x.isdelete == 0).ToList();
@@ -75,7 +78,8 @@ namespace WebAppSDM.Controllers
 
         // GET: TGajis/Edit/5
         public async Task<IActionResult> Edit(int? id)
-        {
+        { 
+            TempData["activelink"] = "active";
             if (id == null || _context.TGaji == null)
             {
                 return NotFound();
@@ -96,6 +100,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,NIP,periode_year,periode_month,gapok,tunjangan_tetap,tunjangan_harian,tunjangan_lain,bpjs_ks,bpjs_tk,dplk,pph21,potongan_koperasi,potongan_lain,thp1,thp2,nominal_upah,update_date,potongan")] TGaji tGaji)
         {
+            TempData["activelink"] = "active";
             if (id != tGaji.id)
             {
                 return NotFound();
@@ -131,6 +136,7 @@ namespace WebAppSDM.Controllers
         // GET: TGajis/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            TempData["activelink"] = "active";
             if (id == null || _context.TGaji == null)
             {
                 return NotFound();
@@ -151,6 +157,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            TempData["activelink"] = "active";
             if (_context.TGaji == null)
             {
                 return Problem("Entity set 'ApplicationDBContext.TGaji'  is null.");
@@ -167,6 +174,7 @@ namespace WebAppSDM.Controllers
 
         private bool TGajiExists(int id)
         {
+            TempData["activelink"] = "active";
             return _context.TGaji.Any(e => e.id == id);
         }
     }

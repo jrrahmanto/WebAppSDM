@@ -14,11 +14,13 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Index()
         {
+            TempData["activeAbsensi"] = "active";
             IEnumerable<MMesinAbsen> objCatlist = _context.MMesinAbsen.Where(x => x.isdelete == 0); ;
             return View(objCatlist);
         }
         public IActionResult Create()
         {
+            TempData["activeAbsensi"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
             return View();
@@ -27,6 +29,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(MMesinAbsen empobj)
         {
+            TempData["activeAbsensi"] = "active";
             empobj.isdelete = 0;
             if (ModelState.IsValid)
             {
@@ -42,6 +45,7 @@ namespace WebAppSDM.Controllers
 
         public IActionResult Edit(int? id)
         {
+            TempData["activeAbsensi"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
             if (id == null || id == 0)
@@ -62,6 +66,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(MMesinAbsen empobj)
         {
+            TempData["activeAbsensi"] = "active";
             if (ModelState.IsValid)
             {
                 _context.MMesinAbsen.Update(empobj);
@@ -76,6 +81,7 @@ namespace WebAppSDM.Controllers
 
         public IActionResult Delete(int? id)
         {
+            TempData["activeAbsensi"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
             if (id == null || id == 0)
@@ -95,6 +101,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteMAbsen(MMesinAbsen empobj)
         {
+            TempData["activeAbsensi"] = "active";
             if (ModelState.IsValid)
             {
                 empobj.isdelete = 1;

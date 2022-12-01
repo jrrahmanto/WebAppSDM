@@ -18,17 +18,20 @@ namespace WebAppSDM.Controllers
 
         public IActionResult Index()
         {
+            TempData["activeHome"] = "active";
             return View();
         }
 
         public IActionResult Privacy()
         {
+            TempData["activeHome"] = "active";
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            TempData["activeHome"] = "active";
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }

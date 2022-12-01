@@ -10,8 +10,8 @@ namespace WebAppSDM.Models
         public string kode_tunjangan { get; set; }
         public string nama_tunjangan { get; set; }
         public Decimal nominal { get; set; }
-        public int grade { get; set; }
-        public int jabatan { get; set; }
+        public int? grade { get; set; }
+        public int? jabatan { get; set; }
         public bool daily { get; set; }
         public int isdelete { get; set; }
         public DateTime create_date { get; set; }
@@ -25,7 +25,7 @@ namespace WebAppSDM.Models
         public string kode_tunjangan { get; set; }
         public string nama_tunjangan { get; set; }
         public Decimal nominal { get; set; }
-        public int grade { get; set; }
+        public string grade { get; set; }
         public string nama_jabatan { get; set; }
         public bool daily { get; set; }
     }

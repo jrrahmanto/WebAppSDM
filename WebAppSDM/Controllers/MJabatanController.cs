@@ -14,17 +14,20 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Index()
         {
+            TempData["activeMaster"] = "active";
             IEnumerable<MJabatan> objCatlist = _context.MJabatan.Where(x=> x.isdelete == 0);
             return View(objCatlist);
         }
         public IActionResult Create()
         {
+            TempData["activeMaster"] = "active";
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(MJabatan empobj)
         {
+            TempData["activeMaster"] = "active";
             if (ModelState.IsValid)
             {
                 _context.MJabatan.Add(empobj);
@@ -38,6 +41,7 @@ namespace WebAppSDM.Controllers
 
         public IActionResult Edit(int? id)
         {
+            TempData["activeMaster"] = "active";
             if (id == null || id == 0)
             {
                 return NotFound();
@@ -55,6 +59,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(MJabatan empobj)
         {
+            TempData["activeMaster"] = "active";
             if (ModelState.IsValid)
             {
                 _context.MJabatan.Update(empobj);
@@ -68,6 +73,7 @@ namespace WebAppSDM.Controllers
 
         public IActionResult Delete(int? id)
         {
+            TempData["activeMaster"] = "active";
             if (id == null || id == 0)
             {
                 return NotFound();
@@ -85,6 +91,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteJabatan(MJabatan empobj)
         {
+            TempData["activeMaster"] = "active";
             if (ModelState.IsValid)
             {
                 empobj.isdelete = 1;

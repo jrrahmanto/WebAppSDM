@@ -16,11 +16,13 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Index()
         {
+            TempData["activeTunjangan"] = "active";
             IEnumerable<ViewTunjangan> objCatlist = _context.ViewTunjangan;
             return View(objCatlist);
         }
         public IActionResult Create()
         {
+            TempData["activeTunjangan"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
             ViewData["GradeList"] = gradelist;
@@ -31,6 +33,8 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(MTunjangan empobj)
         {
+            TempData["activeTunjangan"] = "active";
+           
             if (ModelState.IsValid)
             {
                 empobj.create_date = DateTime.Now;
@@ -44,6 +48,7 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Edit(int? id)
         {
+            TempData["activeTunjangan"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
             ViewData["GradeList"] = gradelist;
@@ -66,6 +71,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(MTunjangan empobj)
         {
+            TempData["activeTunjangan"] = "active";
             if (ModelState.IsValid)
             {
                 _context.MTunjangan.Update(empobj);
@@ -78,6 +84,7 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Delete(int? id)
         {
+            TempData["activeTunjangan"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
             ViewData["GradeList"] = gradelist;
@@ -99,6 +106,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteTunjangan(MTunjangan empobj)
         {
+            TempData["activeTunjangan"] = "active";
             if (ModelState.IsValid)
             {
                 empobj.isdelete = 1;

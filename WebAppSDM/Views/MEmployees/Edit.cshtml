@@ -1,0 +1,255 @@
+﻿@model WebAppSDM.Models.MEmployee
+
+@{
+    var GradeList = (List<DropdownList.GradeList>)ViewData["GradeList"];
+    var JabatanList = (List<DropdownList.JabatanList>)ViewData["JabatanList"];
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Edit Karyawan</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="id" />
+                        <div class="form-group">
+                            <label class="control-label">NIP</label>
+                            <input asp-for="nip" class="form-control" />
+                            <span asp-validation-for="nip" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Nama</label>
+                            <input asp-for="nama" class="form-control" />
+                            <span asp-validation-for="nama" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="emp_email" class="control-label"></label>
+                            <input asp-for="emp_email" type="email" class="form-control" />
+                            <span asp-validation-for="emp_email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Karyawan Aktif</label>
+                            <select asp-for="emp_aktif" class="form-control">
+                                <option value="t">Aktif</option>
+                                <option value="f">Tdk Aktif</option>
+                            </select>
+                            <span asp-validation-for="emp_aktif" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="grade_id" class="control-label"></label>
+                            <select asp-for="grade_id" class="form-control" required>
+                                <option value="99999">-</option>
+                                @foreach (var item in GradeList)
+                                {
+                                    <option value="@item.id">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="grade_id" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="jabatan_id" class="control-label"></label>
+                            <select asp-for="jabatan_id" class="form-control" required>
+                                <option value="99999">-</option>
+                                @foreach (var item in JabatanList)
+                                {
+                                    <option value="@item.id">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="jabatan_id" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tanggal Masuk</label>
+                            <input asp-for="date_of_entry" type="date" class="form-control" />
+                            <span asp-validation-for="date_of_entry" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Status Karyawan</label>
+                            <select asp-for="emp_status" class="form-control" required>
+                                <option value="-">-</option>
+                                <option value="Tetap">Tetap</option>
+                                <option value="Kontrak">Kontrak</option>
+                                <option value="BOD">BOD</option>
+                                <option value="SC">SC</option>
+                            </select>
+                            <span asp-validation-for="emp_status" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tanggal Permanen</label>
+                            <input asp-for="permanent_date" type="date" class="form-control" />
+                            <span asp-validation-for="permanent_date" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tanggal Habis Kontrak</label>
+                            <input asp-for="contract_date" type="date" class="form-control" />
+                            <span asp-validation-for="contract_date" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tempat Lahir</label>
+                            <input asp-for="emp_pob" class="form-control" />
+                            <span asp-validation-for="emp_pob" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tanggal Ulang Tahun</label>
+                            <input asp-for="emp_dob" type="date" class="form-control" />
+                            <span asp-validation-for="emp_dob" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Jenis Kelamin</label>
+                            <select asp-for="emp_sex" class="form-control" required>
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita">Wanita</option>
+                            </select>
+                            <span asp-validation-for="emp_sex" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Alamat 1</label>
+                            <textarea class="form-control" asp-for="emp_address_1" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Alamat 2</label>
+                            <textarea class="form-control" asp-for="emp_address_2" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No Handphone 1</label>
+                            <input asp-for="emp_phone_1" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No Handphone 2</label>
+                            <input asp-for="emp_phone_2" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No. Telepon 1</label>
+                            <input asp-for="emp_cellphone_1" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No. Telepon 2</label>
+                            <input asp-for="emp_cellphone_2" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Agama</label>
+                            <select asp-for="emp_religion" class="form-control" required>
+                                <option value="Islam">Islam</option>
+                                <option value="Khatolik">Khatolik</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Budha">Budha</option>
+                                <option value="Lain2">Lain-lain</option>
+                            </select>
+                            <span asp-validation-for="emp_religion" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No NPWP</label>
+                            <input asp-for="emp_NPWP" class="form-control" />
+                            <span asp-validation-for="emp_NPWP" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No KTP</label>
+                            <input asp-for="emp_KTP" class="form-control" />
+                            <span asp-validation-for="emp_KTP" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No Passport</label>
+                            <input asp-for="emp_passport" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Exp Passport</label>
+                            <input asp-for="emp_passportexp" type="date" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No SIM A</label>
+                            <input asp-for="emp_licenseA" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Exp SIM A</label>
+                            <input asp-for="emp_licenseAexp" type="date" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No SIM B</label>
+                            <input asp-for="emp_licenseB" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Exp SIM B</label>
+                            <input asp-for="emp_licenseBexp" type="date" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="emp_licenseC" class="control-label">No SIM C</label>
+                            <input asp-for="emp_licenseC" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Exp SIM C</label>
+                            <input asp-for="emp_licenseCexp" type="date" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="emp_marital" class="control-label">Status Perkawinan</label>
+                            <select asp-for="emp_marital" class="form-control" required>
+                                <option value="Married">Married</option>
+                                <option value="Single">Single</option>
+                            </select>
+                            <span asp-validation-for="emp_marital" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tanggal Menikah</label>
+                            <input asp-for="emp_dom" type="date" class="form-control" />
+                            <span asp-validation-for="emp_dom" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="emp_photo" class="control-label"></label>
+                            <input asp-for="emp_photo" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Status PTKP</label>
+                            <select asp-for="emp_ptkp" class="form-control" required>
+                                <option value="TK">TK</option>
+                                <option value="K">K</option>
+                                <option value="K1">K1</option>
+                                <option value="K2">K2</option>
+                                <option value="K3">K3</option>
+                            </select>
+                            <span asp-validation-for="emp_ptkp" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No Rekening</label>
+                            <input asp-for="emp_norek" class="form-control" />
+                            <span asp-validation-for="emp_norek" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Bank</label>
+                            <input asp-for="emp_bank" class="form-control" />
+                            <span asp-validation-for="emp_bank" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Atas Nama</label>
+                            <input asp-for="emp_an" class="form-control" />
+                            <span asp-validation-for="emp_an" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Golongan Darah</label>
+                            <select asp-for="emp_darah" class="form-control" required>
+                                <option value="A">A</option>
+                                <option value="AB">AB</option>
+                                <option value="B">B</option>
+                                <option value="O">O</option>
+                            </select>
+                            <span asp-validation-for="emp_darah" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="salary" class="control-label"></label>
+                            <input asp-for="salary" type="number" class="form-control" />
+                            <span asp-validation-for="salary" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                            <a asp-action="Index" class="btn btn-lg btn-danger p-2">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

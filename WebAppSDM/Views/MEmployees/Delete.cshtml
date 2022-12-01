@@ -1,0 +1,271 @@
+﻿@model WebAppSDM.Models.MEmployee
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Yakin Hapus Data ?</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.nip)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.nip)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.nama)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.nama)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_pob)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_pob)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_dob)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_dob)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_sex)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_sex)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_address_1)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_address_1)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_address_2)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_address_2)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_phone_1)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_phone_1)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_phone_2)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_phone_2)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_cellphone_1)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_cellphone_1)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_cellphone_2)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_cellphone_2)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_religion)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_religion)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_NPWP)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_NPWP)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_KTP)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_KTP)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_passport)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_passport)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_passportexp)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_passportexp)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_licenseA)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_licenseA)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_licenseAexp)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_licenseAexp)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_licenseB)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_licenseB)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_licenseBexp)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_licenseBexp)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_licenseC)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_licenseC)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_licenseCexp)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_licenseCexp)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_marital)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_marital)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_dom)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_dom)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_email)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_email)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_aktif)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_aktif)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_photo)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_photo)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_ptkp)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_ptkp)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_norek)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_norek)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_bank)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_bank)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_an)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_an)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_status)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_status)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.emp_darah)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.emp_darah)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.grade_id)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.grade_id)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.jabatan_id)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.jabatan_id)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.salary)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.salary)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.permanent_date)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.permanent_date)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.contract_date)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.contract_date)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.date_of_entry)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.date_of_entry)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.isdelete)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.isdelete)
+                        </dd>
+                    </dl>
+
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="id" />
+                        <input type="submit" value="Delete" class="btn btn-danger" /> |
+                        <a asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
