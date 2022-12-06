@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "WebAppSDM/1.0.0": {
         "dependencies": {
+          "IronXL.Excel": "2022.11.10251",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.10",
@@ -56,6 +57,28 @@
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "IronSoftware.System.Drawing/2022.10.9851": {
+        "dependencies": {
+          "SixLabors.ImageSharp.Drawing": "1.0.0-beta15"
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronSoftware.Drawing.Common.dll": {
+            "assemblyVersion": "2022.10.9851.0",
+            "fileVersion": "2022.10.9851.0"
+          }
+        }
+      },
+      "IronXL.Excel/2022.11.10251": {
+        "dependencies": {
+          "IronSoftware.System.Drawing": "2022.10.9851"
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronXL.dll": {
+            "assemblyVersion": "2022.11.10251.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -1583,6 +1606,38 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "SixLabors.Fonts/1.0.0-beta18": {
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/2.1.3": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.3.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp.Drawing/1.0.0-beta15": {
+        "dependencies": {
+          "SixLabors.Fonts": "1.0.0-beta18",
+          "SixLabors.ImageSharp": "2.1.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.Drawing.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -2439,6 +2494,20 @@
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
     },
+    "IronSoftware.System.Drawing/2022.10.9851": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C6WKp8iC+f+2IYTKipgngoLWy8pWaR/EGOaBlE9FxhnunOyJuW8bnEqPfozDE++SnAmbxJpQPCCSmt8Ou6QAZw==",
+      "path": "ironsoftware.system.drawing/2022.10.9851",
+      "hashPath": "ironsoftware.system.drawing.2022.10.9851.nupkg.sha512"
+    },
+    "IronXL.Excel/2022.11.10251": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ttQQHuVR2kfMMM5S+V0P3xc+eysTDG92UASlQ0oEpB3N38T9dYZ27u2WC8xDW/Zn3QSER+0qI9HncWewF4UneQ==",
+      "path": "ironxl.excel/2022.11.10251",
+      "hashPath": "ironxl.excel.2022.11.10251.nupkg.sha512"
+    },
     "MessagePack/2.1.152": {
       "type": "package",
       "serviceable": true,
@@ -3103,6 +3172,27 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
+    },
+    "SixLabors.Fonts/1.0.0-beta18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-evykNmy/kEE9EAEKgZm3MNUYXuMHFfmcLUNPw7Ho5q7OI96GFkkIxBm+QaKOTPBKw+L0AjKOs+ArVg8P40Ac9g==",
+      "path": "sixlabors.fonts/1.0.0-beta18",
+      "hashPath": "sixlabors.fonts.1.0.0-beta18.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/2.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8yonNRWX3vUE9k29ta0Hbfa0AEc0hbDjSH/nZ3vOTJEXmY6hLnGsjDKoz96Z+AgOsrdkAu6PdL/Ebaf70aitzw==",
+      "path": "sixlabors.imagesharp/2.1.3",
+      "hashPath": "sixlabors.imagesharp.2.1.3.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp.Drawing/1.0.0-beta15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HMb/JNtNsSOr0lh71s5jD4Bv7sUwTxhGz2fOtuXcInQ4p9SB+1oEY3I6PrKXHpOCKaYArLD5r/4mA8t0dT/M5A==",
+      "path": "sixlabors.imagesharp.drawing/1.0.0-beta15",
+      "hashPath": "sixlabors.imagesharp.drawing.1.0.0-beta15.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

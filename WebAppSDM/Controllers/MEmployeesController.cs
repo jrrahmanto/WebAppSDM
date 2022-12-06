@@ -11,6 +11,7 @@ using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class MEmployeesController : Controller
     {
         private readonly ApplicationDBContext _context;
@@ -61,7 +62,7 @@ namespace WebAppSDM.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,nip,nama,emp_pob,emp_dob,emp_sex,emp_address_1,emp_address_2,emp_phone_1,emp_phone_2,emp_cellphone_1,emp_cellphone_2,emp_religion,emp_NPWP,emp_KTP,emp_passport,emp_passportexp,emp_licenseA,emp_licenseAexp,emp_licenseB,emp_licenseBexp,emp_licenseC,emp_licenseCexp,emp_marital,emp_dom,emp_email,emp_aktif,emp_photo,emp_ptkp,emp_norek,emp_bank,emp_an,emp_status,emp_darah,grade_id,jabatan_id,salary,permanent_date,contract_date,date_of_entry,isdelete")] MEmployee mEmployee)
+        public async Task<IActionResult> Create([Bind("id,nip,nama,emp_pob,emp_dob,emp_sex,emp_address_1,emp_address_2,emp_phone_1,emp_phone_2,emp_cellphone_1,emp_cellphone_2,emp_religion,emp_NPWP,emp_KTP,emp_passport,emp_passportexp,emp_licenseA,emp_licenseAexp,emp_licenseB,emp_licenseBexp,emp_licenseC,emp_licenseCexp,emp_marital,emp_dom,emp_email,emp_aktif,emp_photo,emp_ptkp,emp_norek,emp_bank,emp_an,emp_status,emp_darah,grade_id,jabatan_id,salary,permanent_date,contract_date,date_of_entry,isdelete,fasilitas_mobil")] MEmployee mEmployee)
         {
             try
             {
@@ -113,7 +114,7 @@ namespace WebAppSDM.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("id,nip,nama,emp_pob,emp_dob,emp_sex,emp_address_1,emp_address_2,emp_phone_1,emp_phone_2,emp_cellphone_1,emp_cellphone_2,emp_religion,emp_NPWP,emp_KTP,emp_passport,emp_passportexp,emp_licenseA,emp_licenseAexp,emp_licenseB,emp_licenseBexp,emp_licenseC,emp_licenseCexp,emp_marital,emp_dom,emp_email,emp_aktif,emp_photo,emp_ptkp,emp_norek,emp_bank,emp_an,emp_status,emp_darah,grade_id,jabatan_id,salary,permanent_date,contract_date,date_of_entry")] MEmployee mEmployee)
+        public async Task<IActionResult> Edit(long id, [Bind("id,nip,nama,emp_pob,emp_dob,emp_sex,emp_address_1,emp_address_2,emp_phone_1,emp_phone_2,emp_cellphone_1,emp_cellphone_2,emp_religion,emp_NPWP,emp_KTP,emp_passport,emp_passportexp,emp_licenseA,emp_licenseAexp,emp_licenseB,emp_licenseBexp,emp_licenseC,emp_licenseCexp,emp_marital,emp_dom,emp_email,emp_aktif,emp_photo,emp_ptkp,emp_norek,emp_bank,emp_an,emp_status,emp_darah,grade_id,jabatan_id,salary,permanent_date,contract_date,date_of_entry,fasilitas_mobil")] MEmployee mEmployee)
         {
             TempData["activeEmployee"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();

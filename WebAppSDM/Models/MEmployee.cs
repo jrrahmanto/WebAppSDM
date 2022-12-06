@@ -46,5 +46,6 @@ namespace WebAppSDM.Models
         public DateTime? contract_date { get; set; }
         public DateTime? date_of_entry { get; set; }
         public int? isdelete { get; set; }
+        public bool fasilitas_mobil { get; set; }
     }
 }

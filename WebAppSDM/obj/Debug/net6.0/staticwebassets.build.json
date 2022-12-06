@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NXSVnEDToSk5Ow/oMPt+Ze7QrDcI2gYyiD9+Y22vgwc=",
+  "Hash": "47Fraq0hEBRtqfAiDh1yBNHY+97O2ubwoojDBpMHBt8=",
   "Source": "WebAppSDM",
   "BasePath": "_content/WebAppSDM",
   "Mode": "Default",
@@ -2225,6 +2225,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\DataTables\\jquery-3.6.0.min.js"
+    },
+    {
+      "Identity": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\dokumen\\uploadharilibur.xlsx",
+      "SourceId": "WebAppSDM",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\",
+      "BasePath": "_content/WebAppSDM",
+      "RelativePath": "dokumen/uploadharilibur.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dokumen\\uploadharilibur.xlsx"
     },
     {
       "Identity": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\favicon.ico",

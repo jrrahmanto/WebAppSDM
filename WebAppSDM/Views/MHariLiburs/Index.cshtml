@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebAppSDM.Models.MHariLibur>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.noConflict();
+        $('#myDataTable').DataTable({});
+    });
+</script>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Master/</span>Master Grade</h4>
+    <div class="col-xxl">
+        <div class="card mb-4">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data" asp-controller="MHariliburs" asp-action="upload">
+                    <div class="row mb-3">
+                        <div class="col-sm-5">
+                            <input type="file" class="form-control" name="file" id="file" required/>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>    
+                    <a asp-action="Create" class="btn btn-danger">Create</a>
+                    <a href="/dokumen/uploadharilibur.xlsx" class="btn btn-warning">Download</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Basic Bootstrap Table -->
+    <div class="card">
+        <div class="card-header">
+
+            <table class="table" id="myDataTable">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.tanggal)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.keterangan)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.isdelete)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tanggal)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.keterangan)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.isdelete)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

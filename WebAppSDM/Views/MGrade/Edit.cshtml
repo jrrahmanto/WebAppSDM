@@ -11,12 +11,7 @@
                 <div class="card-body">
                     <form method="post" asp-action="Edit">
                         <input type="text" class="form-control" asp-for="Id" required hidden="hidden"/>
-                        <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="basic-default-name">Kode Grade</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" asp-for="kode_grade" required />
-                            </div>
-                        </div>
+                    
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-company">Grade</label>
                             <div class="col-sm-10">
@@ -27,7 +22,18 @@
                             <label class="col-sm-2 col-form-label" for="basic-default-email">Nama Grade</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
-                                    <input type="text" class="form-control" asp-for="nama_grade" required />
+                                    <select asp-for="nama_grade" class="form-control">
+                                        <option value="NC">NC</option>
+                                        <option value="Staf">Staf</option>
+                                        <option value="Pro Spesialist">Pro Spesialist</option>
+                                        <option value="Spesialist">Spesialist</option>
+                                        <option value="AVP">Assistent Vice President</option>
+                                        <option value="DM">Deputy Manager</option>
+                                        <option value="M">Manager</option>
+                                        <option value="SM">Senior Manager</option>
+                                        <option value="SVP">Senior Vice President</option>
+                                        <option value="VP">Vice President</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

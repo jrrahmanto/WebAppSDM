@@ -1,0 +1,59 @@
+﻿@model WebAppSDM.Models.MTunjanganPerson
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var KaryawanList = (List<DropdownList.KaryawanList>)ViewData["KaryawanList"];
+    var TunjanganList = (List<MListTunjangan>)ViewData["TunjanganList"];
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Edit/</span>Spesifik Person</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="id" />
+                        <div class="form-group">
+                            <label class="control-label">Nama</label>
+                            <select asp-for="nip" class="form-control" required>
+                                @foreach (var item in KaryawanList)
+                                {
+                                    <option value="@item.NIP">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="nip" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Nama Tunjangan</label>
+                            <select asp-for="nama_tunjangan" class="form-control" required>
+                                @foreach (var item in TunjanganList)
+                                {
+                                    <option value="@item.id">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="nama_tunjangan" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Nominal</label>
+                            <input asp-for="nominal" type="number" class="form-control" />
+                            <span asp-validation-for="nominal" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a asp-action="Index" class="btn btn-lg btn-danger p-2">Back</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

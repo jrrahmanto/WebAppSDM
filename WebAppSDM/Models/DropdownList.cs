@@ -14,9 +14,9 @@
         }
         public class KaryawanList
         {
-            public int id { get; set; }
+            public long id { get; set; }
             public string nama { get; set; }
-            public string NIP { get; set; }
+            public int NIP { get; set; }
         }
     }
 }

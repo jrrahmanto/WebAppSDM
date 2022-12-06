@@ -25,6 +25,8 @@ namespace WebAppSDM.Controllers
             TempData["activeTunjangan"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            List<MListTunjangan> TunjanganList = _context.MListTunjangan.Where(x => x.keterangan == "all" && x.isdelete == 0).ToList();
+            ViewData["TunjanganList"] = TunjanganList;
             ViewData["GradeList"] = gradelist;
             ViewData["JabatanList"] = jabatanlist;
             return View();
@@ -51,6 +53,8 @@ namespace WebAppSDM.Controllers
             TempData["activeTunjangan"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            List<MListTunjangan> TunjanganList = _context.MListTunjangan.Where(x => x.keterangan == "all" && x.isdelete == 0).ToList();
+            ViewData["TunjanganList"] = TunjanganList;
             ViewData["GradeList"] = gradelist;
             ViewData["JabatanList"] = jabatanlist;
 
@@ -87,6 +91,8 @@ namespace WebAppSDM.Controllers
             TempData["activeTunjangan"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            List<MListTunjangan> TunjanganList = _context.MListTunjangan.Where(x => x.keterangan == "all" && x.isdelete == 0).ToList();
+            ViewData["TunjanganList"] = TunjanganList;
             ViewData["GradeList"] = gradelist;
             ViewData["JabatanList"] = jabatanlist;
 
