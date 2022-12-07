@@ -13,6 +13,7 @@ using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class MHariLibursController : Controller
     {
         private readonly ApplicationDBContext _context;
@@ -25,7 +26,7 @@ namespace WebAppSDM.Controllers
         // GET: MHariLiburs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.MHariLibur.ToListAsync());
+            return View(await _context.MHariLibur.Where(x => x.isdelete == 0).ToListAsync());
         }
 
         // GET: MHariLiburs/Details/5
@@ -59,6 +60,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,tanggal,keterangan,isdelete")] MHariLibur mHariLibur)
         {
+            mHariLibur.isdelete = 0;
             if (ModelState.IsValid)
             {
                 _context.Add(mHariLibur);
@@ -91,6 +93,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,tanggal,keterangan,isdelete")] MHariLibur mHariLibur)
         {
+            mHariLibur.isdelete = 0;
             if (id != mHariLibur.id)
             {
                 return NotFound();
@@ -149,7 +152,9 @@ namespace WebAppSDM.Controllers
             var mHariLibur = await _context.MHariLibur.FindAsync(id);
             if (mHariLibur != null)
             {
-                _context.MHariLibur.Remove(mHariLibur);
+                mHariLibur.isdelete = 1;
+                _context.Update(mHariLibur);
+                await _context.SaveChangesAsync();
             }
 
             await _context.SaveChangesAsync();
@@ -160,12 +165,13 @@ namespace WebAppSDM.Controllers
         {
             return _context.MHariLibur.Any(e => e.id == id);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> upload(IFormFile file)
         {
             string filePath = Path.GetFullPath("wwwroot/dokumen/uploadharilibur.xlsx");
-            
+
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
                 await file.CopyToAsync(stream);
@@ -193,7 +199,6 @@ namespace WebAppSDM.Controllers
                     await _context.SaveChangesAsync();
                 }
             }
-
             return RedirectToAction(nameof(Index));
         }
     }

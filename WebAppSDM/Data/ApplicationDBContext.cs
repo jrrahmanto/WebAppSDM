@@ -36,6 +36,7 @@ namespace WebAppSDM.Data
         public DbSet<MListTunjangan> MListTunjangan { get; set; }
         public DbSet<ViewMTunjanganPerson> ViewMTunjanganPerson { get; set; }
         public DbSet<MHariLibur> MHariLibur { get; set; }
+        public DbSet<TAbsenKhusus> TAbsenKhusus { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ViewTunjangan>(entity => {

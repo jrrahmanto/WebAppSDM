@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebAppSDM.Models.MHariLibur>
+﻿@model IEnumerable<WebAppSDM.Models.TAbsenKhusus>
 
 @{
     ViewData["Title"] = "Index";
@@ -11,33 +11,25 @@
         $('#myDataTable').DataTable({});
     });
 </script>
+
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Master/</span>Hari Libur</h4>
-    <div class="col-xxl">
-        <div class="card mb-4">
-            <div class="card-body">
-                <form method="post" enctype="multipart/form-data" asp-controller="MHariliburs" asp-action="upload">
-                    <div class="row mb-3">
-                        <div class="col-sm-5">
-                            <input type="file" class="form-control" name="file" id="file" required/>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Upload</button>    
-                    <a asp-action="Create" class="btn btn-danger">Create</a>
-                    <a href="/dokumen/uploadharilibur.xlsx" class="btn btn-warning">Download</a>
-                </form>
-            </div>
-        </div>
-    </div>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Absen/</span>Absen Khusus</h4>
     <!-- Basic Bootstrap Table -->
     <div class="card">
+        <h5 class="card-header"> <a asp-action="create" class="btn btn-sm btn-outline-primary">Create</a></h5>
         <div class="card-header">
 
             <table class="table" id="myDataTable">
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.tanggal)
+                            @Html.DisplayNameFor(model => model.nip)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.periode_start)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.periode_end)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.keterangan)
@@ -49,8 +41,25 @@
                     @foreach (var item in Model)
                     {
                         <tr>
+
+                            @if (item.nip == 999)
+                            {
+                                <td>
+                                    Seluruh Pegawai
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.nip)
+                                </td>
+                            }
+
                             <td>
-                                @item.tanggal.ToString("dd/MM/yyyy")
+                                @item.periode_start.ToString("dd/MM/yyyy")
+                            </td>
+                            <td>
+                                @item.periode_end.ToString("dd/MM/yyyy")
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.keterangan)
