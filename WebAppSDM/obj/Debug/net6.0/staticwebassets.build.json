@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "47Fraq0hEBRtqfAiDh1yBNHY+97O2ubwoojDBpMHBt8=",
+  "Hash": "+aul1a0CcY4sahsZ2qfLWDNZtg/pgStJ9iT7BGZPshk=",
   "Source": "WebAppSDM",
   "BasePath": "_content/WebAppSDM",
   "Mode": "Default",
@@ -374,12 +374,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\elements\\7.jpg"
     },
     {
-      "Identity": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\assets\\img\\favicon\\favicon.ico",
+      "Identity": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\assets\\img\\favicon\\ico.ico",
       "SourceId": "WebAppSDM",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\",
       "BasePath": "_content/WebAppSDM",
-      "RelativePath": "assets/img/favicon/favicon.ico",
+      "RelativePath": "assets/img/favicon/ico.ico",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -388,7 +388,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\favicon\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\favicon\\ico.ico"
     },
     {
       "Identity": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\assets\\img\\icons\\brands\\asana.png",
@@ -2242,6 +2242,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\dokumen\\uploadharilibur.xlsx"
+    },
+    {
+      "Identity": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\dokumen\\uploadpotongan.xlsx",
+      "SourceId": "WebAppSDM",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\",
+      "BasePath": "_content/WebAppSDM",
+      "RelativePath": "dokumen/uploadpotongan.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dokumen\\uploadpotongan.xlsx"
     },
     {
       "Identity": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\wwwroot\\favicon.ico",

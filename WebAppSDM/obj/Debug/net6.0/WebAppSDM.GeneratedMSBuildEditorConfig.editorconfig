@@ -159,6 +159,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBhcmFtZXRlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotongan/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

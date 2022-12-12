@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="~/DataTables/DataTables-1.11.3/css/jquery.dataTables.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon/ico.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -98,12 +98,6 @@
                                     <div data-i18n="Master Jabatan">Jabatan</div>
                                 </a>
                             </li>
-       
-                            <li class="menu-item">
-                                <a asp-controller="MPotongan" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Master Potongan">Master Potongan</div>
-                                </a>
-                            </li>
                             <li class="menu-item">
                                 <a asp-controller="MHariLiburs" asp-action="Index" class="menu-link">
                                     <div data-i18n="Master Hari Libur">Hari Libur</div>
@@ -137,14 +131,37 @@
                         <ul class="menu-sub">
                             <li class="menu-item">
                                 <a asp-controller="MTunjangan" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Tunjangan">Semua Pegawai</div>
+                                    <div data-i18n="Tunjangan">Semua Karyawan</div>
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a asp-controller="MTunjanganPersons" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Absensi">Spesifik Pegawai</div>
+                                    <div data-i18n="Absensi">Spesifik Karyawan</div>
                                 </a>
                             </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item @TempData["activePotongan"]">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-credit-card-front"></i>
+                            <div data-i18n="Potongan">Potongan</div>
+                        </a>
+                        <ul class="menu-sub">
+                            @*<li class="menu-item">
+                                <a asp-controller="MPotongan" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Master Potongan">Master Potongan</div>
+                                </a>
+                            </li>*@
+                            <li class="menu-item">
+                                <a asp-controller="MPotonganPersons" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Spesifik Karyawan">Spesifik Karyawan</div>
+                                </a>
+                            </li>
+                            @*<li class="menu-item">
+                                <a asp-controller="TKoperasi" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Koperasi">Koperasi</div>
+                                </a>
+                            </li>*@
                         </ul>
                     </li>
                     <li class="menu-item @TempData["activeEmployee"]">
@@ -189,11 +206,7 @@
                             <div data-i18n="Transaksi">Transaksi</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a asp-controller="TKoperasi" asp-action="Index" class="menu-link">
-                                    <div data-i18n="Koperasi">Koperasi</div>
-                                </a>
-                            </li>
+                            
                             <li class="menu-item">
                                 <a asp-controller="TGajis" asp-action="Index" class="menu-link">
                                     <div data-i18n="Gaji">Gaji</div>

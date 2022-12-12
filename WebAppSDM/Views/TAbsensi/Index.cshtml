@@ -37,6 +37,7 @@
         $.noConflict();
         $('#myDataTable').DataTable({
             order: [],
+            "pageLength": 100
         });
     });
 </script>
@@ -114,19 +115,27 @@
                                     {
                                         <span class="badge bg-label-primary me-1">Masuk</span>
                                     }
-                                    else
+                                    else if (item.Status == "tidak masuk")
                                     {
                                         <span class="badge bg-label-danger me-1">Tdk Masuk</span>
+                                    }
+                                    else if (item.Status == "terlambat")
+                                    {
+                                        <span class="badge bg-label-warning me-1">Terlambat</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-label-success me-1">Libur</span>
                                     }
                                 </td>
                                 <td>
                                     @if (item.Hitung_Lembur == true)
                                     {
-                                        <span class="badge bg-label-primary me-1">Yes</span>
+                                        <span class="badge bg-label-primary me-1">Ya</span>
                                     }
                                     else
                                     {
-                                        <span class="badge bg-label-danger me-1">No</span>
+                                        <span class="badge bg-label-danger me-1">Tdk</span>
                                     }
                                 </td>
                                 <td>@String.Format("{0:n}", item.Nominal_Lembur)</td>

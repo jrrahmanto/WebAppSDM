@@ -8,5 +8,6 @@ namespace WebAppSDM.Models
         public int id { get; set; }
         public string value { get; set; }
         public string keterangan { get; set; }
+        public string parameter_name { get; set; }
     }
 }

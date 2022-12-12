@@ -8,7 +8,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $.noConflict();
-        $('#myDataTable').DataTable({});
+        $('#myDataTable').DataTable({ order: [1,'asc'] });
     });
 </script>
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -22,6 +22,7 @@
                 <thead>
                     <tr>
                         <th>Value</th>
+                        <th>Nama Parameter</th>
                         <th>Keterangan</th>
                         <th>Action</th>
                     </tr>
@@ -31,6 +32,7 @@
                     {
                         <tr>
                             <td>@item.value</td>
+                            <td>@item.parameter_name</td>
                             <td>@item.keterangan</td>
                             <td>
                                 <div class="dropdown">

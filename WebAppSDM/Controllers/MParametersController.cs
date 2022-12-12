@@ -23,12 +23,14 @@ namespace WebAppSDM.Controllers
         // GET: MParameters
         public async Task<IActionResult> Index()
         {
-              return View(await _context.MParameter.ToListAsync());
+            TempData["activeMaster"] = "active";
+            return View(await _context.MParameter.ToListAsync());
         }
 
         // GET: MParameters/Create
         public IActionResult Create()
         {
+            TempData["activeMaster"] = "active";
             return View();
         }
 
@@ -37,8 +39,9 @@ namespace WebAppSDM.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,value,keterangan")] MParameter mParameter)
+        public async Task<IActionResult> Create([Bind("id,value,keterangan, parameter_name")] MParameter mParameter)
         {
+            TempData["activeMaster"] = "active";
             if (ModelState.IsValid)
             {
                 _context.Add(mParameter);
@@ -52,6 +55,7 @@ namespace WebAppSDM.Controllers
         // GET: MParameters/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            TempData["activeMaster"] = "active";
             if (id == null || _context.MParameter == null)
             {
                 return NotFound();
@@ -65,13 +69,11 @@ namespace WebAppSDM.Controllers
             return View(mParameter);
         }
 
-        // POST: MParameters/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,value,keterangan")] MParameter mParameter)
+        public async Task<IActionResult> Edit(int id, [Bind("id,value,keterangan, parameter_name")] MParameter mParameter)
         {
+            TempData["activeMaster"] = "active";
             if (id != mParameter.id)
             {
                 return NotFound();
@@ -105,6 +107,7 @@ namespace WebAppSDM.Controllers
         // GET: MParameters/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            TempData["activeMaster"] = "active";
             if (id == null || _context.MParameter == null)
             {
                 return NotFound();
@@ -125,6 +128,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            TempData["activeMaster"] = "active";
             if (_context.MParameter == null)
             {
                 return Problem("Entity set 'ApplicationDBContext.MParameter'  is null.");
@@ -141,7 +145,8 @@ namespace WebAppSDM.Controllers
 
         private bool MParameterExists(int id)
         {
-          return _context.MParameter.Any(e => e.id == id);
+            TempData["activeMaster"] = "active";
+            return _context.MParameter.Any(e => e.id == id);
         }
     }
 }
