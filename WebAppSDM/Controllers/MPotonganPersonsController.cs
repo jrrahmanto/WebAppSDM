@@ -13,6 +13,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class MPotonganPersonsController : Controller
     {
         private readonly ApplicationDBContext _context;

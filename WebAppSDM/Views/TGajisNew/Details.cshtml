@@ -1,0 +1,205 @@
+﻿@model WebAppSDM.Models.TGajis
+
+@{
+    var listDetail = (List<WebAppSDM.Models.TGajis>)ViewData["listDetail"];
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Transaksi/</span>Detail Gaji</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+
+                    <dl class="row">
+                        <dt class="col-sm-3">
+                            NIP
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.nip)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Periode Mulai
+                        </dt>
+                        <dd class="col-sm-8">
+                            @listDetail[0].periode_start.ToString("dd/MM/yyyy")
+                        </dd>
+                        <dt class="col-sm-3">
+                            Periode Akhir
+                        </dt>
+                        <dd class="col-sm-8">
+                            @listDetail[0].periode_end.ToString("dd/MM/yyyy")
+                        </dd>
+                        <hr />
+                        <dt class="col-sm-3">
+                            Gaji Pokok
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].gapok)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Tetap
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_tetap)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Komunikasi
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_komunikasi)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Konjungtur
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_konjungtur)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Jumlah Masuk
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.jumlah_masuk) Hari
+                        </dd>
+                        <dt class="col-sm-3">
+                            Jumlah Terlambat
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.jumlah_terlambat) Hari
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Harian
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_harian)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Struktural
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_structural)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Perumahan
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_perumahan)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Penyesuaian
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_penyesuaian)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Kinerja
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_kinerja)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan SC
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_sc)
+                        </dd>
+      
+                        <dt class="col-sm-3">
+                           Tunjangan Lain-Lain
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].Tunj_lain)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan PPH
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_pph)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Jamsostek
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_jamsostek)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan Pensiun
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_pensiun)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Tunjangan BPJS
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].tunj_bpjs)
+                        </dd>
+                        <hr />
+                        <dt class="col-sm-3">
+                           Potongan Koperasi
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].pot_koperasi)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Potongan Parkiran
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].pot_parkiran)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Potongan DIM (Danareksa)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].pot_dim)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Potongan Lainnya
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].pot_lain)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Potongan Jamsostek
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].pot_jamsostek)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Potongan BPJS
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].pot_bpjs)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Potongan Pensiun/DPLK
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].pot_dplk)
+                        </dd>
+                        <dt class="col-sm-3">
+                            Potongan TVS
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].pot_tvs)
+                        </dd>
+                        <hr />
+                        <dt class="col-sm-3">
+                            Total
+                        </dt>
+                        <dd class="col-sm-8">
+                            @String.Format("{0:n}",listDetail[0].total)
+                        </dd>
+                    </dl>
+                    <div>
+                        @*<a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |*@
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

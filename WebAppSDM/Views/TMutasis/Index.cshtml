@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebAppSDM.Models.TMutasi>
+﻿@model IEnumerable<WebAppSDM.Models.ViewTMutasi>
 
 @if (TempData["ResultOk"] != null)
 {
@@ -18,85 +18,72 @@
     <div class="card">
         <h5 class="card-header"> <a asp-action="Create" class="btn btn-sm btn-outline-primary">Create</a></h5>
         <div class="card-header">
-            <table class="table" id="myDataTable">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.NIP)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.grade_old)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.grade_new)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.jabatan_old)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.jabatan_new)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.date_mutasi)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.no_sk)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.keterangan)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.isdelete)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.createdate)
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NIP)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.grade_old)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.grade_new)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.jabatan_old)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.jabatan_new)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.date_mutasi)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.no_sk)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.keterangan)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.isdelete)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.createdate)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            <div class="col-12">
+                <div class="card overflow-hidden" style="height: 500px">
+                    <div class="card-body" id="both-scrollbars-example">
+                        <table class="table" id="myDataTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        NAMA
+                                    </th>
+                                    <th>
+                                        JENIS MUTASI
+                                    </th>
+                                    <th>
+                                        GRADE BARU
+                                    </th>
+                                    <th>
+                                        JABATAN BARU
+                                    </th>
+                                    <th>
+                                       TANGGAL MUTASI
+                                    </th>
+                                    <th>
+                                       No. SK
+                                    </th>
+                                    <th>
+                                        KETERANGAN
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.nama
+                                        </td>
+                                        <td>
+                                            @item.jenis_mutasi
+                                        </td>
+                                        <td>
+                                            @item.grade_new_name
+                                        </td>
+                                        <td>
+                                            @item.jabatan_new_name
+                                        </td>
+                                        <td>
+                                            @item.date_mutasi.ToString("dd/MM/yyyy")
+                                        </td>
+                                        <td>
+                                            @item.no_sk
+                                        </td>
+                                        <td>
+                                            @item.keterangan
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

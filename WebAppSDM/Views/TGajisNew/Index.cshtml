@@ -1,0 +1,101 @@
+﻿@model IEnumerable<WebAppSDM.Models.ViewGaji>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.noConflict();
+        $('#myDataTable').DataTable({
+            "order": []
+        });
+    });
+</script>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Transaksi/</span>Gaji</h4>
+
+    <!-- Basic Layout -->
+    <div class="col-xxl">
+        <div class="card mb-4">
+            <div class="card-body">
+                <form asp-action="Create">
+                    <div class="row mb-3">
+                        <div class="col-sm-2">
+                            Periode Start
+                            <input type="date" class="form-control" id="periodestart" name="periodestart" required/>
+                        </div>
+                        <div class="col-sm-2">
+                            Periode End
+                            <input type="date" class="form-control" id="periodeend" name="periodeend" required />
+                        </div>
+                        <div class="col-sm-2">
+                            <br />
+                            <button type="submit" class="btn btn-primary">Generate</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="col-12">
+        <div class="card overflow-hidden" style="height: 500px">
+            <div class="card-body" id="both-scrollbars-example">
+                <table class="display compact" style="width:100%" id="myDataTable">
+
+                    <thead>
+                        <tr>
+                            <th>
+                                Periode Mulai
+                            </th>
+                            <th>
+                                Periode Akhir
+                            </th>
+                            <th>
+                               Nama
+                            </th>
+                            <th>
+                               Nip
+                            </th>
+                            <th>
+                               Total Gaji Diterima
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @item.periode_start.ToString("dd/MM/yyyy")
+                                </td>
+                                <td>
+                                    @item.periode_end.ToString("dd/MM/yyyy")
+                                </td>
+                                <td>
+                                    @item.Nama
+                                </td>
+                                <td>
+                                    @item.nip
+                                </td>
+                                <td>
+                                    @String.Format("{0:n}", item.total)
+                                </td>
+                                <td>
+                                    @*<a asp-action="Edit" asp-route-id="@item.id">Edit</a> |*@
+                                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

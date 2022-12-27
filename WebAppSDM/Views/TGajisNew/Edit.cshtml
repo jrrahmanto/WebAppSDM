@@ -1,0 +1,177 @@
+﻿@model WebAppSDM.Models.TGajis
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>TGajis</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="periode_start" class="control-label"></label>
+                <input asp-for="periode_start" class="form-control" />
+                <span asp-validation-for="periode_start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="periode_end" class="control-label"></label>
+                <input asp-for="periode_end" class="form-control" />
+                <span asp-validation-for="periode_end" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gapok" class="control-label"></label>
+                <input asp-for="gapok" class="form-control" />
+                <span asp-validation-for="gapok" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_tetap" class="control-label"></label>
+                <input asp-for="tunj_tetap" class="form-control" />
+                <span asp-validation-for="tunj_tetap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_komunikasi" class="control-label"></label>
+                <input asp-for="tunj_komunikasi" class="form-control" />
+                <span asp-validation-for="tunj_komunikasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_konjungtur" class="control-label"></label>
+                <input asp-for="tunj_konjungtur" class="form-control" />
+                <span asp-validation-for="tunj_konjungtur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_harian" class="control-label"></label>
+                <input asp-for="tunj_harian" class="form-control" />
+                <span asp-validation-for="tunj_harian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_structural" class="control-label"></label>
+                <input asp-for="tunj_structural" class="form-control" />
+                <span asp-validation-for="tunj_structural" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_perumahan" class="control-label"></label>
+                <input asp-for="tunj_perumahan" class="form-control" />
+                <span asp-validation-for="tunj_perumahan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_penyesuaian" class="control-label"></label>
+                <input asp-for="tunj_penyesuaian" class="form-control" />
+                <span asp-validation-for="tunj_penyesuaian" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_kinerja" class="control-label"></label>
+                <input asp-for="tunj_kinerja" class="form-control" />
+                <span asp-validation-for="tunj_kinerja" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_sc" class="control-label"></label>
+                <input asp-for="tunj_sc" class="form-control" />
+                <span asp-validation-for="tunj_sc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="total" class="control-label"></label>
+                <input asp-for="total" class="form-control" />
+                <span asp-validation-for="total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createddate" class="control-label"></label>
+                <input asp-for="createddate" class="form-control" />
+                <span asp-validation-for="createddate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nip" class="control-label"></label>
+                <input asp-for="nip" class="form-control" />
+                <span asp-validation-for="nip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tunj_lain" class="control-label"></label>
+                <input asp-for="Tunj_lain" class="form-control" />
+                <span asp-validation-for="Tunj_lain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pot_koperasi" class="control-label"></label>
+                <input asp-for="pot_koperasi" class="form-control" />
+                <span asp-validation-for="pot_koperasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pot_parkiran" class="control-label"></label>
+                <input asp-for="pot_parkiran" class="form-control" />
+                <span asp-validation-for="pot_parkiran" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pot_dim" class="control-label"></label>
+                <input asp-for="pot_dim" class="form-control" />
+                <span asp-validation-for="pot_dim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pot_lain" class="control-label"></label>
+                <input asp-for="pot_lain" class="form-control" />
+                <span asp-validation-for="pot_lain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_pph" class="control-label"></label>
+                <input asp-for="tunj_pph" class="form-control" />
+                <span asp-validation-for="tunj_pph" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_jamsostek" class="control-label"></label>
+                <input asp-for="tunj_jamsostek" class="form-control" />
+                <span asp-validation-for="tunj_jamsostek" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_pensiun" class="control-label"></label>
+                <input asp-for="tunj_pensiun" class="form-control" />
+                <span asp-validation-for="tunj_pensiun" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tunj_bpjs" class="control-label"></label>
+                <input asp-for="tunj_bpjs" class="form-control" />
+                <span asp-validation-for="tunj_bpjs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pot_jamsostek" class="control-label"></label>
+                <input asp-for="pot_jamsostek" class="form-control" />
+                <span asp-validation-for="pot_jamsostek" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pot_bpjs" class="control-label"></label>
+                <input asp-for="pot_bpjs" class="form-control" />
+                <span asp-validation-for="pot_bpjs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pot_dplk" class="control-label"></label>
+                <input asp-for="pot_dplk" class="form-control" />
+                <span asp-validation-for="pot_dplk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="jumlah_masuk" class="control-label"></label>
+                <input asp-for="jumlah_masuk" class="form-control" />
+                <span asp-validation-for="jumlah_masuk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="jumlah_terlambat" class="control-label"></label>
+                <input asp-for="jumlah_terlambat" class="form-control" />
+                <span asp-validation-for="jumlah_terlambat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pot_tvs" class="control-label"></label>
+                <input asp-for="pot_tvs" class="form-control" />
+                <span asp-validation-for="pot_tvs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

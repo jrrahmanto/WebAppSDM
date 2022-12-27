@@ -3,74 +3,122 @@
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var KaryawanList = (List<DropdownList.KaryawanList>)ViewData["KaryawanList"];
+    var GradeList = (List<DropdownList.GradeList>)ViewData["GradeList"];
+    var JabatanList = (List<DropdownList.JabatanList>)ViewData["JabatanList"];
 }
 
-<h1>Create</h1>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Create/</span>Mutasi</h4>
 
-<h4>TMutasi</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="NIP" class="control-label"></label>
-                <input asp-for="NIP" class="form-control" />
-                <span asp-validation-for="NIP" class="text-danger"></span>
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label class="control-label">Nama</label>
+                            <select asp-for="NIP" class="form-control" required>
+                                @foreach (var item in KaryawanList)
+                                {
+                                    <option value="@item.NIP">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="NIP" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Grade Lama</label>
+                            <select asp-for="grade_old" class="form-control" required>
+                                <option value="99999">-</option>
+                                @foreach (var item in GradeList)
+                                {
+                                    <option value="@item.id">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="grade_old" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Grade Baru</label>
+                            <select asp-for="grade_new" class="form-control" required>
+                                <option value="99999">-</option>
+                                @foreach (var item in GradeList)
+                                {
+                                    <option value="@item.id">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="grade_new" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Jabatan Lama</label>
+                            <select asp-for="jabatan_old" class="form-control" required>
+                                <option value="99999">-</option>
+                                @foreach (var item in JabatanList)
+                                {
+                                    <option value="@item.id">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="jabatan_old" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Jabatan Baru</label>
+                            <select asp-for="jabatan_new" class="form-control" required>
+                                <option value="99999">-</option>
+                                @foreach (var item in JabatanList)
+                                {
+                                    <option value="@item.id">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="jabatan_new" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Jenis Mutasi</label>
+                            <select asp-for="jenis_mutasi" class="form-control" required>
+                                <option value="-">-</option>
+                                <option value="Penetapan Tugas">Penetapan Tugas</option>
+                                <option value="Baru">Baru</option>
+                                <option value="Mutasi">Mutasi</option>
+                                <option value="Promosi">Promosi</option>
+                                <option value="Kontrak">Kontrak</option>
+                            </select>
+                            <span asp-validation-for="jabatan_new" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tanggal Mutasi</label>
+                            <input asp-for="date_mutasi" type="date" class="form-control" />
+                            <span asp-validation-for="date_mutasi" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">No. SK</label>
+                            <input asp-for="no_sk" class="form-control" />
+                            <span asp-validation-for="no_sk" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Keterangan</label>
+                            <input asp-for="keterangan" class="form-control" />
+                            <span asp-validation-for="keterangan" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Gaji Pokok Lama</label>
+                            <input asp-for="gapok_old" class="form-control" />
+                            <span asp-validation-for="gapok_old" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Gaji Pokok Baru</label>
+                            <input asp-for="gapok_new" class="form-control" />
+                            <span asp-validation-for="gapok_new" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                            <a class="btn btn-danger" asp-action="Index">Back</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="grade_old" class="control-label"></label>
-                <input asp-for="grade_old" class="form-control" />
-                <span asp-validation-for="grade_old" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="grade_new" class="control-label"></label>
-                <input asp-for="grade_new" class="form-control" />
-                <span asp-validation-for="grade_new" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="jabatan_old" class="control-label"></label>
-                <input asp-for="jabatan_old" class="form-control" />
-                <span asp-validation-for="jabatan_old" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="jabatan_new" class="control-label"></label>
-                <input asp-for="jabatan_new" class="form-control" />
-                <span asp-validation-for="jabatan_new" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="date_mutasi" class="control-label"></label>
-                <input asp-for="date_mutasi" class="form-control" />
-                <span asp-validation-for="date_mutasi" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="no_sk" class="control-label"></label>
-                <input asp-for="no_sk" class="form-control" />
-                <span asp-validation-for="no_sk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="keterangan" class="control-label"></label>
-                <input asp-for="keterangan" class="form-control" />
-                <span asp-validation-for="keterangan" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="isdelete" class="control-label"></label>
-                <input asp-for="isdelete" class="form-control" />
-                <span asp-validation-for="isdelete" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="createdate" class="control-label"></label>
-                <input asp-for="createdate" class="form-control" />
-                <span asp-validation-for="createdate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-

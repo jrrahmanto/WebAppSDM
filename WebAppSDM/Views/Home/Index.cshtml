@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    string username = HttpContextAccessor.HttpContext.Session.GetString("username");
     ViewData["Title"] = "Home Page";
 }
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -8,13 +11,12 @@
                 <div class="d-flex align-items-end row">
                     <div class="col-sm-7">
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                            <h5 class="card-title text-primary">Welcome @username! 🎉</h5>
                             <p class="mb-4">
-                                You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
-                                your profile.
+                                Sistem aplikasi untuk SDM Insan KBI semua informasi tentang SDM check informasi di bawah ini.
                             </p>
 
-                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Lihat Info</a>
                         </div>
                     </div>
                     <div class="col-sm-5 text-center text-sm-left">
@@ -98,8 +100,9 @@
             <div class="card">
                 <div class="row row-bordered g-0">
                     <div class="col-md-8">
-                        <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
+                        <h5 class="card-header m-0 me-2 pb-3">Total Karyawan</h5>
                         <div id="totalRevenueChart" class="px-2"></div>
+
                     </div>
                     <div class="col-md-4">
                         <div class="card-body">

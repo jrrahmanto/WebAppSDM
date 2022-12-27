@@ -48,6 +48,8 @@ namespace WebAppSDM.Controllers
                     var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
                     HttpContext.Session.SetString("nip", db.nip);
+                    HttpContext.Session.SetString("username", db.username);
+                    HttpContext.Session.SetString("username_nip", db.username+"-"+db.nip);
                     HttpContext.Session.SetString("UserLoginData", db.nip); 
                     return RedirectToAction("Index", "Home");
                 }

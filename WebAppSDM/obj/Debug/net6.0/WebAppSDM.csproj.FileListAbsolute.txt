@@ -287,3 +287,4 @@ D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\IronXL.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\SixLabors.Fonts.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\SixLabors.ImageSharp.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\SixLabors.ImageSharp.Drawing.dll
+D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll

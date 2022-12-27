@@ -1,0 +1,202 @@
+﻿@model WebAppSDM.Models.TGajis
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TGajis</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.periode_start)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.periode_start)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.periode_end)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.periode_end)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.gapok)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.gapok)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_tetap)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_tetap)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_komunikasi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_komunikasi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_konjungtur)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_konjungtur)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_harian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_harian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_structural)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_structural)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_perumahan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_perumahan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_penyesuaian)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_penyesuaian)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_kinerja)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_kinerja)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_sc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_sc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.total)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.createddate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.createddate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nip)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nip)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tunj_lain)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tunj_lain)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pot_koperasi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pot_koperasi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pot_parkiran)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pot_parkiran)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pot_dim)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pot_dim)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pot_lain)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pot_lain)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_pph)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_pph)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_jamsostek)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_jamsostek)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_pensiun)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_pensiun)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tunj_bpjs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tunj_bpjs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pot_jamsostek)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pot_jamsostek)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pot_bpjs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pot_bpjs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pot_dplk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pot_dplk)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.jumlah_masuk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.jumlah_masuk)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.jumlah_terlambat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.jumlah_terlambat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pot_tvs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pot_tvs)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

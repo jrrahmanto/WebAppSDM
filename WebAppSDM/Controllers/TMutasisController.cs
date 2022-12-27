@@ -10,6 +10,7 @@ using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class TMutasisController : Controller
     {
         private readonly ApplicationDBContext _context;
@@ -22,14 +23,14 @@ namespace WebAppSDM.Controllers
         // GET: TMutasis
         public async Task<IActionResult> Index()
         {
-            TempData["activelink"] = "active";
-            return View(await _context.TMutasi.ToListAsync());
+            TempData["activeTransaksi"] = "active";
+            return View(await _context.ViewTMutasi.ToListAsync());
         }
 
         // GET: TMutasis/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            TempData["activelink"] = "active";
+            TempData["activeTransaksi"] = "active";
             if (id == null || _context.TMutasi == null)
             {
                 return NotFound();
@@ -48,7 +49,13 @@ namespace WebAppSDM.Controllers
         // GET: TMutasis/Create
         public IActionResult Create()
         {
-            TempData["activelink"] = "active";
+            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.OrderBy(x => x.nama).ToList();
+            List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
+            List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            ViewData["GradeList"] = gradelist;
+            ViewData["JabatanList"] = jabatanlist;
+            ViewData["KaryawanList"] = KaryawanList;
+            TempData["activeTransaksi"] = "active";
             return View();
         }
 
@@ -57,22 +64,32 @@ namespace WebAppSDM.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,NIP,grade_old,grade_new,jabatan_old,jabatan_new,date_mutasi,no_sk,keterangan,isdelete,createdate")] TMutasi tMutasi)
+        public async Task<IActionResult> Create(TMutasi tMutasi)
         {
-            TempData["activelink"] = "active";
+            TempData["activeTransaksi"] = "active";
+
             if (ModelState.IsValid)
             {
+                tMutasi.isdelete = 0;
+                tMutasi.createdate = DateTime.Now;
                 _context.Add(tMutasi);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.OrderBy(x => x.nama).ToList();
+            List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
+            List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            ViewData["GradeList"] = gradelist;
+            ViewData["JabatanList"] = jabatanlist;
+            ViewData["KaryawanList"] = KaryawanList;
+            TempData["activeTransaksi"] = "active";
             return View(tMutasi);
         }
 
         // GET: TMutasis/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            TempData["activelink"] = "active";
+            TempData["activeTransaksi"] = "active";
             if (id == null || _context.TMutasi == null)
             {
                 return NotFound();
@@ -83,6 +100,13 @@ namespace WebAppSDM.Controllers
             {
                 return NotFound();
             }
+            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.OrderBy(x => x.nama).ToList();
+            List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
+            List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            ViewData["GradeList"] = gradelist;
+            ViewData["JabatanList"] = jabatanlist;
+            ViewData["KaryawanList"] = KaryawanList;
+            TempData["activeTransaksi"] = "active";
             return View(tMutasi);
         }
 
@@ -91,41 +115,40 @@ namespace WebAppSDM.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,NIP,grade_old,grade_new,jabatan_old,jabatan_new,date_mutasi,no_sk,keterangan,isdelete,createdate")] TMutasi tMutasi)
+        public async Task<IActionResult> Edit(TMutasi tMutasi)
         {
-            TempData["activelink"] = "active";
-            if (id != tMutasi.id)
-            {
-                return NotFound();
-            }
+            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.OrderBy(x => x.nama).ToList();
+            List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
+            List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
+            ViewData["GradeList"] = gradelist;
+            ViewData["JabatanList"] = jabatanlist;
+            ViewData["KaryawanList"] = KaryawanList;
+            TempData["activeTransaksi"] = "active";
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(tMutasi);
-                    await _context.SaveChangesAsync();
+                    _context.TMutasi.Update(tMutasi);
+                    _context.SaveChanges();
+                    TempData["ResultOk"] = "Data Updated Successfully !";
+                    return RedirectToAction("Index");
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception x)
                 {
-                    if (!TMutasiExists(tMutasi.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    TempData["ResultOk"] = x.Message;
+                    return RedirectToAction("Index");
                 }
-                return RedirectToAction(nameof(Index));
+     
             }
+            
             return View(tMutasi);
         }
 
         // GET: TMutasis/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            TempData["activelink"] = "active";
+            TempData["activeTransaksi"] = "active";
             if (id == null || _context.TMutasi == null)
             {
                 return NotFound();
@@ -146,15 +169,21 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            TempData["activelink"] = "active";
+            TempData["activeTransaksi"] = "active";
             if (_context.TMutasi == null)
             {
                 return Problem("Entity set 'ApplicationDBContext.TMutasi'  is null.");
             }
-            var tMutasi = await _context.TMutasi.FindAsync(id);
+            //var tMutasi = await _context.TMutasi.FindAsync(id);
+            var tMutasi = _context.TMutasi.FirstOrDefault(u => u.id == id);
             if (tMutasi != null)
             {
-                _context.TMutasi.Remove(tMutasi);
+                
+                tMutasi.isdelete = 1;
+                _context.SaveChanges();
+
+                TempData["ResultOk"] = "Data Deleted Successfully !";
+                return RedirectToAction("Index");
             }
             
             await _context.SaveChangesAsync();
@@ -163,7 +192,7 @@ namespace WebAppSDM.Controllers
 
         private bool TMutasiExists(int id)
         {
-            TempData["activelink"] = "active";
+            TempData["activeTransaksi"] = "active";
             return _context.TMutasi.Any(e => e.id == id);
         }
     }

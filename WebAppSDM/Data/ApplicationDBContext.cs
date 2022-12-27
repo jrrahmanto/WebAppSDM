@@ -21,7 +21,6 @@ namespace WebAppSDM.Data
         public DbSet<MMesinAbsen> MMesinAbsen { get; set; }
         public DbSet<MParameter> MParameter { get; set; }
         public DbSet<ARole> ARole { get; set; }
-        public DbSet<TGaji> TGaji { get; set; }
         public DbSet<MTunjanganPerson> MTunjanganPerson { get; set; }
         public DbSet<AUser> AUser { get; set; }
         public DbSet<MEmployee> MEmployee { get; set; }
@@ -38,7 +37,9 @@ namespace WebAppSDM.Data
         public DbSet<MHariLibur> MHariLibur { get; set; }
         public DbSet<TAbsenKhusus> TAbsenKhusus { get; set; }
         public DbSet<MPotonganPerson> MPotonganPerson { get; set; }
+        public DbSet<TGajis> TGajis { get; set; }
         public DbSet<ViewPotonganPerson> ViewPotonganPerson { get; set; }
+        public DbSet<ViewTMutasi> ViewTMutasi { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ViewTunjangan>(entity => {
@@ -83,6 +84,11 @@ namespace WebAppSDM.Data
             modelBuilder.Entity<ViewPotonganPerson>(entity => {
                 entity.HasKey(e => e.id);
                 entity.ToTable("ViewPotonganPerson");
+                entity.Property(e => e.nama).HasMaxLength(100);
+            });
+            modelBuilder.Entity<ViewTMutasi>(entity => {
+                entity.HasKey(e => e.id);
+                entity.ToTable("ViewTMutasi");
                 entity.Property(e => e.nama).HasMaxLength(100);
             });
         }
