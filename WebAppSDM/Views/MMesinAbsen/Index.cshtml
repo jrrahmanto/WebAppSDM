@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MMesinAbsen>
+﻿@model IEnumerable<ViewMasterAbsen>
 
 @if (TempData["ResultOk"] != null)
 {
@@ -22,9 +22,10 @@
             <table class="table" id="myDataTable">
                 <thead>
                     <tr>
+                        <th>Nama</th>
+                        <th>NIP</th>
                         <th>Id Mesin</th>
                         <th>Badge Number</th>
-                        <th>NIP</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -32,9 +33,11 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td><strong>@item.id_mechine</strong></td>
-                            <td>@item.badge_number</td>
+                            <td><strong>@item.nama</strong></td>
                             <td>@item.NIP</td>
+                            <td>@item.id_mechine</td>
+                            <td>@item.badge_number</td>
+                            
                             
 
                             <td>

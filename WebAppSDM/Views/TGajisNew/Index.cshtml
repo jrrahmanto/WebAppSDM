@@ -21,7 +21,7 @@
     <div class="col-xxl">
         <div class="card mb-4">
             <div class="card-body">
-                <form asp-action="Create">
+                <form action="" method="post">
                     <div class="row mb-3">
                         <div class="col-sm-2">
                             Periode Start
@@ -31,9 +31,10 @@
                             Periode End
                             <input type="date" class="form-control" id="periodeend" name="periodeend" required />
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                             <br />
-                            <button type="submit" class="btn btn-primary">Generate</button>
+                            <button type="submit" class="btn btn-primary" asp-action="Create">Generate</button>
+                            <input type="submit" value="Cetak" class="btn btn-info" asp-action="ReportGaji" />
                         </div>
                     </div>
                 </form>

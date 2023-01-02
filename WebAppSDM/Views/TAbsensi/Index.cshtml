@@ -49,7 +49,7 @@
     <div class="col-xxl">
         <div class="card mb-4">
             <div class="card-body">
-                <form asp-action="Create">
+                <form action="" method="post">
                     <div class="row mb-3">
                         <div class="col-sm-2">
                             Nama
@@ -69,9 +69,9 @@
                             Periode End
                             <input type="date" class="form-control" id="periodeend" name="periodeend" />
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-5">
                             <br />
-                            <button type="submit" class="btn btn-primary">Search</button>    <a asp-controller="TAbsensi" asp-action="Index" class="btn btn-danger">Clear</a>
+                            <button asp-action="Create" type="submit" class="btn btn-primary">Search</button>    <a asp-controller="TAbsensi" asp-action="Index" class="btn btn-danger">Clear</a> <input type="submit" value="Cetak" class="btn btn-info" asp-action="ReportAbsen" />
                         </div>
                     </div>
                 </form>

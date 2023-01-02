@@ -15,7 +15,7 @@ namespace WebAppSDM.Controllers
         public IActionResult Index()
         {
             TempData["activeAbsensi"] = "active";
-            IEnumerable<MMesinAbsen> objCatlist = _context.MMesinAbsen.Where(x => x.isdelete == 0); ;
+            IEnumerable<ViewMasterAbsen> objCatlist = _context.ViewMasterAbsen;
             return View(objCatlist);
         }
         public IActionResult Create()

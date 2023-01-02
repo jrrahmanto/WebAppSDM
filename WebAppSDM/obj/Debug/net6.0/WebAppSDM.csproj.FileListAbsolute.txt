@@ -288,3 +288,7 @@ D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\SixLabors.Fonts.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\SixLabors.ImageSharp.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\SixLabors.ImageSharp.Drawing.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
+D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\Microsoft.ReportViewer.Common.dll
+D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\Microsoft.ReportViewer.DataVisualization.dll
+D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Source Code Service\WebAppSDM\WebAppSDM\bin\Debug\net6.0\Microsoft.ReportViewer.WebForms.dll

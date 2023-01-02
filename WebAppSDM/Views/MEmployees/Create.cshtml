@@ -11,27 +11,27 @@
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Add Karyawan</h4>
 
     <!-- Basic Layout & Basic with Icons -->
+    <!-- Basic Layout & Basic with Icons -->
     <div class="row">
         <!-- Basic Layout -->
         <div class="col-xxl">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form asp-action="Create">
+                    <form asp-action="Create" enctype="multipart/form-data">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
                         <div class="form-group">
                             <label class="control-label">NIP</label>
-                            <input asp-for="nip" class="form-control" />
+                            <input asp-for="nip" class="form-control" required />
                             <span asp-validation-for="nip" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Nama</label>
-                            <input asp-for="nama" class="form-control" />
+                            <input asp-for="nama" class="form-control" required />
                             <span asp-validation-for="nama" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="emp_email" class="control-label"></label>
-                            <input asp-for="emp_email" type="email" class="form-control" />
+                            <label class="control-label">Email</label>
+                            <input asp-for="emp_email" type="email" class="form-control" required/>
                             <span asp-validation-for="emp_email" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -43,7 +43,7 @@
                             <span asp-validation-for="emp_aktif" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="grade_id" class="control-label"></label>
+                            <label class="control-label">Grade</label>
                             <select asp-for="grade_id" class="form-control" required>
                                 <option value="99999">-</option>
                                 @foreach (var item in GradeList)
@@ -54,7 +54,7 @@
                             <span asp-validation-for="grade_id" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="jabatan_id" class="control-label"></label>
+                            <label class="control-label">Jabatan</label>
                             <select asp-for="jabatan_id" class="form-control" required>
                                 <option value="99999">-</option>
                                 @foreach (var item in JabatanList)
@@ -66,12 +66,12 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label">Tanggal Masuk</label>
-                            <input asp-for="date_of_entry" type="date" class="form-control" />
+                            <input asp-for="date_of_entry" type="date" class="form-control" required />
                             <span asp-validation-for="date_of_entry" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Status Karyawan</label>
-                            <select asp-for="emp_status" class="form-control" required>
+                            <select asp-for="emp_status" class="form-control" onchange="validateStatus()" required>
                                 <option value="-">-</option>
                                 <option value="Tetap">Tetap</option>
                                 <option value="Kontrak">Kontrak</option>
@@ -80,13 +80,6 @@
                             </select>
                             <span asp-validation-for="emp_status" class="text-danger"></span>
                         </div>
-                        <hr />
-                        <div class="form-group">
-                            <label class="control-label">Apakah Mengambil Fasilitas Mobil ?</label><br />
-                            <input class="form-check-input" type="checkbox" asp-for="fasilitas_mobil" /> Ya/Tidak
-                            <span asp-validation-for="fasilitas_mobil" class="text-danger"></span>
-                        </div>
-                        <hr />
                         <div class="form-group">
                             <label class="control-label">Tanggal Permanen</label>
                             <input asp-for="permanent_date" type="date" class="form-control" />
@@ -97,14 +90,21 @@
                             <input asp-for="contract_date" type="date" class="form-control" />
                             <span asp-validation-for="contract_date" class="text-danger"></span>
                         </div>
+                        <hr />
+                        <div class="form-group">
+                            <label class="control-label">Apakah Mengambil Fasilitas Mobil ?</label><br />
+                            <input class="form-check-input" type="checkbox" asp-for="fasilitas_mobil" /> Ya
+                            <span asp-validation-for="fasilitas_mobil" class="text-danger"></span>
+                        </div>
+                        <hr />
                         <div class="form-group">
                             <label class="control-label">Tempat Lahir</label>
-                            <input asp-for="emp_pob" class="form-control" />
+                            <input asp-for="emp_pob" class="form-control" required />
                             <span asp-validation-for="emp_pob" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Tanggal Ulang Tahun</label>
-                            <input asp-for="emp_dob" type="date" class="form-control" />
+                            <label class="control-label">Tanggal Lahir</label>
+                            <input asp-for="emp_dob" type="date" class="form-control" required />
                             <span asp-validation-for="emp_dob" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -125,19 +125,19 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label">No Handphone 1</label>
-                            <input asp-for="emp_phone_1" class="form-control" />
+                            <input asp-for="emp_phone_1" class="form-control" placeholder="0821xxxxxx" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">No Handphone 2</label>
-                            <input asp-for="emp_phone_2" class="form-control" />
+                            <input asp-for="emp_phone_2" class="form-control" placeholder="0821xxxxxx" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">No. Telepon 1</label>
-                            <input asp-for="emp_cellphone_1" class="form-control" />
+                            <input asp-for="emp_cellphone_1" class="form-control" placeholder="021xxxxxx" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">No. Telepon 2</label>
-                            <input asp-for="emp_cellphone_2" class="form-control" />
+                            <input asp-for="emp_cellphone_2" class="form-control" placeholder="021xxxxxx" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Agama</label>
@@ -169,34 +169,10 @@
                             <input asp-for="emp_passportexp" type="date" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <label class="control-label">No SIM A</label>
-                            <input asp-for="emp_licenseA" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Exp SIM A</label>
-                            <input asp-for="emp_licenseAexp" type="date" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">No SIM B</label>
-                            <input asp-for="emp_licenseB" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Exp SIM B</label>
-                            <input asp-for="emp_licenseBexp" type="date" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="emp_licenseC" class="control-label">No SIM C</label>
-                            <input asp-for="emp_licenseC" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Exp SIM C</label>
-                            <input asp-for="emp_licenseCexp" type="date" class="form-control" />
-                        </div>
-                        <div class="form-group">
                             <label asp-for="emp_marital" class="control-label">Status Perkawinan</label>
                             <select asp-for="emp_marital" class="form-control" required>
-                                <option value="Married">Married</option>
-                                <option value="Single">Single</option>
+                                <option value="Married">Menikah</option>
+                                <option value="Single">Belum Menikah</option>
                             </select>
                             <span asp-validation-for="emp_marital" class="text-danger"></span>
                         </div>
@@ -204,10 +180,6 @@
                             <label class="control-label">Tanggal Menikah</label>
                             <input asp-for="emp_dom" type="date" class="form-control" />
                             <span asp-validation-for="emp_dom" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="emp_photo" class="control-label"></label>
-                            <input asp-for="emp_photo" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Status PTKP</label>
@@ -227,7 +199,10 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label">Bank</label>
-                            <input asp-for="emp_bank" class="form-control" />
+                            <select asp-for="emp_bank" class="form-control" required>
+                                <option value="BNI">BNI</option>
+                                <option value="MANDIRI">MANDIRI</option>
+                            </select>
                             <span asp-validation-for="emp_bank" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -246,10 +221,17 @@
                             <span asp-validation-for="emp_darah" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="salary" class="control-label"></label>
+                            <label class="control-label">Gaji Pokok</label>
                             <input asp-for="salary" type="number" class="form-control" />
                             <span asp-validation-for="salary" class="text-danger"></span>
                         </div>
+                        <div class="form-group">
+                            <label class="control-label">Upload Foto</label>
+                            <input name="photo" id="photo" type="file" class="form-control" onchange="return fileValidationJPEG()" accept=".jpg" />
+                            <label style="color:red">*Maksimum 5 mb</label>
+                        </div>
+                        <div id="imagePreview"></div>
+                        <br />
                         <div class="form-group">
                             <input type="submit" value="Save" class="btn btn-primary" />
                             <a asp-action="Index" class="btn btn-lg btn-danger p-2">Back</a>
@@ -260,3 +242,51 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function validateStatus() {
+        var data = $("#emp_status").val();
+        if (data == "Kontrak") {
+            document.getElementById('contract_date').readOnly = false;
+        } else {
+            document.getElementById("contract_date").readOnly = true;
+        }
+    }
+    function fileValidationJPEG() {
+        var fileInput = document.getElementById('photo');
+        var renderImage = document.getElementById('imagePreview');
+
+        var filePath = fileInput.value;
+
+        const fileSize = fileInput.files[0].size / 1024 / 1024; // in mb
+        if (fileSize > 5) {
+            alert('File maksimum 5 MB');
+            fileInput.value = '';
+            document.getElementById('imagePreview').innerHTML = '<img width="60" src=""/>';
+            return false;
+        } else {
+            var allowedExtensions = /(\.jpg)$/i;
+
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Format harus .jpg');
+                fileInput.value = '';
+                return false;
+            }
+            else {
+
+                // Image preview
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        document.getElementById(
+                            'imagePreview').innerHTML =
+                            '<img width="60" src="' + e.target.result
+                            + '"/>';
+                    };
+
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            }
+
+        }
+    }
+</script>

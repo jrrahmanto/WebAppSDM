@@ -54,6 +54,10 @@ D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microso
 D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.NET.StringTools.dll
+D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.ReportViewer.Common.dll
+D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.ReportViewer.DataVisualization.dll
+D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.ReportViewer.WebForms.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Debugger.Contracts.dll
 D:\Source Code Service\WebAppSDM\WebAppSDM\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.dll

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,7 @@ namespace WebAppSDM.Controllers
         public async Task<IActionResult> Index()
         {
             TempData["activeEmployee"] = "active";
-              return View(await _context.MEmployee.Where(x=>x.isdelete ==0).OrderByDescending(x=>x.emp_aktif).ThenBy(x=>x.nama).ToListAsync());
+            return View(await _context.MEmployee.Where(x => x.isdelete == 0).OrderByDescending(x => x.emp_aktif).ThenBy(x => x.nama).ToListAsync());
         }
 
         // GET: MEmployees/Details/5
@@ -57,15 +58,22 @@ namespace WebAppSDM.Controllers
             return View();
         }
 
-        // POST: MEmployees/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,nip,nama,emp_pob,emp_dob,emp_sex,emp_address_1,emp_address_2,emp_phone_1,emp_phone_2,emp_cellphone_1,emp_cellphone_2,emp_religion,emp_NPWP,emp_KTP,emp_passport,emp_passportexp,emp_licenseA,emp_licenseAexp,emp_licenseB,emp_licenseBexp,emp_licenseC,emp_licenseCexp,emp_marital,emp_dom,emp_email,emp_aktif,emp_photo,emp_ptkp,emp_norek,emp_bank,emp_an,emp_status,emp_darah,grade_id,jabatan_id,salary,permanent_date,contract_date,date_of_entry,isdelete,fasilitas_mobil")] MEmployee mEmployee)
+        public async Task<IActionResult> Create(IFormFile photo, MEmployee mEmployee)
         {
             try
             {
+                if (photo != null)
+                {
+                    string filePath = Path.GetFullPath("wwwroot/photos/" + mEmployee.nip + ".jpg");
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await photo.CopyToAsync(stream);
+                    }
+                }
+
                 List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
                 List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
                 ViewData["GradeList"] = gradelist;
@@ -85,7 +93,7 @@ namespace WebAppSDM.Controllers
 
                 throw;
             }
-         
+
         }
 
         // GET: MEmployees/Edit/5
@@ -109,13 +117,21 @@ namespace WebAppSDM.Controllers
             return View(mEmployee);
         }
 
-        // POST: MEmployees/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("id,nip,nama,emp_pob,emp_dob,emp_sex,emp_address_1,emp_address_2,emp_phone_1,emp_phone_2,emp_cellphone_1,emp_cellphone_2,emp_religion,emp_NPWP,emp_KTP,emp_passport,emp_passportexp,emp_licenseA,emp_licenseAexp,emp_licenseB,emp_licenseBexp,emp_licenseC,emp_licenseCexp,emp_marital,emp_dom,emp_email,emp_aktif,emp_photo,emp_ptkp,emp_norek,emp_bank,emp_an,emp_status,emp_darah,grade_id,jabatan_id,salary,permanent_date,contract_date,date_of_entry,fasilitas_mobil")] MEmployee mEmployee)
+        public async Task<IActionResult> Edit(long id, IFormFile photo, MEmployee mEmployee)
         {
+            if (photo != null)
+            {
+                string filePath = Path.GetFullPath("wwwroot/photos/" + mEmployee.nip + ".jpg");
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await photo.CopyToAsync(stream);
+                }
+
+            }
+
             TempData["activeEmployee"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
@@ -127,26 +143,27 @@ namespace WebAppSDM.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
+            //{
+            try
             {
-                try
-                {
-                    _context.Update(mEmployee);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!MEmployeeExists(Convert.ToInt32(mEmployee.id)))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                mEmployee.emp_photo = mEmployee.nip + ".jpg";
+                _context.Update(mEmployee);
+                await _context.SaveChangesAsync();
             }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!MEmployeeExists(Convert.ToInt32(mEmployee.id)))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));
+            //}
             return View(mEmployee);
         }
 
@@ -186,7 +203,7 @@ namespace WebAppSDM.Controllers
                 _context.Update(mEmployee);
                 await _context.SaveChangesAsync();
             }
-            
+
             return RedirectToAction(nameof(Index));
         }
 

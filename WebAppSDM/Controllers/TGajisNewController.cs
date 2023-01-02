@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Reporting.WebForms;
+using NuGet.Protocol;
+using NuGet.Protocol.Plugins;
 using WebAppSDM.Data;
 using WebAppSDM.Models;
 
@@ -150,6 +154,7 @@ namespace WebAppSDM.Controllers
         public async Task<IActionResult> Create([Bind("periodestart,periodeend")] SPGenerateGaji tGaji)
         {
             TempData["activelink"] = "active";
+
             var loginname = HttpContext.Session.GetString("username_nip");
             try
             {
@@ -179,6 +184,37 @@ namespace WebAppSDM.Controllers
             }
             TempData["activeTransaksi"] = "active";
             return RedirectToAction("Index", "TGajisNew");
+        }
+
+        [HttpPost]
+        public ActionResult ReportGaji([Bind("periodestart,periodeend")] SPGenerateGaji tGaji)
+        {
+            string url = "http://182.253.222.68:33677/ReportServer?/SDMInternalReports/Rpt_TGaji/&rs:Command=Render&rs:Format=EXCELOPENXML&rc:OutputFormat=XLS&start_date=" + tGaji.periodestart.ToString("yyyy-MM-dd")+ "&end_date="+tGaji.periodeend.ToString("yyyy-MM-dd") + "";
+
+            System.Net.HttpWebRequest Req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            Req.Credentials = new NetworkCredential("admin", "Jakarta2020");
+            Req.Method = "GET";
+
+            string path = Path.GetFullPath("wwwroot/dokumen/reportgaji.xlsx");
+
+            System.Net.WebResponse objResponse = Req.GetResponse();
+            System.IO.FileStream fs = new System.IO.FileStream(path, System.IO.FileMode.Create);
+            System.IO.Stream stream = objResponse.GetResponseStream();
+
+            byte[] buf = new byte[1024];
+            int len = stream.Read(buf, 0, 1024);
+
+            while (len > 0)
+            {
+                fs.WriteAsync(buf, 0, len);
+                len = stream.Read(buf, 0, 1024);
+            }
+            stream.Close();
+            fs.Close();
+
+            byte[] fileBytes = System.IO.File.ReadAllBytes(path);
+            System.IO.File.Delete(path);
+            return File(fileBytes, "application/force-download", "reportgaji.xlsx");
         }
     }
 }

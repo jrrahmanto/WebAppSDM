@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebAppSDM.Models.TAbsenKhusus>
+﻿@model IEnumerable<WebAppSDM.Models.ViewAbsenKhusus>
 
 @{
     ViewData["Title"] = "Index";
@@ -22,17 +22,18 @@
             <table class="table" id="myDataTable">
                 <thead>
                     <tr>
+                        <th>Nama</th>
                         <th>
-                            @Html.DisplayNameFor(model => model.nip)
+                            NIP
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.periode_start)
+                            Tanggal Mulai
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.periode_end)
+                            Tanggal Selesai
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.keterangan)
+                            Keterangan
                         </th>
                         <th></th>
                     </tr>
@@ -41,7 +42,7 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-
+                            <td>@item.nama</td>
                             @if (item.nip == 999)
                             {
                                 <td>
