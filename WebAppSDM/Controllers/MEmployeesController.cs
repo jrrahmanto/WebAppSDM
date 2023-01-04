@@ -141,12 +141,16 @@ namespace WebAppSDM.Controllers
 
             }
 
-            //var mEmployeeExist = _context.MEmployee.Where(x=>x.id == mEmployee.id).FirstOrDefault();
-            //if (mEmployee.emp_aktif == null)
-            //{
-            //    mEmployee.emp_aktif = mEmployeeExist.emp_aktif;
-            //}
-            
+            var mEmployeeExist = _context.MEmployee.Where(x => x.id == mEmployee.id).First();
+            if (mEmployee.emp_aktif == null || mEmployee.salary == null || mEmployee.grade_id == null || mEmployee.jabatan_id == null || mEmployee.emp_status == null)
+            {
+                mEmployee.emp_aktif = mEmployeeExist.emp_aktif;
+                mEmployee.salary = mEmployeeExist.salary;
+                mEmployee.grade_id = mEmployeeExist.grade_id;
+                mEmployee.jabatan_id = mEmployeeExist.jabatan_id;
+                mEmployee.emp_status = mEmployeeExist.emp_status;
+            }
+
             TempData["activeEmployee"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
@@ -161,7 +165,7 @@ namespace WebAppSDM.Controllers
             try
             {
                 mEmployee.emp_photo = mEmployee.nip + ".jpg";
-                _context.MEmployee.Update(mEmployee);
+                _context.Entry(mEmployeeExist).CurrentValues.SetValues(mEmployee);
                 _context.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
