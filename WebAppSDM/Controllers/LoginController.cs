@@ -49,6 +49,7 @@ namespace WebAppSDM.Controllers
 
                     HttpContext.Session.SetString("nip", db.nip);
                     HttpContext.Session.SetString("username", db.username);
+                    HttpContext.Session.SetString("role", db.role_id.ToString());
                     HttpContext.Session.SetString("username_nip", db.username+"-"+db.nip);
                     HttpContext.Session.SetString("UserLoginData", db.nip); 
                     return RedirectToAction("Index", "Home");

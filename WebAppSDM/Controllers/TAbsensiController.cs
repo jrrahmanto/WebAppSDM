@@ -9,6 +9,8 @@ using System.Drawing.Printing;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
+using System.Net.NetworkInformation;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace WebAppSDM.Controllers
 {
@@ -22,11 +24,35 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Index()
         {
-            TempData["activeAbsensi"] = "active";
-            IEnumerable<ViewTAbsensi> objCatlist = _context.ViewTAbsensi.Where(x => x.update_date == DateTime.Now.Date).OrderBy(x => x.nama);
-            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.OrderBy(x => x.nama).ToList();
-            ViewData["KaryawanList"] = KaryawanList;
-            return View(objCatlist);
+            try
+            {
+                TempData["activeAbsensi"] = "active";
+                string role = HttpContext.Session.GetString("role");
+                
+                if (role == "2")
+                {
+                    string nip = HttpContext.Session.GetString("nip");
+                    IEnumerable<ViewTAbsensi> objCatlist = _context.ViewTAbsensi.Where(x => x.NIP == nip && x.update_date >= DateTime.Now.AddDays(-25).Date && x.update_date <= DateTime.Now.Date).OrderByDescending(x => x.update_date);
+
+                    List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.OrderBy(x => x.nama).ToList();
+                    ViewData["KaryawanList"] = KaryawanList;
+                    return View(objCatlist);
+                }
+                else
+                {
+                    List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.OrderBy(x => x.nama).ToList();
+                    ViewData["KaryawanList"] = KaryawanList;
+                    IEnumerable<ViewTAbsensi> objCatlist = _context.ViewTAbsensi.Where(x => x.update_date == DateTime.Now.Date).OrderBy(x => x.nama);
+                    return View(objCatlist);
+                }
+            }
+            catch (Exception x)
+            {
+
+                throw;
+            }
+         
+           
         }
         public IActionResult Edit(int? id)
         {
@@ -101,29 +127,6 @@ namespace WebAppSDM.Controllers
         {
             try
             {
-                //string url = "http://182.253.222.68:33677/ReportServer?/DailyReport/rptReportBalanceDetail&rs:Command=Render&rs:Format=EXCELOPENXML";
-
-                //string periodStart = DateTime.ParseExact(BusinessDateStart, "MM/dd/yyyy", provider).ToString("yyyy-MM-dd");
-                //string periodFinish = DateTime.ParseExact(BusinessDateEnd, "MM/dd/yyyy", provider).ToString("yyyy-MM-dd");
-
-                //url = url + "&startperiod=" + periodStart + "&endperiod=" + periodFinish;
-
-                //System.Net.HttpWebRequest Req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
-                //Req.Credentials = new NetworkCredential(@"PTKBI\admin", @"Jakarta2020");
-                //Req.Method = "GET";
-
-                //string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
-
-                //System.Net.WebResponse objResponse = Req.GetResponse();
-                //System.IO.Stream stream = objResponse.GetResponseStream();
-
-                //var net = new System.Net.WebClient();
-                //var content = stream;
-                //var contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                //var fileName = timestamp + @".xlsx";
-                //return File(content, contentType, fileName);
-
-
                 string url = "http://182.253.222.68:33677/ReportServer?/SDMInternalReports/Rpt_TAbsensi&rs:Command=Render&rs:Format=EXCELOPENXML&periodestart=" + tAbsen.periodestart.ToString("yyyy-MM-dd") + "&periodeend=" + tAbsen.periodeend.ToString("yyyy-MM-dd") + "&nama=" + tAbsen.nip + "";
 
                 System.Net.HttpWebRequest Req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
@@ -133,27 +136,6 @@ namespace WebAppSDM.Controllers
                 System.Net.WebResponse objResponse = Req.GetResponse();
                 System.IO.Stream stream = objResponse.GetResponseStream();
 
-
-                //string path = Path.GetFullPath("wwwroot/dokumen/reportabsen.xlsx");
-
-                //System.Net.WebResponse objResponse = Req.GetResponse();
-                //System.IO.FileStream fs = new System.IO.FileStream(path, System.IO.FileMode.Create);
-                //System.IO.Stream stream = objResponse.GetResponseStream();
-
-                //byte[] buf = new byte[1024];
-                //int len = stream.Read(buf, 0, 1024);
-
-                //while (len > 0)
-                //{
-                //    fs.WriteAsync(buf, 0, len);
-                //    len = stream.Read(buf, 0, 1024);
-                //}
-                //stream.Close();
-                //fs.Close();
-
-                //byte[] fileBytes = System.IO.File.ReadAllBytes(path);
-                //System.IO.File.Delete(path);
-
                 var net = new System.Net.WebClient();
                 var content = stream;
 
@@ -162,10 +144,9 @@ namespace WebAppSDM.Controllers
             }
             catch (Exception x)
             {
-                TempData["ResultOk"] = "EROR ! "+x.Message;
+                TempData["ResultOk"] = "EROR ! " + x.Message;
                 return View("Index");
             }
         }
-
     }
 }

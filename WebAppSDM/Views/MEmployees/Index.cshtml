@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<WebAppSDM.Models.MEmployee>
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
 
 @{
+    string role = HttpContextAccessor.HttpContext.Session.GetString("role");
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -17,7 +20,10 @@
     <!-- Basic Layout -->
     <div class="col-xxl">
         <div class="card mb-4">
-            <h5 class="card-header"> <a asp-action="Create" class="btn btn-sm btn-outline-primary">Create</a></h5>
+            @if (role == "1")
+            {
+                <h5 class="card-header"> <a asp-action="Create" class="btn btn-sm btn-outline-primary">Create</a></h5>
+            }
             <div class="card-body">
                 <div class="col-12">
                     <div class="card overflow-hidden" style="height: 500px">
@@ -54,7 +60,7 @@
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.nip)
                                             </td>
-                                          
+
                                             <td>
                                                 @if (item.emp_aktif.ToString() == "t")
                                                 {
@@ -68,22 +74,39 @@
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.emp_status)
                                             </td>
-                                            
+
                                             <td>
-                                                 @String.Format("{0:n}", item.salary)
+                                                @String.Format("{0:n}", item.salary)
                                             </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.id"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                        <a class="dropdown-item" asp-action="Details" asp-route-id="@item.id"><i class="bx bx-detail"></i> Detail</a>
-                                                        <a class="dropdown-item" asp-action="Delete" asp-route-id="@item.id"><i class="bx bx-trash"></i> Delete</a>
+                                            @if (role == "1")
+                                            {
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.id"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                                            <a class="dropdown-item" asp-action="Details" asp-route-id="@item.id"><i class="bx bx-detail"></i> Detail</a>
+                                                            <a class="dropdown-item" asp-action="Delete" asp-route-id="@item.id"><i class="bx bx-trash"></i> Delete</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.id"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                                            <a class="dropdown-item" asp-action="Details" asp-route-id="@item.id"><i class="bx bx-detail"></i> Detail</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            }
                                         </tr>
                                     }
                                 </tbody>

@@ -26,7 +26,16 @@ namespace WebAppSDM.Controllers
         public async Task<IActionResult> Index()
         {
             TempData["activeEmployee"] = "active";
-            return View(await _context.MEmployee.Where(x => x.isdelete == 0).OrderByDescending(x => x.emp_aktif).ThenBy(x => x.nama).ToListAsync());
+            string role = HttpContext.Session.GetString("role");
+            if (role == "1")
+            {
+                return View(await _context.MEmployee.Where(x => x.isdelete == 0).OrderByDescending(x => x.emp_aktif).ThenBy(x => x.nama).ToListAsync());
+            }
+            else
+            {
+                string nip = HttpContext.Session.GetString("nip");
+                return View(await _context.MEmployee.Where(x => x.nip == Convert.ToInt32(nip)).OrderByDescending(x => x.emp_aktif).ThenBy(x => x.nama).ToListAsync());
+            }
         }
 
         // GET: MEmployees/Details/5
@@ -132,6 +141,12 @@ namespace WebAppSDM.Controllers
 
             }
 
+            //var mEmployeeExist = _context.MEmployee.Where(x=>x.id == mEmployee.id).FirstOrDefault();
+            //if (mEmployee.emp_aktif == null)
+            //{
+            //    mEmployee.emp_aktif = mEmployeeExist.emp_aktif;
+            //}
+            
             TempData["activeEmployee"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
@@ -143,13 +158,11 @@ namespace WebAppSDM.Controllers
                 return NotFound();
             }
 
-            //if (ModelState.IsValid)
-            //{
             try
             {
                 mEmployee.emp_photo = mEmployee.nip + ".jpg";
-                _context.Update(mEmployee);
-                await _context.SaveChangesAsync();
+                _context.MEmployee.Update(mEmployee);
+                _context.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {

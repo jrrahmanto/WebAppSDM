@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Reporting.WebForms;
 using NuGet.Protocol;
 using NuGet.Protocol.Plugins;
@@ -192,29 +193,16 @@ namespace WebAppSDM.Controllers
             string url = "http://182.253.222.68:33677/ReportServer?/SDMInternalReports/Rpt_TGaji/&rs:Command=Render&rs:Format=EXCELOPENXML&rc:OutputFormat=XLS&start_date=" + tGaji.periodestart.ToString("yyyy-MM-dd")+ "&end_date="+tGaji.periodeend.ToString("yyyy-MM-dd") + "";
 
             System.Net.HttpWebRequest Req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
-            Req.Credentials = new NetworkCredential("admin", "Jakarta2020");
+            Req.Credentials = new NetworkCredential(@"PTKBI\admin", @"Jakarta2020");
             Req.Method = "GET";
 
-            string path = Path.GetFullPath("wwwroot/dokumen/reportgaji.xlsx");
-
             System.Net.WebResponse objResponse = Req.GetResponse();
-            System.IO.FileStream fs = new System.IO.FileStream(path, System.IO.FileMode.Create);
             System.IO.Stream stream = objResponse.GetResponseStream();
 
-            byte[] buf = new byte[1024];
-            int len = stream.Read(buf, 0, 1024);
+            var net = new System.Net.WebClient();
+            var content = stream;
 
-            while (len > 0)
-            {
-                fs.WriteAsync(buf, 0, len);
-                len = stream.Read(buf, 0, 1024);
-            }
-            stream.Close();
-            fs.Close();
-
-            byte[] fileBytes = System.IO.File.ReadAllBytes(path);
-            System.IO.File.Delete(path);
-            return File(fileBytes, "application/force-download", "reportgaji.xlsx");
+            return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "report gaji "+DateTime.Now.ToString("yyyyMMdd") + ".xlsx");
         }
     }
 }

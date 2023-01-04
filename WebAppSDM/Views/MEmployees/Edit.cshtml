@@ -1,12 +1,14 @@
 ﻿@model WebAppSDM.Models.MEmployee
 @inject IHttpContextAccessor HttpContextAccessor
+@using Microsoft.AspNetCore.Http
 
 @{
+    string role = HttpContextAccessor.HttpContext.Session.GetString("role");
     var GradeList = (List<DropdownList.GradeList>)ViewData["GradeList"];
     var JabatanList = (List<DropdownList.JabatanList>)ViewData["JabatanList"];
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    string path = "/photos/"+Model.nip+".jpg";
+    string path = "/photos/" + Model.nip + ".jpg";
 }
 <script type="text/javascript">
     $(document).ready(function () {
@@ -33,7 +35,15 @@
                         <input type="hidden" asp-for="emp_photo" />
                         <div class="form-group">
                             <label class="control-label">NIP</label>
-                            <input asp-for="nip" class="form-control" />
+                            @if (role == "1")
+                            {
+                                <input asp-for="nip" class="form-control" />
+                            }
+                            else
+                            {
+                                <input asp-for="nip" class="form-control" readonly="readonly" />
+                            }
+
                             <span asp-validation-for="nip" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -42,16 +52,27 @@
                             <span asp-validation-for="nama" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="emp_email" class="control-label"></label>
+                            <label class="control-label">Email</label>
                             <input asp-for="emp_email" type="email" class="form-control" />
                             <span asp-validation-for="emp_email" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Karyawan Aktif</label>
-                            <select asp-for="emp_aktif" class="form-control">
-                                <option value="t">Aktif</option>
-                                <option value="f">Tdk Aktif</option>
-                            </select>
+                            @if (role == "1")
+                            {
+                                <select asp-for="emp_aktif" class="form-control">
+                                    <option value="t">Aktif</option>
+                                    <option value="f">Tdk Aktif</option>
+                                </select>
+                            }
+                            else
+                            {
+                                <select asp-for="emp_aktif" class="form-control" disabled>
+                                    <option value="t">Aktif</option>
+                                    <option value="f">Tdk Aktif</option>
+                                </select>
+                            }
+
                             <span asp-validation-for="emp_aktif" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -137,7 +158,7 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label">No Handphone 1</label>
-                            <input asp-for="emp_phone_1" class="form-control" placeholder="0821xxxxxx"/>
+                            <input asp-for="emp_phone_1" class="form-control" placeholder="0821xxxxxx" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">No Handphone 2</label>
@@ -145,11 +166,11 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label">No. Telepon 1</label>
-                            <input asp-for="emp_cellphone_1" class="form-control" placeholder="021xxxxxx"/>
+                            <input asp-for="emp_cellphone_1" class="form-control" placeholder="021xxxxxx" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">No. Telepon 2</label>
-                            <input asp-for="emp_cellphone_2" class="form-control" placeholder="021xxxxxx"/>
+                            <input asp-for="emp_cellphone_2" class="form-control" placeholder="021xxxxxx" />
                         </div>
                         <div class="form-group">
                             <label class="control-label">Agama</label>
@@ -242,7 +263,7 @@
                             <input name="photo" id="photo" type="file" class="form-control" onchange="return fileValidationJPEG()" accept=".jpg" />
                             <label style="color:red">*Maksimum 5 mb</label>
                             <br />
-                            <a href=@path  target="_blank">Download Foto</a>
+                            <a href=@path target="_blank">Download Foto</a>
                         </div>
                         <div id="imagePreview"></div>
                         <br />

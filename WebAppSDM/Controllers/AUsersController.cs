@@ -64,7 +64,7 @@ namespace WebAppSDM.Controllers
                         _context.Add(aUser);
                         await _context.SaveChangesAsync();
                         string text = System.IO.File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\html\\TemplateEmail.cshtml"));
-                        text = text.Replace("#body#", "Email ini di daftarkan untuk account website SDM, berikut adalah akun untuk login ke website SDM,");
+                        text = text.Replace("#body#", "Email ini di daftarkan untuk account website SDM, berikut adalah akun untuk login ke website SDM\nhttps://sdm-ptkbi.azurewebsites.net/,");
                         text = text.Replace("#username#", aUser.username);
                         text = text.Replace("#password#", pwdori);
                         text = text.Replace("#name#", aUser.username);

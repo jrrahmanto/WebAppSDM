@@ -66,7 +66,9 @@ namespace WebAppSDM.Data
                 entity.Property(e => e.Nama).HasMaxLength(50);
             });
             modelBuilder.Entity<ViewTAbsensi>(entity => {
+                entity.HasKey(e => e.id);
                 entity.ToTable("ViewTAbsensi");
+                entity.Property(e => e.nama).HasMaxLength(50);
             });
             modelBuilder.Entity<DropdownList.KaryawanList>(entity => {
                 entity.HasKey(e => e.id);
