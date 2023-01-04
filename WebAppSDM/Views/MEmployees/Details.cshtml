@@ -15,249 +15,90 @@
                 <div class="card-body">
                     @foreach (var item in Model)
                     {
-                        <dl class="row">
-                            <dt class="col-sm-3">
-                                <img src="~/photos/@item.nip@extphoto" style=" width: 100%;height: auto;" />
-                            </dt>
-                            <dt class="col-sm-3">
-                                NIP
-                            </dt>
-                            <dd class="col-sm-6">
-                                : @item.nip
-                            </dd>
-
-                            <dt class="col-sm-3">
-                                NAMA
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.nama
-                            </dd>
-                            <dt class="col-sm-3">
-                                TEMPAT, TGL LAHIR
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_pob , @item.emp_dob.Value.ToString("dd/MM/yyyy")
-                            </dd>
-                            <dt class="col-sm-3">
-                                JENIS KELAMIN
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_sex
-                            </dd>
-                            <dt class="col-sm-3">
-                                ALAMAT 1
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_address_1
-                            </dd>
-                            <dt class="col-sm-3">
-                                ALAMAT 2
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_address_2
-                            </dd>
-                            <dt class="col-sm-3">
-                                NO. HANDPHONE 1
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_phone_1
-                            </dd>
-                            <dt class="col-sm-3">
-                                NO. HANDPHONE 2
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_phone_2
-                            </dd>
-                            <dt class="col-sm-3">
-                                NO. TELEPHONE 1
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_cellphone_1
-                            </dd>
-                            <dt class="col-sm-3">
-                                NO. TELEPHONE 2
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_cellphone_2
-                            </dd>
-                            <dt class="col-sm-3">
-                                AGAMA
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_religion
-                            </dd>
-                            <dt class="col-sm-3">
-                                NO. NPWP
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_NPWP
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_KTP
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_KTP
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_passport
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_passport
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_passportexp
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_passportexp
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_licenseA
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_licenseA
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_licenseAexp
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_licenseAexp
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_licenseB
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_licenseB
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_licenseBexp
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_licenseBexp
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_licenseC
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_licenseC
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_licenseCexp
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_licenseCexp
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_marital
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_marital
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_dom
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_dom
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_email
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_email
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_aktif
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_aktif
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_photo
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_photo
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_ptkp
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_ptkp
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_norek
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_norek
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_bank
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_bank
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_an
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_an
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_status
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_status
-                            </dd>
-                            <dt class="col-sm-3">
-                                emp_darah
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.emp_darah
-                            </dd>
-                            <dt class="col-sm-3">
-                                grade_id
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.grade_id
-                            </dd>
-                            <dt class="col-sm-3">
-                                jabatan_id
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.jabatan_id
-                            </dd>
-                            <dt class="col-sm-3">
-                                salary
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.salary
-                            </dd>
-                            <dt class="col-sm-3">
-                                permanent_date
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.permanent_date
-                            </dd>
-                            <dt class="col-sm-3">
-                                contract_date
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.contract_date
-                            </dd>
-                            <dt class="col-sm-3">
-                                date_of_entry
-                            </dt>
-                            <dd class="col-sm-9">
-                                : @item.date_of_entry
-                            </dd>
-                            <dt class="col-sm-3">
-                                <a asp-action="Edit" asp-route-id="@item?.id">Edit</a> |
-                                <a asp-action="Index">Back to List</a>
-                            </dt>
-                            <dd class="col-sm-9">
-
-                            </dd>
-                        </dl>
-
+                        <table border="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th rowspan="22" width="20%" style="vertical-align: top;"><center><img src="~/photos/@item.nip@extphoto" style=" width: 40%;height: auto;" /></center></th>
+                                    <th width="20%">NIP</th>
+                                    <th>: @item.nip</th>
+                                </tr>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>: @item.nama</th>
+                                </tr>
+                                <tr>
+                                    <th>Tempat, Tgl Lahir</th>
+                                    <th>: @item.emp_pob , @item.emp_dob.Value.ToString("dd/MM/yyyy")</th>
+                                </tr>
+                                <tr>
+                                    <th>Jenis Kelamin</th>
+                                    <th>: @item.emp_sex</th>
+                                </tr>
+                                <tr>
+                                    <th>Alamat 1</th>
+                                    <th>: @item.emp_address_1</th>
+                                </tr>
+                                <tr>
+                                    <th>Alamat 2</th>
+                                    <th>: @item.emp_address_2</th>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>: @item.emp_email</th>
+                                </tr>
+                                <tr>
+                                    <th>No. Handphone</th>
+                                    <th>: @item.emp_phone_1 / @item.emp_phone_2</th>
+                                </tr>
+                                 <tr>
+                                    <th>Agama</th>
+                                    <th>: @item.emp_religion</th>
+                                </tr>
+                                <tr>
+                                    <th>No. NPWP</th>
+                                    <th>: @item.emp_NPWP</th>
+                                </tr>
+                                <tr>
+                                    <th>NIK KTP</th>
+                                    <th>: @item.emp_KTP</th>
+                                </tr>
+                                 <tr>
+                                    <th>ID Passport</th>
+                                    <th>: @item.emp_passport</th>
+                                </tr>
+                                <tr>
+                                    <th>Exp Passport</th>
+                                    <th>: @item.emp_passportexp</th>
+                                </tr>
+                                  <tr>
+                                    <th>Status</th>
+                                    <th>: @item.emp_marital</th>
+                                </tr>
+                                <tr>
+                                    <th>Tanggal Menikah</th>
+                                    <th>: @item.emp_marital</th>
+                                </tr>
+                                <tr>
+                                    <th>Status PTKP</th>
+                                    <th>: @item.emp_ptkp</th>
+                                </tr>
+                                <tr>
+                                    <th>Bank</th>
+                                    <th>: @item.emp_bank</th>
+                                </tr>
+                                <tr>
+                                    <th>No Rekening</th>
+                                    <th>: @item.emp_norek</th>
+                                </tr>
+                                <tr>
+                                    <th>Gol Darah</th>
+                                    <th>: @item.emp_darah</th>
+                                </tr>
+                            </thead>
+                        </table>
                     }
+                    <br />
+                    <a asp-action="Index">Back to List</a>
                 </div>
             </div>
         </div>

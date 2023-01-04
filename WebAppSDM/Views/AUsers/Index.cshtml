@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<WebAppSDM.Models.AUser>
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
 
 @{
+    string role = HttpContextAccessor.HttpContext.Session.GetString("role");
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -19,8 +22,10 @@
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Authorize/</span>Account</h4>
     <!-- Basic Bootstrap Table -->
     <div class="card">
-        <h5 class="card-header"> <a asp-action="Create" class="btn btn-sm btn-outline-primary">Create</a></h5>
-
+        @if (role == "1")
+        {
+            <h5 class="card-header"> <a asp-action="Create" class="btn btn-sm btn-outline-primary">Create</a></h5>
+        }
         <div class="card-header">
 
             <table class="table" id="myDataTable">

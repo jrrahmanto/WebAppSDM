@@ -26,7 +26,16 @@ namespace WebAppSDM.Controllers
         // GET: AUsers
         public async Task<IActionResult> Index()
         {
-              return View(await _context.AUser.OrderBy(x=>x.isactive).ToListAsync());
+            string role = HttpContext.Session.GetString("role");
+            if (role == "1")
+            {
+                return View(await _context.AUser.OrderBy(x => x.isactive).ToListAsync());
+            }
+            else
+            {
+                string nip = HttpContext.Session.GetString("nip");
+                return View(await _context.AUser.Where(x=>x.nip == nip).OrderBy(x => x.isactive).ToListAsync());
+            }
         }
 
         // GET: AUsers/Create
