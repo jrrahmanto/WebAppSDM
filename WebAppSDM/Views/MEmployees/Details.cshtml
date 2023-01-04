@@ -76,7 +76,17 @@
                                 </tr>
                                 <tr>
                                     <th>Tanggal Menikah</th>
-                                    <th>: @item.emp_marital</th>
+                                    @if (item.emp_dom != null)
+                                    {
+                                        <th>: @item.emp_dom.Value.ToString("dd/MM/yyyy") </th>
+                                    }
+                                    else
+                                    {
+                                        <th>:
+                                        </th>
+                                            
+                                    }
+                                    
                                 </tr>
                                 <tr>
                                     <th>Status PTKP</th>
