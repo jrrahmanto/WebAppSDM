@@ -3,7 +3,9 @@
 @{
     string username = HttpContextAccessor.HttpContext.Session.GetString("username");
     ViewData["Title"] = "Home Page";
+    var x = 50;
 }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
         <div class="col-lg-8 mb-4 order-0">
@@ -52,14 +54,12 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                        <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                        <a class="dropdown-item" href="javascript:void(0);">Detail</a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="fw-semibold d-block mb-1">Profit</span>
-                            <h3 class="card-title mb-2">$12,628</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+                            <span class="fw-semibold d-block mb-1">Sisa Plafond Kesehatan</span>
+                            <h3 class="card-title mb-2">90.000</h3>
                         </div>
                     </div>
                 </div>
@@ -82,14 +82,12 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                        <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                        <a class="dropdown-item" href="javascript:void(0);">Detail</a>
                                     </div>
                                 </div>
                             </div>
-                            <span>Sales</span>
-                            <h3 class="card-title text-nowrap mb-1">$4,679</h3>
-                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                            <span>Plafond Terpakai</span>
+                            <h3 class="card-title text-nowrap mb-1">9.421</h3>
                         </div>
                     </div>
                 </div>
@@ -101,52 +99,24 @@
                 <div class="row row-bordered g-0">
                     <div class="col-md-8">
                         <h5 class="card-header m-0 me-2 pb-3">Total Karyawan</h5>
-                        <div id="totalRevenueChart" class="px-2"></div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <canvas id="myChart" class="chartjs" data-height="400"></canvas>
+                            </div>
+                        </div>
+
+                        @*<div id="totalRevenueChart" class="px-2"></div>*@
 
                     </div>
                     <div class="col-md-4">
-                        <div class="card-body">
-                            <div class="text-center">
-                                <div class="dropdown">
-                                    <button class="btn btn-sm btn-outline-primary dropdown-toggle"
-                                            type="button"
-                                            id="growthReportId"
-                                            data-bs-toggle="dropdown"
-                                            aria-haspopup="true"
-                                            aria-expanded="false">
-                                        2022
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
-                                        <a class="dropdown-item" href="javascript:void(0);">2021</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">2020</a>
-                                        <a class="dropdown-item" href="javascript:void(0);">2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="growthChart"></div>
-                        <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
+                        <br />
+                        <br />
+                        
+                        <canvas id="myChartPie" style="width:100%;max-width:100%"></canvas>
+                       
+                        <div class="text-center fw-semibold pt-3 mb-2">15% Perempuan<br />75% Laki Laki</div>
 
-                        <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
-                            <div class="d-flex">
-                                <div class="me-2">
-                                    <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <small>2022</small>
-                                    <h6 class="mb-0">$32.5k</h6>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <div class="me-2">
-                                    <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <small>2021</small>
-                                    <h6 class="mb-0">$41.2k</h6>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -511,3 +481,43 @@
         <!--/ Transactions -->
     </div>
 </div>
+<script>
+    var xValues = ["Jan", "Feb", "Mar", "Apr", "Mei"];
+    var yValues = [55, 0, 0, 0, 0];
+    var barColors = ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(54, 162, 235, 0.2)"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            title: {
+                display: false,
+                text: "World Wine Production 2018"
+            }
+        }
+    });
+
+    new Chart("myChartPie", {
+        type: "pie",
+        data: {
+            labels: ["Laki laki", "Perempuan"],
+            datasets: [{
+                backgroundColor: ["blue","red",],
+                data: [35,20]
+            }]
+        },
+        options: {
+            title: {
+                display: false,
+                text: "World Wide Wine Production"
+            }
+        }
+    });
+</script>
