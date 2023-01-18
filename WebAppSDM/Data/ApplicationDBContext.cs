@@ -42,6 +42,7 @@ namespace WebAppSDM.Data
         public DbSet<ViewTMutasi> ViewTMutasi { get; set; }
         public DbSet<ViewMasterAbsen> ViewMasterAbsen { get; set; }
         public DbSet<ViewAbsenKhusus> ViewAbsenKhusus { get; set; }
+        public DbSet<MDivisi> MDivisi { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ViewTunjangan>(entity => {

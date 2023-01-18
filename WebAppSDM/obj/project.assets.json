@@ -10816,11 +10816,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\WebAppSDM.csproj",
+      "projectUniqueName": "D:\\Source Code\\Web Code\\WebAppSDM\\WebAppSDM\\WebAppSDM.csproj",
       "projectName": "WebAppSDM",
-      "projectPath": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\WebAppSDM.csproj",
+      "projectPath": "D:\\Source Code\\Web Code\\WebAppSDM\\WebAppSDM\\WebAppSDM.csproj",
       "packagesPath": "C:\\Users\\IFA DTI\\.nuget\\packages\\",
-      "outputPath": "D:\\Source Code Service\\WebAppSDM\\WebAppSDM\\obj\\",
+      "outputPath": "D:\\Source Code\\Web Code\\WebAppSDM\\WebAppSDM\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

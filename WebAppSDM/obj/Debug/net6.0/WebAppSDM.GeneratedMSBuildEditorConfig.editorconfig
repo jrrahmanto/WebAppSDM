@@ -8,329 +8,349 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebAppSDM
 build_property.RootNamespace = WebAppSDM
-build_property.ProjectDir = D:\Source Code Service\WebAppSDM\WebAppSDM\
+build_property.ProjectDir = D:\Source Code\Web Code\WebAppSDM\WebAppSDM\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Source Code Service\WebAppSDM\WebAppSDM
+build_property.MSBuildProjectDirectory = D:\Source Code\Web Code\WebAppSDM\WebAppSDM
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/AUsers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/AUsers/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/AUsers/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/AUsers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVVzZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/Home/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/Home/Privacy.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/Login/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MDivisis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTURpdmlzaXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MDivisis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTURpdmlzaXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MDivisis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTURpdmlzaXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MDivisis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTURpdmlzaXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MDivisis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTURpdmlzaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmployees/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmployees/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Details.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmployees/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmployees/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MEmployees/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmployees/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcGxveWVlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MGrade/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MGrade/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUdyYWRlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MGrade/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MGrade/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUdyYWRlXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MGrade/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MGrade/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUdyYWRlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MGrade/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MGrade/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUdyYWRlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MHariLiburs/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MHariLiburs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUhhcmlMaWJ1cnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MHariLiburs/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MHariLiburs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUhhcmlMaWJ1cnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MHariLiburs/Details.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MHariLiburs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUhhcmlMaWJ1cnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MHariLiburs/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MHariLiburs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUhhcmlMaWJ1cnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MHariLiburs/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MHariLiburs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUhhcmlMaWJ1cnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MJabatan/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MJabatan/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUphYmF0YW5cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MJabatan/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MJabatan/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUphYmF0YW5cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MJabatan/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MJabatan/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUphYmF0YW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MJabatan/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MJabatan/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUphYmF0YW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MKaryawan/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MKaryawan/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUthcnlhd2FuXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MKaryawan/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MKaryawan/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUthcnlhd2FuXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MKaryawan/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MKaryawan/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUthcnlhd2FuXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MKaryawan/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MKaryawan/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUthcnlhd2FuXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MMesinAbsen/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MMesinAbsen/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTU1lc2luQWJzZW5cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MMesinAbsen/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MMesinAbsen/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTU1lc2luQWJzZW5cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MMesinAbsen/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MMesinAbsen/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTU1lc2luQWJzZW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MMesinAbsen/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MMesinAbsen/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTU1lc2luQWJzZW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MParameters/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MParameters/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBhcmFtZXRlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MParameters/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MParameters/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBhcmFtZXRlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MParameters/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MParameters/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBhcmFtZXRlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MParameters/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MParameters/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBhcmFtZXRlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Details.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MPotonganPersons/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuUGVyc29uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotongan/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MPotongan/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotongan/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MPotongan/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotongan/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MPotongan/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MPotongan/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MPotongan/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVBvdG9uZ2FuXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MTunjanganPersons/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MTunjanganPersons/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVR1bmphbmdhblBlcnNvbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MTunjanganPersons/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MTunjanganPersons/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVR1bmphbmdhblBlcnNvbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MTunjanganPersons/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MTunjanganPersons/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVR1bmphbmdhblBlcnNvbnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MTunjanganPersons/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MTunjanganPersons/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVR1bmphbmdhblBlcnNvbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MTunjangan/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MTunjangan/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVR1bmphbmdhblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MTunjangan/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MTunjangan/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVR1bmphbmdhblxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MTunjangan/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MTunjangan/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVR1bmphbmdhblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/MTunjangan/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MTunjangan/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTVR1bmphbmdhblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/Shared/Error.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFic2VuS2h1c3VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFic2VuS2h1c3VzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Details.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFic2VuS2h1c3VzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFic2VuS2h1c3VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TAbsenKhusus/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFic2VuS2h1c3VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TAbsensi/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TAbsensi/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFic2Vuc2lcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TAbsensi/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TAbsensi/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFic2Vuc2lcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TGajisNew/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TGajisNew/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEdhamlzTmV3XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TGajisNew/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TGajisNew/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEdhamlzTmV3XERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TGajisNew/Details.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TGajisNew/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEdhamlzTmV3XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TGajisNew/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TGajisNew/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEdhamlzTmV3XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TGajisNew/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TGajisNew/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEdhamlzTmV3XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TKoperasi/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TKoperasi/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEtvcGVyYXNpXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TKoperasi/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TKoperasi/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEtvcGVyYXNpXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TKoperasi/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TKoperasi/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEtvcGVyYXNpXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TKoperasi/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TKoperasi/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEtvcGVyYXNpXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Create.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TMutasis/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Delete.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TMutasis/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Details.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TMutasis/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Edit.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TMutasis/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/TMutasis/Index.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TMutasis/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVE11dGFzaXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/_ViewImports.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/_ViewStart.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/wwwroot/html/TemplateEmail.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/wwwroot/html/TemplateEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = d3d3cm9vdFxodG1sXFRlbXBsYXRlRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source Code Service/WebAppSDM/WebAppSDM/Views/Shared/_Layout.cshtml]
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-sqye80e9b1
