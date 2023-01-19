@@ -43,6 +43,8 @@ namespace WebAppSDM.Data
         public DbSet<ViewMasterAbsen> ViewMasterAbsen { get; set; }
         public DbSet<ViewAbsenKhusus> ViewAbsenKhusus { get; set; }
         public DbSet<MDivisi> MDivisi { get; set; }
+        public DbSet<TDivisi> TDivisi { get; set; }
+        public DbSet<ViewDivisi> ViewDivisi { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ViewTunjangan>(entity => {
@@ -105,6 +107,11 @@ namespace WebAppSDM.Data
                 entity.HasKey(e => e.id);
                 entity.ToTable("ViewAbsenKhusus");
                 entity.Property(e => e.nama).HasMaxLength(100);
+            });
+            modelBuilder.Entity<ViewDivisi>(entity => {
+                entity.HasKey(e => e.id);
+                entity.ToTable("ViewDivisi");
+                entity.Property(e => e.divisi_name).HasMaxLength(100);
             });
         }
     }

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebAppSDM.Models.ViewDivisi>
+@if (TempData["ResultOk"] != null)
+{
+    <h1 class="card-header">@TempData["ResultOk"]</h1>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.noConflict();
+        $('#myDataTable').DataTable({});
+    });
+</script>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Karyawan/</span>Data Divisi</h4>
+    <!-- Basic Bootstrap Table -->
+    <div class="card">
+        <h5 class="card-header"> <a asp-action="create" class="btn btn-sm btn-outline-primary">Create</a></h5>
+        <div class="card-header">
+
+            <table class="table" id="myDataTable">
+                <thead>
+                    <tr>
+                        <th>
+                            Nama Divisi
+                        </th>
+                        <th>
+                            Total Karyawan
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.divisi_name
+                            </td>
+                            <td>
+                                @item.totalkaryawan
+                            </td>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.id">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -283,6 +283,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFic2Vuc2lcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TDivisis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVERpdmlzaXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TDivisis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVERpdmlzaXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TDivisis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVERpdmlzaXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TDivisis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVERpdmlzaXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TDivisis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVERpdmlzaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/TGajisNew/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEdhamlzTmV3XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
