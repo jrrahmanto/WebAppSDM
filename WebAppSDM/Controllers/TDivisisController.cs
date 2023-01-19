@@ -10,6 +10,7 @@ using WebAppSDM.Models;
 
 namespace WebAppSDM.Controllers
 {
+    [Models.Authorize]
     public class TDivisisController : Controller
     {
         private readonly ApplicationDBContext _context;
