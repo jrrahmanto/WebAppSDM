@@ -1,43 +1,53 @@
-﻿@model WebAppSDM.Models.TDivisi
-
-@{
-    ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@model IEnumerable<WebAppSDM.Models.TDivisiDetail>
+@if (TempData["ResultOk"] != null)
+{
+    <h1 class="card-header">@TempData["ResultOk"]</h1>
 }
 
-<h1>Details</h1>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.noConflict();
+        $('#myDataTable').DataTable({});
+    });
+</script>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Daftar </span>@Model.FirstOrDefault().divisi_name</h4>
+    <!-- Basic Bootstrap Table -->
+    <div class="card">
+       
+        <h5 class="card-header"> <a asp-action="index" class="btn btn-sm btn-outline-primary">Beck</a></h5>
+        <div class="card-header">
 
-<div>
-    <h4>TDivisi</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.id_divisi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.id_divisi)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nip)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.nip)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.createdate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.createdate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.isdelete)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.isdelete)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+            <table class="table" id="myDataTable">
+                <thead>
+                    <tr>
+                        <th>
+                            Nama Karyawan
+                        </th>
+                        <th>
+                            NIP
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.nama
+                            </td>
+                            <td>
+                                @item.nip
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> | 
+                                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

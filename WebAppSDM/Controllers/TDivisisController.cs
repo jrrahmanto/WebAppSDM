@@ -33,8 +33,7 @@ namespace WebAppSDM.Controllers
                 return NotFound();
             }
 
-            var tDivisi = await _context.TDivisi
-                .FirstOrDefaultAsync(m => m.id == id);
+            var tDivisi = await _context.TDivisiDetail.Where(x => x.id_divisi == id).ToListAsync();
             if (tDivisi == null)
             {
                 return NotFound();
@@ -83,6 +82,8 @@ namespace WebAppSDM.Controllers
         // GET: TDivisis/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
+            ViewData["KaryawanList"] = KaryawanList;
             if (id == null || _context.TDivisi == null)
             {
                 return NotFound();
@@ -103,6 +104,8 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,id_divisi,nip,createdate,isdelete")] TDivisi tDivisi)
         {
+            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
+            ViewData["KaryawanList"] = KaryawanList;
             if (id != tDivisi.id)
             {
                 return NotFound();
@@ -152,20 +155,37 @@ namespace WebAppSDM.Controllers
         // POST: TDivisis/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id, [Bind("id,id_divisi,nip,createdate,isdelete")] TDivisi tDivisi)
         {
-            if (_context.TDivisi == null)
+            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
+            ViewData["KaryawanList"] = KaryawanList;
+            tDivisi.isdelete = 1;
+            if (id != tDivisi.id)
             {
-                return Problem("Entity set 'ApplicationDBContext.TDivisi'  is null.");
+                return NotFound();
             }
-            var tDivisi = await _context.TDivisi.FindAsync(id);
-            if (tDivisi != null)
+
+            if (ModelState.IsValid)
             {
-                _context.TDivisi.Remove(tDivisi);
+                try
+                {
+                    _context.Update(tDivisi);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TDivisiExists(tDivisi.id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
             }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return View(tDivisi);
         }
 
         private bool TDivisiExists(int id)

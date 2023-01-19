@@ -1,46 +1,27 @@
 ﻿@model WebAppSDM.Models.TDivisi
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Apakah anda yakin ? </h4>
 
-@{
-    ViewData["Title"] = "Delete";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>TDivisi</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.id_divisi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.id_divisi)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.nip)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.nip)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.createdate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.createdate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.isdelete)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.isdelete)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="id" />
+                        <input type="hidden" asp-for="createdate" />
+                        <input type="hidden" asp-for="isdelete" />
+                        <input type="hidden" asp-for="id_divisi" />
+                        <input type="hidden" asp-for="nip" />
+                        <br />
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                            <a onclick="history.back()" class="btn btn-lg btn-danger p-2">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
