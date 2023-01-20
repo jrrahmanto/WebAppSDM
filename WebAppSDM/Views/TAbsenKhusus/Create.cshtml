@@ -38,10 +38,24 @@
                             <input asp-for="periode_end" type="date" class="form-control" />
                             <span asp-validation-for="periode_end" class="text-danger"></span>
                         </div>
-                        <div class="form-group">
-                            <label asp-for="keterangan" class="control-label"></label>
-                            <input asp-for="keterangan" class="form-control" />
-                            <span asp-validation-for="keterangan" class="text-danger"></span>
+                        <div class="form-grou">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Keterangan</label>
+
+                            <select asp-for="keterangan" class="form-select">
+                                <option value="-">-</option>
+                                <option value="sakit">Sakit</option>
+                                <option value="Danareksa">Danareksa</option>
+                                <option value="cuti tahunan">Cuti Tahunan</option>
+                                <option value="cuti besar">Cuti Besar</option>
+                                <option value="gathering">Gathering</option>
+                                <option value="Dinas">Dinas</option>
+                                <option value="Pelatihan">Pelatihan</option>
+                                <option value="Mobile/Flexitime">Mobile/Flexitime</option>
+                                <option value="WFH">WFH</option>
+                                <option value="EOD">EOD</option>
+                                <option value="piket">Piket</option>
+                                <option value="Lain-Lain">Lain lain</option>
+                            </select>
                         </div>
                         <br />
                         <div class="form-group">

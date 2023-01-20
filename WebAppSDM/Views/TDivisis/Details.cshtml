@@ -1,4 +1,9 @@
 ﻿@model IEnumerable<WebAppSDM.Models.TDivisiDetail>
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    string role = HttpContextAccessor.HttpContext.Session.GetString("role");
+}
 @if (TempData["ResultOk"] != null)
 {
     <h1 class="card-header">@TempData["ResultOk"]</h1>
@@ -14,7 +19,7 @@
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Daftar </span>@Model.FirstOrDefault().divisi_name</h4>
     <!-- Basic Bootstrap Table -->
     <div class="card">
-       
+
         <h5 class="card-header"> <a asp-action="index" class="btn btn-sm btn-outline-primary">Beck</a></h5>
         <div class="card-header">
 
@@ -40,10 +45,16 @@
                             <td>
                                 @item.nip
                             </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> | 
-                                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-                            </td>
+                            @if (role == "1")
+                            {
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                                </td>
+                            }else
+                            {
+                                <td></td>
+                            }
                         </tr>
                     }
                 </tbody>

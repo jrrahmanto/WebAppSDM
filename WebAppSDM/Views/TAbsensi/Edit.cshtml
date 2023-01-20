@@ -26,13 +26,33 @@
                             </div>
                         </div>
                         <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-default-company">Keterangan</label>
+                            <div class="col-sm-10">
+                                <select asp-for="keterangan" class="form-select">
+                                    <option value="-">-</option>
+                                    <option value="sakit">Sakit</option>
+                                    <option value="Danareksa">Danareksa</option>
+                                    <option value="cuti tahunan">Cuti Tahunan</option>
+                                    <option value="cuti besar">Cuti Besar</option>
+                                    <option value="gathering">Gathering</option>
+                                    <option value="Dinas">Dinas</option>
+                                    <option value="Pelatihan">Pelatihan</option>
+                                    <option value="Mobile/Flexitime">Mobile/Flexitime</option>
+                                    <option value="WFH">WFH</option>
+                                    <option value="EOD">EOD</option>
+                                    <option value="piket">Piket</option>
+                                    <option value="Lain-Lain">Lain lain</option>
+                                </select>
+                            </div>
+                        </div>
+                      @*  <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-email">Keterangan</label>
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
                                     <input type="text" class="form-control" asp-for="keterangan" placeholder="cuti/dinas luar/sakit" />
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-company">Status</label>
                             <div class="col-sm-10">

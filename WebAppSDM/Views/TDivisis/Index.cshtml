@@ -1,4 +1,9 @@
 ﻿@model IEnumerable<WebAppSDM.Models.ViewDivisi>
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    string role = HttpContextAccessor.HttpContext.Session.GetString("role");
+}
 @if (TempData["ResultOk"] != null)
 {
     <h1 class="card-header">@TempData["ResultOk"]</h1>
@@ -14,7 +19,10 @@
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Karyawan/</span>Data Divisi</h4>
     <!-- Basic Bootstrap Table -->
     <div class="card">
-        <h5 class="card-header"> <a asp-action="create" class="btn btn-sm btn-outline-primary">Create</a></h5>
+        @if (role == "1")
+        {
+            <h5 class="card-header"> <a asp-action="create" class="btn btn-sm btn-outline-primary">Create</a></h5>
+        }
         <div class="card-header">
 
             <table class="table" id="myDataTable">

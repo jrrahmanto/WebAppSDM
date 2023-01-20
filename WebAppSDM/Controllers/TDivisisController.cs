@@ -23,12 +23,14 @@ namespace WebAppSDM.Controllers
         // GET: TDivisis
         public async Task<IActionResult> Index()
         {
-              return View(await _context.ViewDivisi.ToListAsync());
+            TempData["activeEmployee"] = "active";
+            return View(await _context.ViewDivisi.ToListAsync());
         }
 
         // GET: TDivisis/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            TempData["activeEmployee"] = "active";
             if (id == null || _context.TDivisi == null)
             {
                 return NotFound();
@@ -46,6 +48,7 @@ namespace WebAppSDM.Controllers
         // GET: TDivisis/Create
         public IActionResult Create()
         {
+            TempData["activeEmployee"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
 
@@ -62,6 +65,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,id_divisi,nip,createdate,isdelete")] TDivisi tDivisi)
         {
+            TempData["activeEmployee"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
 
@@ -83,6 +87,7 @@ namespace WebAppSDM.Controllers
         // GET: TDivisis/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            TempData["activeEmployee"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
             if (id == null || _context.TDivisi == null)
@@ -105,6 +110,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,id_divisi,nip,createdate,isdelete")] TDivisi tDivisi)
         {
+            TempData["activeEmployee"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
             if (id != tDivisi.id)
@@ -138,6 +144,7 @@ namespace WebAppSDM.Controllers
         // GET: TDivisis/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            TempData["activeEmployee"] = "active";
             if (id == null || _context.TDivisi == null)
             {
                 return NotFound();
@@ -158,6 +165,7 @@ namespace WebAppSDM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id, [Bind("id,id_divisi,nip,createdate,isdelete")] TDivisi tDivisi)
         {
+            TempData["activeEmployee"] = "active";
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
             ViewData["KaryawanList"] = KaryawanList;
             tDivisi.isdelete = 1;
@@ -188,7 +196,6 @@ namespace WebAppSDM.Controllers
             }
             return View(tDivisi);
         }
-
         private bool TDivisiExists(int id)
         {
           return _context.TDivisi.Any(e => e.id == id);
