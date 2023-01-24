@@ -115,7 +115,7 @@
                                         <div data-i18n="Master Parameter">Parameter</div>
                                     </a>
                                 </li>
-                                 <li class="menu-item">
+                                <li class="menu-item">
                                     <a asp-controller="MDivisis" asp-action="Index" class="menu-link">
                                         <div data-i18n="Master Divisi">Master Divisi</div>
                                     </a>
@@ -191,6 +191,13 @@
                                 </a>
                             </li>
                         </ul>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a asp-controller="MEmpFamilies" asp-action="Index" class="menu-link">
+                                    <div data-i18n="Data Keluarga">Data Keluarga</div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="menu-item @TempData["activeAbsensi"]">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -215,7 +222,7 @@
                                         <div data-i18n="Master Mesin Absen">Master Mesin Absen</div>
                                     </a>
                                 </li>
-                                    <li class="menu-item">
+                                <li class="menu-item">
                                     <a asp-controller="RptRekapAbsen" asp-action="Index" class="menu-link">
                                         <div data-i18n="Report">Report Absen</div>
                                     </a>

@@ -48,6 +48,8 @@ namespace WebAppSDM.Controllers
             }
 
             var mEmployee = await _context.MEmployee.Where(x => x.id == id).ToListAsync();
+            List<MEmpFamily> familyList = _context.MEmpFamily.Where(x => x.isdelete == 0 && x.nip == mEmployee[0].nip).ToList();
+            ViewData["familyList"] = familyList;
             if (mEmployee == null)
             {
                 return NotFound();

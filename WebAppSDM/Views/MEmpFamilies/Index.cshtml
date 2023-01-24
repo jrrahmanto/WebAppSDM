@@ -1,0 +1,109 @@
+﻿@model IEnumerable<WebAppSDM.Models.ViewEmpFamily>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.noConflict();
+        $('#myDataTable').DataTable({
+            "order": []
+        });
+    });
+</script>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Karyawan/</span>Data Keluarga</h4>
+    <!-- Basic Layout -->
+    <div class="col-xxl">
+        <div class="card mb-4">
+            <h5 class="card-header"> <a asp-action="Create" class="btn btn-sm btn-outline-primary">Create</a></h5>
+            <div class="card-body">
+                <div class="col-12">
+                    <div class="card overflow-hidden" style="height: 500px">
+                        <div class="card-body" id="both-scrollbars-example">
+
+                            <table class="display compact" style="width:100%" id="myDataTable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Nama
+                                        </th>
+                                        <th>
+                                            Nama Keluarga
+                                        </th>
+                                        <th>
+                                            Hubungan
+                                        </th>
+                                        <th>
+                                            TTL
+                                        </th>
+                                        <th>
+                                            Jenis kelamin
+                                        </th>
+                                        <th>
+                                            NIK
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item.nama
+                                            </td>
+                                            <td>
+                                                @item.fam_name
+                                            </td>
+                                            <td>
+                                                @item.fam_relationship
+                                            </td>
+
+                                            @if (item.fam_dob != null)
+                                            {
+                                                <td>
+                                                    @item.fam_pob / @item.fam_dob.Value.ToString("dd-MM-yyyy")
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                 <td>
+                                                 @item.fam_pob
+                                                </td>
+                                            }
+                                           
+                                            @if (item.fam_sex == "1")
+                                            {
+                                                <td>Laki laki</td>
+                                            }
+                                            else
+                                            {
+                                                <td>Perempuan</td>
+                                            }
+                                            <td>
+                                                @item.fam_KTP
+                                            </td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" asp-action="Edit" asp-route-id="@item.fam_id"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                                        <a class="dropdown-item" asp-action="Delete" asp-route-id="@item.fam_id"><i class="bx bx-trash"></i> Delete</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+﻿@model WebAppSDM.Models.MEmpFamily
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Yakin mau di hapus ?</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.nip)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.nip)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.fam_relationship)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.fam_relationship)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.fam_name)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.fam_name)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.fam_pob)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.fam_pob)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.fam_dob)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.fam_dob)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.fam_KTP)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.fam_KTP)
+                        </dd>
+                    </dl>
+
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="fam_id" />
+                        <input type="submit" value="Delete" class="btn btn-danger" /> |
+                        <a asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

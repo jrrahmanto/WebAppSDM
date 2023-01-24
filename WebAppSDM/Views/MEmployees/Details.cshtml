@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<WebAppSDM.Models.MEmployee>
 @{
+    var familyList = (List<MEmpFamily>)ViewData["familyList"];
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var extphoto = ".jpg";
@@ -15,99 +16,168 @@
                 <div class="card-body">
                     @foreach (var item in Model)
                     {
+                        <h5><strong>A. Data Pribadi</strong></h5>
+                        <hr />
+                        <img src="~/photos/@item.nip@extphoto" style=" width: 10%;height: auto;" />
+                        <hr />
                         <table border="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th rowspan="22" width="20%" style="vertical-align: top;"><center><img src="~/photos/@item.nip@extphoto" style=" width: 40%;height: auto;" /></center></th>
-                                    <th width="20%">NIP</th>
-                                    <th>: @item.nip</th>
-                                </tr>
-                                <tr>
-                                    <th>Nama</th>
-                                    <th>: @item.nama</th>
-                                </tr>
-                                <tr>
-                                    <th>Tempat, Tgl Lahir</th>
-                                    <th>: @item.emp_pob , @item.emp_dob.Value.ToString("dd/MM/yyyy")</th>
-                                </tr>
-                                <tr>
-                                    <th>Jenis Kelamin</th>
-                                    <th>: @item.emp_sex</th>
-                                </tr>
-                                <tr>
-                                    <th>Alamat 1</th>
-                                    <th>: @item.emp_address_1</th>
-                                </tr>
-                                <tr>
-                                    <th>Alamat 2</th>
-                                    <th>: @item.emp_address_2</th>
-                                </tr>
-                                <tr>
-                                    <th>Email</th>
-                                    <th>: @item.emp_email</th>
-                                </tr>
-                                <tr>
-                                    <th>No. Handphone</th>
-                                    <th>: @item.emp_phone_1 / @item.emp_phone_2</th>
-                                </tr>
-                                 <tr>
-                                    <th>Agama</th>
-                                    <th>: @item.emp_religion</th>
-                                </tr>
-                                <tr>
-                                    <th>No. NPWP</th>
-                                    <th>: @item.emp_NPWP</th>
-                                </tr>
-                                <tr>
-                                    <th>NIK KTP</th>
-                                    <th>: @item.emp_KTP</th>
-                                </tr>
-                                 <tr>
-                                    <th>ID Passport</th>
-                                    <th>: @item.emp_passport</th>
-                                </tr>
-                                <tr>
-                                    <th>Exp Passport</th>
-                                    <th>: @item.emp_passportexp</th>
-                                </tr>
-                                  <tr>
-                                    <th>Status</th>
-                                    <th>: @item.emp_marital</th>
-                                </tr>
-                                <tr>
-                                    <th>Tanggal Menikah</th>
-                                    @if (item.emp_dom != null)
-                                    {
-                                        <th>: @item.emp_dom.Value.ToString("dd/MM/yyyy") </th>
-                                    }
-                                    else
-                                    {
-                                        <th>:
-                                        </th>
-                                            
-                                    }
-                                    
-                                </tr>
-                                <tr>
-                                    <th>Status PTKP</th>
-                                    <th>: @item.emp_ptkp</th>
-                                </tr>
-                                <tr>
-                                    <th>Bank</th>
-                                    <th>: @item.emp_bank</th>
-                                </tr>
-                                <tr>
-                                    <th>No Rekening</th>
-                                    <th>: @item.emp_norek</th>
-                                </tr>
-                                <tr>
-                                    <th>Gol Darah</th>
-                                    <th>: @item.emp_darah</th>
-                                </tr>
-                            </thead>
+                            <tr>
+                                <td width="20%">NIP</td>
+                                <td>: @item.nip</td>
+                            </tr>
+                            <tr>
+                                <td>Nama</td>
+                                <td>: @item.nama</td>
+                            </tr>
+                            <tr>
+                                <td>Tempat, Tgl Lahir</td>
+                                <td>: @item.emp_pob , @item.emp_dob.Value.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                            <tr>
+                                <td>Jenis Kelamin</td>
+                                <td>: @item.emp_sex</td>
+                            </tr>
+                            <tr>
+                                <td>Alamat 1</td>
+                                <td>: @item.emp_address_1</td>
+                            </tr>
+                            <tr>
+                                <td>Alamat 2</td>
+                                <td>: @item.emp_address_2</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>: @item.emp_email</td>
+                            </tr>
+                            <tr>
+                                <td>No. Handphone</td>
+                                <td>: @item.emp_phone_1 / @item.emp_phone_2</td>
+                            </tr>
+                            <tr>
+                                <td>Agama</td>
+                                <td>: @item.emp_religion</td>
+                            </tr>
+                            <tr>
+                                <td>No. NPWP</td>
+                                <td>: @item.emp_NPWP</td>
+                            </tr>
+                            <tr>
+                                <td>NIK KTP</td>
+                                <td>: @item.emp_KTP</td>
+                            </tr>
+                            <tr>
+                                <td>ID Passport</td>
+                                <td>: @item.emp_passport</td>
+                            </tr>
+                            <tr>
+                                <td>Exp Passport</td>
+                                <td>: @item.emp_passportexp</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>: @item.emp_marital</td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Menikah</td>
+                                @if (item.emp_dom != null)
+                                {
+                                    <td>: @item.emp_dom.Value.ToString("dd/MM/yyyy") </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        :
+                                    </td>
+                                }
+
+                            </tr>
+                            <tr>
+                                <td>Status PTKP</td>
+                                <td>: @item.emp_ptkp</td>
+                            </tr>
+                            <tr>
+                                <td>Bank</td>
+                                <td>: @item.emp_bank</td>
+                            </tr>
+                            <tr>
+                                <td>No Rekening</td>
+                                <td>: @item.emp_norek</td>
+                            </tr>
+                            <tr>
+                                <td>Gol Darah</td>
+                                <td>: @item.emp_darah</td>
+                            </tr>
                         </table>
                     }
                     <br />
+                    <h5><strong>B. Data Keluarga</strong></h5>
+                    <hr />
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>Nama</td>
+                                    <td>Hubungan</td>
+                                    <td>TTL</td>
+                                    <td>Jenis Kelamin</td>
+                                    <td>NIK</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in familyList)
+                                {
+                                    <tr>
+                                        <td>@item.fam_name</td>
+                                        <td>@item.fam_relationship</td>
+                                        <td>@item.fam_pob / @item.fam_dob.Value.ToString("dd MM yyyy")</td>
+                                        @if (item.fam_sex == "1")
+                                        {
+                                            <td>Laki laki</td>
+                                        }
+                                        else
+                                        {
+                                            <td>Perempuan</td>
+                                        }
+                                        <td>@item.fam_KTP</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <h5><strong>C. Data Pendidikan</strong></h5>
+                    <hr />
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>Jenjang Pendidikan</td>
+                                    <td>Tempat</td>
+                                    <td>Tahun Kelulusan</td>
+                                    <td>Fakultas</td>
+                                    <td>Nilai/IPK</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h5><strong>D. Kontak Darurat</strong></h5>
+                    <hr />
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>Nama</td>
+                                    <td>Hubungan</td>
+                                    <td>Alamat</td>
+                                    <td>No HP</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                     <a asp-action="Index">Back to List</a>
                 </div>
             </div>

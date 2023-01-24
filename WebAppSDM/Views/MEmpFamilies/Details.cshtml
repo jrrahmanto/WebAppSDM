@@ -1,0 +1,79 @@
+﻿@model WebAppSDM.Models.MEmpFamily
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MEmpFamily</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nip)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nip)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fam_relationship)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fam_relationship)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fam_name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fam_name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fam_sex)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fam_sex)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fam_pob)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fam_pob)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fam_dob)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fam_dob)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fam_KTP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fam_KTP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fam_contact)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fam_contact)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isdelete)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isdelete)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.createddate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.createddate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.fam_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
