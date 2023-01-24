@@ -1,0 +1,74 @@
+﻿@model WebAppSDM.Models.MEmpEducations
+@{
+    var KaryawanList = (List<DropdownList.KaryawanList>)ViewData["KaryawanList"];
+}
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Add Pendidikan</h4>
+
+    <!-- Basic Layout & Basic with Icons -->
+    <!-- Basic Layout & Basic with Icons -->
+    <div class="row">
+        <!-- Basic Layout -->
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label class="control-label">Nama Karyawan</label>
+                            <select asp-for="nip" class="form-control" required>
+                                @foreach (var item in KaryawanList)
+                                {
+                                    <option value="@item.NIP">@item.nama</option>
+                                }
+                            </select>
+                            <span asp-validation-for="nip" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tahun Kelulusan</label>
+                            <input asp-for="edu_year" type="number" class="form-control" />
+                            <span asp-validation-for="edu_year" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Tempat</label>
+                            <input asp-for="edu_place" placeholder="Universitas KBI" class="form-control" />
+                            <span asp-validation-for="edu_place" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Fakultas</label>
+                            <select asp-for="edu_strata" class="form-control" required>
+                                <option value="SMP">SMP</option>
+                                <option value="SMA/SMK">SMA/SMK</option>
+                                <option value="D1">D1</option>
+                                <option value="D3">D3</option>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2</option>
+                                <option value="S3">S3</option>
+                            </select>
+                            <span asp-validation-for="edu_strata" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Fakultas</label>
+                            <input asp-for="edu_faculty" class="form-control" />
+                            <span asp-validation-for="edu_faculty" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Nilai/IPK</label>
+                            <input asp-for="emp_gpa" class="form-control" type="number" step=".01" />
+                            <span asp-validation-for="emp_gpa" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a asp-action="Index" class="btn btn-lg btn-danger p-2">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

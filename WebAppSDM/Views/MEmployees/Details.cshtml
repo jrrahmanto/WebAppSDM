@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<WebAppSDM.Models.MEmployee>
 @{
     var familyList = (List<MEmpFamily>)ViewData["familyList"];
+    var eduList = (List<MEmpEducations>)ViewData["eduList"];
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var extphoto = ".jpg";
@@ -159,6 +160,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach (var item in eduList)
+                                {
+                                    <tr>
+                                        <td>@item.edu_strata</td>
+                                        <td>@item.edu_place</td>
+                                        <td>@item.edu_year</td>
+                                        <td>@item.edu_faculty</td>
+                                        <td>@String.Format("{0:0.00}",item.emp_gpa)</td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>

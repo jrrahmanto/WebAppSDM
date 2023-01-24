@@ -59,6 +59,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTURpdmlzaXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmpEducations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcEVkdWNhdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmpEducations/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcEVkdWNhdGlvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmpEducations/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcEVkdWNhdGlvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmpEducations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcEVkdWNhdGlvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmpEducations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcEVkdWNhdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Source Code/Web Code/WebAppSDM/WebAppSDM/Views/MEmpFamilies/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUVtcEZhbWlsaWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
