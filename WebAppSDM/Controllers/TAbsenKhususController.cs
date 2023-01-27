@@ -24,7 +24,7 @@ namespace WebAppSDM.Controllers
         public async Task<IActionResult> Index()
         {
             TempData["activeAbsensi"] = "active";
-            return View(await _context.ViewAbsenKhusus.OrderByDescending(x=>x.periode_end).ToListAsync());
+            return View(await _context.ViewAbsenKhusus.ToListAsync());
         }
 
         // GET: TAbsenKhusus/Details/5
