@@ -23,7 +23,18 @@ namespace WebAppSDM.Controllers
         // GET: MEmpEducations
         public async Task<IActionResult> Index()
         {
-              return View(await _context.ViewEdu.ToListAsync());
+            TempData["activeEmployee"] = "active";
+            
+            string role = HttpContext.Session.GetString("role");
+            if (role == "1")
+            {
+                return View(await _context.ViewEdu.ToListAsync());
+            }
+            else
+            {
+                string nip = HttpContext.Session.GetString("nip");
+                return View(await _context.ViewEdu.Where(x => x.nip.ToString() == nip).ToListAsync());
+            }
         }
 
         // GET: MEmpEducations/Details/5
@@ -48,8 +59,18 @@ namespace WebAppSDM.Controllers
         public IActionResult Create()
         {
             TempData["activeEmployee"] = "active";
-            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
-            ViewData["KaryawanList"] = KaryawanList;
+            string role = HttpContext.Session.GetString("role");
+            if (role == "1")
+            {
+                List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
+                ViewData["KaryawanList"] = KaryawanList;
+            }
+            else
+            {
+                string nip = HttpContext.Session.GetString("nip");
+                List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.Where(x => x.NIP.ToString() == nip).ToList();
+                ViewData["KaryawanList"] = KaryawanList;
+            }
             return View();
         }
 
@@ -61,8 +82,18 @@ namespace WebAppSDM.Controllers
         public async Task<IActionResult> Create([Bind("edu_id,nip,edu_year,edu_place,edu_strata,edu_faculty,edu_major,emp_gpa,emp_scholarship,edu_final")] MEmpEducations mEmpEducations)
         {
             TempData["activeEmployee"] = "active";
-            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
-            ViewData["KaryawanList"] = KaryawanList;
+            string role = HttpContext.Session.GetString("role");
+            if (role == "1")
+            {
+                List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
+                ViewData["KaryawanList"] = KaryawanList;
+            }
+            else
+            {
+                string nip = HttpContext.Session.GetString("nip");
+                List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.Where(x => x.NIP.ToString() == nip).ToList();
+                ViewData["KaryawanList"] = KaryawanList;
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(mEmpEducations);
@@ -76,8 +107,18 @@ namespace WebAppSDM.Controllers
         public async Task<IActionResult> Edit(long? id)
         {
             TempData["activeEmployee"] = "active";
-            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
-            ViewData["KaryawanList"] = KaryawanList;
+            string role = HttpContext.Session.GetString("role");
+            if (role == "1")
+            {
+                List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
+                ViewData["KaryawanList"] = KaryawanList;
+            }
+            else
+            {
+                string nip = HttpContext.Session.GetString("nip");
+                List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.Where(x => x.NIP.ToString() == nip).ToList();
+                ViewData["KaryawanList"] = KaryawanList;
+            }
             if (id == null || _context.MEmpEducations == null)
             {
                 return NotFound();
@@ -99,8 +140,18 @@ namespace WebAppSDM.Controllers
         public async Task<IActionResult> Edit(long id, [Bind("edu_id,nip,edu_year,edu_place,edu_strata,edu_faculty,edu_major,emp_gpa,emp_scholarship,edu_final")] MEmpEducations mEmpEducations)
         {
             TempData["activeEmployee"] = "active";
-            List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
-            ViewData["KaryawanList"] = KaryawanList;
+            string role = HttpContext.Session.GetString("role");
+            if (role == "1")
+            {
+                List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.ToList();
+                ViewData["KaryawanList"] = KaryawanList;
+            }
+            else
+            {
+                string nip = HttpContext.Session.GetString("nip");
+                List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.Where(x => x.NIP.ToString() == nip).ToList();
+                ViewData["KaryawanList"] = KaryawanList;
+            }
             if (id != mEmpEducations.edu_id)
             {
                 return NotFound();
