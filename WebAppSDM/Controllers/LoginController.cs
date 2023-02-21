@@ -21,7 +21,7 @@ namespace WebAppSDM.Controllers
         }
         public IActionResult Index()
         {
-           
+            HttpContext.Session.Clear();
             HttpContext.Session.SetString("NotificationLogin", "");
             return View();
         }
