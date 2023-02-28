@@ -147,15 +147,26 @@ namespace WebAppSDM.Controllers
             }
 
             var mEmployeeExist = _context.MEmployee.Where(x => x.id == mEmployee.id).First();
-            if (mEmployee.emp_aktif == null || mEmployee.salary == null || mEmployee.grade_id == null || mEmployee.jabatan_id == null || mEmployee.emp_status == null)
+            if (mEmployee.emp_aktif == null)
             {
                 mEmployee.emp_aktif = mEmployeeExist.emp_aktif;
+            }
+            if (mEmployee.salary == null)
+            {
                 mEmployee.salary = mEmployeeExist.salary;
+            }
+            if (mEmployee.grade_id == null)
+            {
                 mEmployee.grade_id = mEmployeeExist.grade_id;
+            }
+            if (mEmployee.jabatan_id == null)
+            {
                 mEmployee.jabatan_id = mEmployeeExist.jabatan_id;
+            }
+            if (mEmployee.emp_status == null)
+            {
                 mEmployee.emp_status = mEmployeeExist.emp_status;
             }
-
             TempData["activeEmployee"] = "active";
             List<DropdownList.GradeList> gradelist = _context.GradeList.ToList();
             List<DropdownList.JabatanList> jabatanlist = _context.JabatanList.ToList();
