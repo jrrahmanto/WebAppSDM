@@ -12,7 +12,7 @@ namespace WebAppSDM.Models
             {
                 SmtpClient smtp = new SmtpClient("smtp.outlook.com", 587);
                 smtp.EnableSsl = true;
-                smtp.Credentials = new NetworkCredential("automatic_ptkbi@outlook.com", "Jakarta2021");
+                smtp.Credentials = new NetworkCredential("automatic_ptkbi@outlook.com", "Jakarta2023");
 
                 String from = "automatic_ptkbi@outlook.com";
                 String to = to_email;

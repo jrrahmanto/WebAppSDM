@@ -60,7 +60,7 @@ namespace WebAppSDM.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,nip,periode_start,periode_end,keterangan,isdelete")] TAbsenKhusus tAbsenKhusus)
+        public async Task<IActionResult> Create([Bind("id,nip,periode_start,periode_end,keterangan,isdelete, status")] TAbsenKhusus tAbsenKhusus)
         {
             tAbsenKhusus.isdelete = 0;
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.OrderBy(x => x.nama).ToList();
@@ -99,7 +99,7 @@ namespace WebAppSDM.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,nip,periode_start,periode_end,keterangan,isdelete")] TAbsenKhusus tAbsenKhusus)
+        public async Task<IActionResult> Edit(int id, [Bind("id,nip,periode_start,periode_end,keterangan,isdelete,status")] TAbsenKhusus tAbsenKhusus)
         {
             tAbsenKhusus.isdelete = 0;
             List<DropdownList.KaryawanList> KaryawanList = _context.KaryawanLists.OrderBy(x => x.nama).ToList();

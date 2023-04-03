@@ -29,7 +29,8 @@
                             <label class="col-sm-2 col-form-label" for="basic-default-company">Keterangan</label>
                             <div class="col-sm-10">
                                 <select asp-for="keterangan" class="form-select">
-                                    <option value="-">-</option>
+                                    <input type="text" class="form-control" asp-for="keterangan" />
+                                   @* <option value="-">-</option>
                                     <option value="sakit">Sakit</option>
                                     <option value="Danareksa">Danareksa</option>
                                     <option value="cuti tahunan">Cuti Tahunan</option>
@@ -42,7 +43,7 @@
                                     <option value="EOD">EOD</option>
                                     <option value="piket">Piket</option>
                                     <option value="Kick Of Meeting">Kick Of Meeting</option>
-                                    <option value="Lain-Lain">Lain lain</option>
+                                    <option value="Lain-Lain">Lain lain</option>*@
                                 </select>
                             </div>
                         </div>

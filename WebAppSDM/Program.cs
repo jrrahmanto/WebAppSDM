@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Server.IISIntegration;
 using Microsoft.AspNetCore.Authorization;
 using System.Configuration;
+using WebAppSDM.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +28,7 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-
+builder.Services.Configure<GoogleRecapthaConfig>(builder.Configuration.GetSection("GoogleReCaptcha"));
 
 var app = builder.Build();
 

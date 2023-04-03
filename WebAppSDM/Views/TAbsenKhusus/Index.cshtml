@@ -35,6 +35,9 @@
                             Tanggal Selesai
                         </th>
                         <th>
+                            Status
+                        </th>
+                        <th>
                             Keterangan
                         </th>
                         <th></th>
@@ -64,6 +67,15 @@
                             <td>
                                 @item.periode_end.ToString("dd/MM/yyyy")
                             </td>
+                            @if (item.status == 1)
+                            {
+                                <td>Dihitung Masuk</td>
+                            }
+                            else
+                            {
+                                <td>Dihitung Tidak Masuk</td>
+                            }
+
                             <td>
                                 @Html.DisplayFor(modelItem => item.keterangan)
                             </td>

@@ -1,6 +1,8 @@
 ﻿@model Login.loginparam
 @using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor HttpContextAccessor
+@using Microsoft.Extensions.Options
+@inject IOptions<GoogleRecapthaConfig> GoogleRecapthaConfig
 @{
     string notificationlogin = HttpContextAccessor.HttpContext.Session.GetString("NotificationLogin");
 
@@ -92,14 +94,14 @@
                             <div class="mb-3 form-password-toggle">
                                 <div class="d-flex justify-content-between">
                                     <label class="form-label" for="password">Password</label>
-                                    
+
                                 </div>
                                 <div class="input-group input-group-merge">
-                                    <input  asp-for="password" type="password"
+                                    <input asp-for="password" type="password"
                                            class="form-control"
                                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                            aria-describedby="password"
-                                           required/>
+                                           required />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
@@ -113,6 +115,20 @@
                 <!-- /Register -->
                 <!-- Core JS -->
                 <!-- build:js assets/vendor/js/core.js -->
+                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+                        async defer>
+                </script>
+
+                <script src="https://www.google.com/recaptcha/api.js?render=@GoogleRecapthaConfig.Value.SiteKey"></script>
+                <script>
+                    window.addEventListener('load', () => {
+                        const $recaptcha = document.querySelector('#g-recaptcha-response');
+                        if ($recaptcha) {
+                            $recaptcha.setAttribute('required', 'required');
+                        }
+                    })
+                </script>
+
                 <script src="~/assets/vendor/libs/jquery/jquery.js"></script>
                 <script src="~/assets/vendor/libs/popper/popper.js"></script>
                 <script src="~/assets/vendor/js/bootstrap.js"></script>
@@ -131,6 +147,7 @@
         </div>
     </div>
 
-    
+
 </body>
+
 </html>
