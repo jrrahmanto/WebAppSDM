@@ -130,7 +130,7 @@ namespace WebAppSDM.Controllers
                 string url = "http://182.253.222.68:33677/ReportServer?/SDMInternalReports/Rpt_TAbsensi&rs:Command=Render&rs:Format=EXCELOPENXML&periodestart=" + tAbsen.periodestart.ToString("yyyy-MM-dd") + "&periodeend=" + tAbsen.periodeend.ToString("yyyy-MM-dd") + "&nama=" + tAbsen.nip + "";
 
                 System.Net.HttpWebRequest Req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
-                Req.Credentials = new NetworkCredential(@"PTKBI\admin", @"Jakarta2020");
+                Req.Credentials = new NetworkCredential(@"PTKBI\admin", @"Jakarta2023");
                 Req.Method = "GET";
 
                 System.Net.WebResponse objResponse = Req.GetResponse();
